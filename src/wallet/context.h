@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_WALLET_CONTEXT_H
-#define FUJICOIN_WALLET_CONTEXT_H
+#ifndef BARICOIN_WALLET_CONTEXT_H
+#define BARICOIN_WALLET_CONTEXT_H
 
 class ArgsManager;
 namespace interfaces {
@@ -31,4 +31,4 @@ struct WalletContext {
     ~WalletContext();
 };
 
-#endif // FUJICOIN_WALLET_CONTEXT_H
+#endif // BARICOIN_WALLET_CONTEXT_H

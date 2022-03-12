@@ -95,7 +95,7 @@
     </message>
     </context>
 <context>
-    <name>FujicoinGUI</name>
+    <name>BaricoinGUI</name>
     <message>
         <source>&amp;Transactions</source>
         <translation>&amp;Транзакциялар</translation>
@@ -148,7 +148,7 @@
         <translation>Жаңартылған</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Fujicoin network.</source>
+        <source>%n active connection(s) to Baricoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />
@@ -212,7 +212,7 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>Fujicoin</source>
+        <source>Baricoin</source>
         <translation type="unfinished">Биткоин</translation>
     </message>
     <message numerus="yes">
@@ -362,7 +362,7 @@
     </message>
     </context>
 <context>
-    <name>fujicoin-core</name>
+    <name>baricoin-core</name>
     <message>
         <source>Transaction amount too small</source>
         <translation type="unfinished">Транзакция өте кішкентай</translation>

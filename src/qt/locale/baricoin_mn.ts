@@ -62,7 +62,7 @@
         <translation type="unfinished">Хүлээн авах хаяг</translation>
     </message>
     <message>
-        <source>These are your Fujicoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your Baricoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished">Эдгээр Биткойн хаягууд нь илгээх хаягууд. Хүлээн авах хаяг болон тоо хэмжээг илгээхээсээ өмнө сайн нягталж үзэж байна уу</translation>
     </message>
     <message>
@@ -218,7 +218,7 @@
     </message>
     </context>
 <context>
-    <name>FujicoinGUI</name>
+    <name>BaricoinGUI</name>
     <message>
         <source>&amp;Transactions</source>
         <translation>Гүйлгээнүүд</translation>
@@ -283,7 +283,7 @@
         <translation>Шинэчлэгдсэн</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Fujicoin network.</source>
+        <source>%n active connection(s) to Baricoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />
@@ -391,7 +391,7 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>Fujicoin</source>
+        <source>Baricoin</source>
         <translation type="unfinished">Биткойн</translation>
     </message>
     <message numerus="yes">
@@ -693,7 +693,7 @@
         </translation>
     </message>
     <message>
-        <source>Warning: Invalid Fujicoin address</source>
+        <source>Warning: Invalid Baricoin address</source>
         <translation type="unfinished">Анхаар:Буруу Биткойны хаяг байна</translation>
     </message>
     <message>
@@ -987,7 +987,7 @@
     </message>
     </context>
 <context>
-    <name>fujicoin-core</name>
+    <name>baricoin-core</name>
     <message>
         <source>Done loading</source>
         <translation type="unfinished">Ачааллаж дууслаа</translation>

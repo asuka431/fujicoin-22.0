@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_SCRIPT_STANDARD_H
-#define FUJICOIN_SCRIPT_STANDARD_H
+#ifndef BARICOIN_SCRIPT_STANDARD_H
+#define BARICOIN_SCRIPT_STANDARD_H
 
 #include <pubkey.h>
 #include <script/interpreter.h>
@@ -152,7 +152,7 @@ struct WitnessUnknown
  *  * WitnessV0KeyHash: TxoutType::WITNESS_V0_KEYHASH destination (P2WPKH)
  *  * WitnessV1Taproot: TxoutType::WITNESS_V1_TAPROOT destination (P2TR)
  *  * WitnessUnknown: TxoutType::WITNESS_UNKNOWN destination (P2W???)
- *  A CTxDestination is the internal data type encoded in a fujicoin address
+ *  A CTxDestination is the internal data type encoded in a baricoin address
  */
 using CTxDestination = std::variant<CNoDestination, PKHash, ScriptHash, WitnessV0ScriptHash, WitnessV0KeyHash, WitnessV1Taproot, WitnessUnknown>;
 
@@ -198,7 +198,7 @@ bool ExtractDestination(const CScript& scriptPubKey, CTxDestination& addressRet)
 bool ExtractDestinations(const CScript& scriptPubKey, TxoutType& typeRet, std::vector<CTxDestination>& addressRet, int& nRequiredRet);
 
 /**
- * Generate a Fujicoin scriptPubKey for the given CTxDestination. Returns a P2PKH
+ * Generate a Baricoin scriptPubKey for the given CTxDestination. Returns a P2PKH
  * script for a CKeyID destination, a P2SH script for a CScriptID, and an empty
  * script for CNoDestination.
  */
@@ -335,4 +335,4 @@ public:
  */
 std::optional<std::vector<std::tuple<int, CScript, int>>> InferTaprootTree(const TaprootSpendData& spenddata, const XOnlyPubKey& output);
 
-#endif // FUJICOIN_SCRIPT_STANDARD_H
+#endif // BARICOIN_SCRIPT_STANDARD_H

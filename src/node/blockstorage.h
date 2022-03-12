@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_NODE_BLOCKSTORAGE_H
-#define FUJICOIN_NODE_BLOCKSTORAGE_H
+#ifndef BARICOIN_NODE_BLOCKSTORAGE_H
+#define BARICOIN_NODE_BLOCKSTORAGE_H
 
 #include <fs.h>
 #include <protocol.h> // For CMessageHeader::MessageStartChars
@@ -79,4 +79,4 @@ FlatFilePos SaveBlockToDisk(const CBlock& block, int nHeight, CChain& active_cha
 
 void ThreadImport(ChainstateManager& chainman, std::vector<fs::path> vImportFiles, const ArgsManager& args);
 
-#endif // FUJICOIN_NODE_BLOCKSTORAGE_H
+#endif // BARICOIN_NODE_BLOCKSTORAGE_H

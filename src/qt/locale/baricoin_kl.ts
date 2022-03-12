@@ -126,7 +126,7 @@
     </message>
     </context>
 <context>
-    <name>FujicoinGUI</name>
+    <name>BaricoinGUI</name>
     <message>
         <source>Wallet:</source>
         <translation type="unfinished">Aningaasivik:</translation>
@@ -147,7 +147,7 @@
         <translation type="unfinished">Ammaruk aningaasivik</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Fujicoin network.</source>
+        <source>%n active connection(s) to Baricoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />
@@ -157,7 +157,7 @@
     <message>
         <source>Amount: %1
 </source>
-        <translation type="unfinished">Fujicoin amerlassusaa: %1
+        <translation type="unfinished">Baricoin amerlassusaa: %1
 </translation>
     </message>
     </context>

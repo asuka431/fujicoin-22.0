@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_WALLET_SALVAGE_H
-#define FUJICOIN_WALLET_SALVAGE_H
+#ifndef BARICOIN_WALLET_SALVAGE_H
+#define BARICOIN_WALLET_SALVAGE_H
 
 #include <fs.h>
 #include <streams.h>
@@ -13,4 +13,4 @@ struct bilingual_str;
 
 bool RecoverDatabaseFile(const fs::path& file_path, bilingual_str& error, std::vector<bilingual_str>& warnings);
 
-#endif // FUJICOIN_WALLET_SALVAGE_H
+#endif // BARICOIN_WALLET_SALVAGE_H

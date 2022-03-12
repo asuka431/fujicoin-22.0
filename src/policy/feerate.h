@@ -3,15 +3,15 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_POLICY_FEERATE_H
-#define FUJICOIN_POLICY_FEERATE_H
+#ifndef BARICOIN_POLICY_FEERATE_H
+#define BARICOIN_POLICY_FEERATE_H
 
 #include <amount.h>
 #include <serialize.h>
 
 #include <string>
 
-const std::string CURRENCY_UNIT = "FJC"; // One formatted unit
+const std::string CURRENCY_UNIT = "BARI"; // One formatted unit
 const std::string CURRENCY_ATOM = "sat"; // One indivisible minimum value unit
 
 /* Used to determine type of fee estimation requested */
@@ -19,7 +19,7 @@ enum class FeeEstimateMode {
     UNSET,        //!< Use default settings based on other criteria
     ECONOMICAL,   //!< Force estimateSmartFee to use non-conservative estimates
     CONSERVATIVE, //!< Force estimateSmartFee to use conservative estimates
-    FJC_KVB,      //!< Use FJC/kvB fee rate unit
+    BARI_KVB,      //!< Use BARI/kvB fee rate unit
     SAT_VB,       //!< Use sat/vB fee rate unit
 };
 
@@ -43,7 +43,7 @@ public:
      *
      *  Passing a num_bytes value of COIN (1e8) returns a fee rate in satoshis per vB (sat/vB),
      *  e.g. (nFeePaid * 1e8 / 1e3) == (nFeePaid / 1e5),
-     *  where 1e5 is the ratio to convert from FJC/kvB to sat/vB.
+     *  where 1e5 is the ratio to convert from BARI/kvB to sat/vB.
      */
     CFeeRate(const CAmount& nFeePaid, uint32_t num_bytes);
     /**
@@ -61,9 +61,9 @@ public:
     friend bool operator>=(const CFeeRate& a, const CFeeRate& b) { return a.nSatoshisPerK >= b.nSatoshisPerK; }
     friend bool operator!=(const CFeeRate& a, const CFeeRate& b) { return a.nSatoshisPerK != b.nSatoshisPerK; }
     CFeeRate& operator+=(const CFeeRate& a) { nSatoshisPerK += a.nSatoshisPerK; return *this; }
-    std::string ToString(const FeeEstimateMode& fee_estimate_mode = FeeEstimateMode::FJC_KVB) const;
+    std::string ToString(const FeeEstimateMode& fee_estimate_mode = FeeEstimateMode::BARI_KVB) const;
 
     SERIALIZE_METHODS(CFeeRate, obj) { READWRITE(obj.nSatoshisPerK); }
 };
 
-#endif //  FUJICOIN_POLICY_FEERATE_H
+#endif //  BARICOIN_POLICY_FEERATE_H

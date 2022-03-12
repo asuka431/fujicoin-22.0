@@ -63,8 +63,8 @@
         <translation type="unfinished">Mottar adresser </translation>
     </message>
     <message>
-        <source>These are your Fujicoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Dette er dine Fujicoin adresser for å sende betalinger.Alltid sjekk mengden og mottaker adressen før du sender mynter.  </translation>
+        <source>These are your Baricoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">Dette er dine Baricoin adresser for å sende betalinger.Alltid sjekk mengden og mottaker adressen før du sender mynter.  </translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -132,7 +132,7 @@
     </message>
     </context>
 <context>
-    <name>FujicoinGUI</name>
+    <name>BaricoinGUI</name>
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
         <translation>
@@ -141,7 +141,7 @@
         </translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Fujicoin network.</source>
+        <source>%n active connection(s) to Baricoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />

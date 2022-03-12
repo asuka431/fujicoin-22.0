@@ -1,4 +1,4 @@
-Fujicoin version 0.7.1 is now available from:
+Baricoin version 0.7.1 is now available from:
   http://sourceforge.net/projects/bitcoin/files/Bitcoin/bitcoin-0.7.1/
 
 This is a bug-fix minor release.
@@ -8,16 +8,16 @@ Please report bugs using the issue tracker at github:
 
 Project source code is hosted at github; you can get
 source-only tarballs/zipballs directly from there:
-  https://github.com/fujicoin/fujicoin/tarball/v0.7.1  # .tar.gz
-  https://github.com/fujicoin/fujicoin/zipball/v0.7.1  # .zip
+  https://github.com/baricoin/baricoin/tarball/v0.7.1  # .tar.gz
+  https://github.com/baricoin/baricoin/zipball/v0.7.1  # .zip
 
 Ubuntu Linux users can use the "Personal Package Archive" (PPA)
 maintained by Matt Corallo to automatically keep 
 up-to-date.  Just type:
-  sudo apt-add-repository ppa:fujicoin/fujicoin
+  sudo apt-add-repository ppa:baricoin/baricoin
   sudo apt-get update
-in your terminal, then install the fujicoin-qt package:
-  sudo apt-get install fujicoin-qt
+in your terminal, then install the baricoin-qt package:
+  sudo apt-get install baricoin-qt
 
 KNOWN ISSUES
 ------------
@@ -30,7 +30,7 @@ How to Upgrade
 If you are running an older version, shut it down. Wait
 until it has completely shut down (which might take a few minutes for older
 versions), then run the installer (on Windows) or just copy over
-/Applications/Fujicoin-Qt (on Mac) or fujicoind/fujicoin-qt (on Linux).
+/Applications/Baricoin-Qt (on Mac) or baricoind/baricoin-qt (on Linux).
 
 If you were running on Linux with a version that might have been compiled
 with a different version of Berkeley DB (for example, if you were using an
@@ -75,7 +75,7 @@ Dependency changes
 Bug fixes
 ---------
 
-* Clicking on a fujicoin: URI on Windows should now launch Fujicoin-Qt properly.
+* Clicking on a baricoin: URI on Windows should now launch Baricoin-Qt properly.
 
 * When running -testnet, use RPC port 18332 by default.
 

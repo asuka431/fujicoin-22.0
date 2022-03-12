@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_WALLET_COINSELECTION_H
-#define FUJICOIN_WALLET_COINSELECTION_H
+#ifndef BARICOIN_WALLET_COINSELECTION_H
+#define BARICOIN_WALLET_COINSELECTION_H
 
 #include <amount.h>
 #include <policy/feerate.h>
@@ -171,4 +171,4 @@ bool SelectCoinsBnB(std::vector<OutputGroup>& utxo_pool, const CAmount& selectio
 // Original coin selection algorithm as a fallback
 bool KnapsackSolver(const CAmount& nTargetValue, std::vector<OutputGroup>& groups, std::set<CInputCoin>& setCoinsRet, CAmount& nValueRet);
 
-#endif // FUJICOIN_WALLET_COINSELECTION_H
+#endif // BARICOIN_WALLET_COINSELECTION_H

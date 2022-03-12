@@ -62,13 +62,13 @@
         <translation type="unfinished">Přijímací adresy</translation>
     </message>
     <message>
-        <source>These are your Fujicoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Tohle jsou tvé fujicoinové adresy pro posílání plateb. Před odesláním mincí si vždy zkontroluj částku a cílovou adresu.</translation>
+        <source>These are your Baricoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">Tohle jsou tvé baricoinové adresy pro posílání plateb. Před odesláním mincí si vždy zkontroluj částku a cílovou adresu.</translation>
     </message>
     <message>
-        <source>These are your Fujicoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
+        <source>These are your Baricoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
-        <translation type="unfinished">Tohle jsou tvé fujicoinové adresy pro přijmaní plateb. Použij "Vytvoř novou přijimací adresu" pro vytvoření nových adres. Přihlašování je povoleno jen s adresami typu "Legacy"</translation>
+        <translation type="unfinished">Tohle jsou tvé baricoinové adresy pro přijmaní plateb. Použij "Vytvoř novou přijimací adresu" pro vytvoření nových adres. Přihlašování je povoleno jen s adresami typu "Legacy"</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -159,8 +159,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Potvrď zašifrování peněženky</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR FUJICOINS&lt;/b&gt;!</source>
-        <translation type="unfinished">Upozornění: Pokud si zašifruješ peněženku a ztratíš či zapomeneš heslo, &lt;b&gt;PŘIJDEŠ O VŠECHNY FUJICOINY&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BARICOINS&lt;/b&gt;!</source>
+        <translation type="unfinished">Upozornění: Pokud si zašifruješ peněženku a ztratíš či zapomeneš heslo, &lt;b&gt;PŘIJDEŠ O VŠECHNY BARICOINY&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -179,8 +179,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Zadej staré a nové heslo k peněžence.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your fujicoins from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished">Pamatujte, že zašifrování peněženky nemůže plně ochránit vaše fujicoiny před krádeží, pokud by byl váš počítač napadem malwarem.</translation>
+        <source>Remember that encrypting your wallet cannot fully protect your baricoins from being stolen by malware infecting your computer.</source>
+        <translation type="unfinished">Pamatujte, že zašifrování peněženky nemůže plně ochránit vaše baricoiny před krádeží, pokud by byl váš počítač napadem malwarem.</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
@@ -239,7 +239,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
 </context>
 <context>
-    <name>FujicoinApplication</name>
+    <name>BaricoinApplication</name>
     <message>
         <source>A fatal error occurred. %1 can no longer continue safely and will quit.</source>
         <translation type="unfinished">Stala se fatální chyba. %1 nemůže bezpečně pokračovat v činnosti, a bude ukončen.</translation>
@@ -280,8 +280,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Částka</translation>
     </message>
     <message>
-        <source>Enter a Fujicoin address (e.g. %1)</source>
-        <translation type="unfinished">Zadej fujicoinovou adresu (např. %1)</translation>
+        <source>Enter a Baricoin address (e.g. %1)</source>
+        <translation type="unfinished">Zadej baricoinovou adresu (např. %1)</translation>
     </message>
     <message>
         <source>Inbound</source>
@@ -353,7 +353,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     </context>
 <context>
-    <name>FujicoinGUI</name>
+    <name>BaricoinGUI</name>
     <message>
         <source>&amp;Overview</source>
         <translation>&amp;Přehled</translation>
@@ -416,8 +416,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Proxy je &lt;b&gt;zapnutá&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a Fujicoin address</source>
-        <translation>Pošli mince na fujicoinovou adresu</translation>
+        <source>Send coins to a Baricoin address</source>
+        <translation>Pošli mince na baricoinovou adresu</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -452,12 +452,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation>Zašifruj soukromé klíče ve své peněžence</translation>
     </message>
     <message>
-        <source>Sign messages with your Fujicoin addresses to prove you own them</source>
-        <translation>Podepiš zprávy svými fujicoinovými adresami, čímž prokážeš, že jsi jejich vlastníkem</translation>
+        <source>Sign messages with your Baricoin addresses to prove you own them</source>
+        <translation>Podepiš zprávy svými baricoinovými adresami, čímž prokážeš, že jsi jejich vlastníkem</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Fujicoin addresses</source>
-        <translation>Ověř zprávy, aby ses ujistil, že byly podepsány danými fujicoinovými adresami</translation>
+        <source>Verify messages to ensure they were signed with specified Baricoin addresses</source>
+        <translation>Ověř zprávy, aby ses ujistil, že byly podepsány danými baricoinovými adresami</translation>
     </message>
     <message>
         <source>Close Wallet…</source>
@@ -492,8 +492,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Vytvářím index bloků na disku...</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and fujicoin: URIs)</source>
-        <translation type="unfinished">Požaduj platby (generuje QR kódy a fujicoin: URI)</translation>
+        <source>Request payments (generates QR codes and baricoin: URIs)</source>
+        <translation type="unfinished">Požaduj platby (generuje QR kódy a baricoin: URI)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -544,12 +544,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation>Aktuální</translation>
     </message>
     <message>
-        <source>Load Partially Signed Fujicoin Transaction</source>
-        <translation type="unfinished">Načíst částečně podepsanou Fujicoinovou transakci</translation>
+        <source>Load Partially Signed Baricoin Transaction</source>
+        <translation type="unfinished">Načíst částečně podepsanou Baricoinovou transakci</translation>
     </message>
     <message>
-        <source>Load Partially Signed Fujicoin Transaction from clipboard</source>
-        <translation type="unfinished">Načíst částečně podepsanou Fujicoinovou transakci ze schránky</translation>
+        <source>Load Partially Signed Baricoin Transaction from clipboard</source>
+        <translation type="unfinished">Načíst částečně podepsanou Baricoinovou transakci ze schránky</translation>
     </message>
     <message>
         <source>Node window</source>
@@ -568,8 +568,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Přijímací adresy</translation>
     </message>
     <message>
-        <source>Open a fujicoin: URI</source>
-        <translation type="unfinished">Načíst Fujicoin: URI</translation>
+        <source>Open a baricoin: URI</source>
+        <translation type="unfinished">Načíst Baricoin: URI</translation>
     </message>
     <message>
         <source>Open Wallet</source>
@@ -588,8 +588,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Zavřít všechny peněženky</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Fujicoin command-line options</source>
-        <translation type="unfinished">Seznam argumentů Fujicoinu pro příkazovou řádku získáš v nápovědě %1</translation>
+        <source>Show the %1 help message to get a list with possible Baricoin command-line options</source>
+        <translation type="unfinished">Seznam argumentů Baricoinu pro příkazovou řádku získáš v nápovědě %1</translation>
     </message>
     <message>
         <source>&amp;Mask values</source>
@@ -628,7 +628,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">%1 klient</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Fujicoin network.</source>
+        <source>%n active connection(s) to Baricoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />
@@ -994,8 +994,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Uprav odesílací adresu</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Fujicoin address.</source>
-        <translation type="unfinished">Zadaná adresa „%1“ není platná fujicoinová adresa.</translation>
+        <source>The entered address "%1" is not a valid Baricoin address.</source>
+        <translation type="unfinished">Zadaná adresa „%1“ není platná baricoinová adresa.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -1065,7 +1065,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         </translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Fujicoin block chain.</source>
+        <source>%1 will download and store a copy of the Baricoin block chain.</source>
         <translation type="unfinished">%1 bude stahovat kopii blockchainu.</translation>
     </message>
     <message>
@@ -1150,12 +1150,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Formulář</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the fujicoin network, as detailed below.</source>
-        <translation type="unfinished">Nedávné transakce ještě nemusí být vidět, takže stav tvého účtu nemusí být platný. Jakmile se však tvá peněženka dosynchronizuje s fujicoinovou sítí (viz informace níže), tak už bude stav správně.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the baricoin network, as detailed below.</source>
+        <translation type="unfinished">Nedávné transakce ještě nemusí být vidět, takže stav tvého účtu nemusí být platný. Jakmile se však tvá peněženka dosynchronizuje s baricoinovou sítí (viz informace níže), tak už bude stav správně.</translation>
     </message>
     <message>
-        <source>Attempting to spend fujicoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation type="unfinished">Utrácení fujicoinů, které už utratily zatím nezobrazené transakce, nebude fujicoinovou sítí umožněno.</translation>
+        <source>Attempting to spend baricoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation type="unfinished">Utrácení baricoinů, které už utratily zatím nezobrazené transakce, nebude baricoinovou sítí umožněno.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1201,8 +1201,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
 <context>
     <name>OpenURIDialog</name>
     <message>
-        <source>Open fujicoin URI</source>
-        <translation type="unfinished">Otevřít fujicoin URI</translation>
+        <source>Open baricoin URI</source>
+        <translation type="unfinished">Otevřít baricoin URI</translation>
     </message>
     </context>
 <context>
@@ -1304,7 +1304,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">&amp;Utrácet i ještě nepotvrzené drobné</translation>
     </message>
     <message>
-        <source>Automatically open the Fujicoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the Baricoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation>Automaticky otevře potřebný port na routeru. Tohle funguje jen za předpokladu, že tvůj router podporuje UPnP a že je UPnP povolené.</translation>
     </message>
     <message>
@@ -1312,8 +1312,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation>Namapovat port přes &amp;UPnP</translation>
     </message>
     <message>
-        <source>Automatically open the Fujicoin client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
-        <translation type="unfinished">Automaticky otevřít port pro Fujicoinový klient na routeru. Toto funguje pouze pokud váš router podporuje a má zapnutou funkci NAT-PMP. Vnější port může být zvolen náhodně.</translation>
+        <source>Automatically open the Baricoin client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
+        <translation type="unfinished">Automaticky otevřít port pro Baricoinový klient na routeru. Toto funguje pouze pokud váš router podporuje a má zapnutou funkci NAT-PMP. Vnější port může být zvolen náhodně.</translation>
     </message>
     <message>
         <source>Map port using NA&amp;T-PMP</source>
@@ -1328,8 +1328,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Přijí&amp;mat příchozí spojení</translation>
     </message>
     <message>
-        <source>Connect to the Fujicoin network through a SOCKS5 proxy.</source>
-        <translation type="unfinished">Připojí se do fujicoinové sítě přes SOCKS5 proxy.</translation>
+        <source>Connect to the Baricoin network through a SOCKS5 proxy.</source>
+        <translation type="unfinished">Připojí se do baricoinové sítě přes SOCKS5 proxy.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1400,8 +1400,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Zda ukazovat možnosti pro ruční správu mincí nebo ne.</translation>
     </message>
     <message>
-        <source>Connect to the Fujicoin network through a separate SOCKS5 proxy for Tor onion services.</source>
-        <translation type="unfinished">Připojí se do Fujicoinové sítě přes vyhrazenou SOCKS5 proxy pro služby v Tor síti.</translation>
+        <source>Connect to the Baricoin network through a separate SOCKS5 proxy for Tor onion services.</source>
+        <translation type="unfinished">Připojí se do Baricoinové sítě přes vyhrazenou SOCKS5 proxy pro služby v Tor síti.</translation>
     </message>
     <message>
         <source>Use separate SOCKS&amp;5 proxy to reach peers via Tor onion services:</source>
@@ -1487,8 +1487,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation>Formulář</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Fujicoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Zobrazené informace nemusí být aktuální. Tvá peněženka se automaticky sesynchronizuje s fujicoinovou sítí, jakmile se s ní spojí. Zatím ale ještě není synchronizace dokončena.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Baricoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>Zobrazené informace nemusí být aktuální. Tvá peněženka se automaticky sesynchronizuje s baricoinovou sítí, jakmile se s ní spojí. Zatím ale ještě není synchronizace dokončena.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1686,16 +1686,16 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Chyba platebního požadavku</translation>
     </message>
     <message>
-        <source>Cannot start fujicoin: click-to-pay handler</source>
-        <translation type="unfinished">Nemůžu spustit fujicoin: obsluha click-to-pay</translation>
+        <source>Cannot start baricoin: click-to-pay handler</source>
+        <translation type="unfinished">Nemůžu spustit baricoin: obsluha click-to-pay</translation>
     </message>
     <message>
         <source>URI handling</source>
         <translation type="unfinished">Zpracování URI</translation>
     </message>
     <message>
-        <source>'fujicoin://' is not a valid URI. Use 'fujicoin:' instead.</source>
-        <translation type="unfinished">'fujicoin://' není platné URI. Místo toho použij 'fujicoin:'.</translation>
+        <source>'baricoin://' is not a valid URI. Use 'baricoin:' instead.</source>
+        <translation type="unfinished">'baricoin://' není platné URI. Místo toho použij 'baricoin:'.</translation>
     </message>
     <message>
         <source>Cannot process payment request because BIP70 is not supported.
@@ -1706,8 +1706,8 @@ Vzhledem k rozšířeným bezpečnostním chybám v BIP70 je důrazně doporuče
 Pokud vidíte tuto chybu, měli byste požádat, aby obchodník poskytl adresu kompatibilní s BIP21.</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Fujicoin address or malformed URI parameters.</source>
-        <translation type="unfinished">Nepodařilo se analyzovat URI! Důvodem může být neplatná fujicoinová adresa nebo poškozené parametry URI.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid Baricoin address or malformed URI parameters.</source>
+        <translation type="unfinished">Nepodařilo se analyzovat URI! Důvodem může být neplatná baricoinová adresa nebo poškozené parametry URI.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -2115,8 +2115,8 @@ Pokud vidíte tuto chybu, měli byste požádat, aby obchodník poskytl adresu k
         <translation type="unfinished">&amp;Zpráva:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Fujicoin network.</source>
-        <translation type="unfinished">Volitelná zpráva, která se připojí k platebnímu požadavku a která se zobrazí, když se požadavek otevře. Poznámka: tahle zpráva se neposílá s platbou po fujicoinové síti.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Baricoin network.</source>
+        <translation type="unfinished">Volitelná zpráva, která se připojí k platebnímu požadavku a která se zobrazí, když se požadavek otevře. Poznámka: tahle zpráva se neposílá s platbou po baricoinové síti.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2364,8 +2364,8 @@ Pokud vidíte tuto chybu, měli byste požádat, aby obchodník poskytl adresu k
         <translation type="unfinished">Schovat nastavení poplatků transakce - transaction fee</translation>
     </message>
     <message>
-        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for fujicoin transactions than the network can process.</source>
-        <translation type="unfinished">Když je zde měně transakcí než místa na bloky, mineři stejně tak relay-e mohou nasadit minimální poplatky. Zaplacením pouze minimálního poplatku je v pohodě, ale mějte na paměti že toto může mít za následek nikdy neověřenou transakci pokud zde bude více fujicoinových transakcí než může síť zvládnout.</translation>
+        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for baricoin transactions than the network can process.</source>
+        <translation type="unfinished">Když je zde měně transakcí než místa na bloky, mineři stejně tak relay-e mohou nasadit minimální poplatky. Zaplacením pouze minimálního poplatku je v pohodě, ale mějte na paměti že toto může mít za následek nikdy neověřenou transakci pokud zde bude více baricoinových transakcí než může síť zvládnout.</translation>
     </message>
     <message>
         <source>A too low fee might result in a never confirming transaction (read the tooltip)</source>
@@ -2441,8 +2441,8 @@ Pokud vidíte tuto chybu, měli byste požádat, aby obchodník poskytl adresu k
         <translation type="unfinished">Vytvořit bez podpisu</translation>
     </message>
     <message>
-        <source>Creates a Partially Signed Fujicoin Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation type="unfinished">Vytvořit částečně podepsanou Fujicoin transakci (Partially Signed Fujicoin Transaction - PSBT) k použtí kupříkladu s offline %1 peněženkou nebo s jinou kompatibilní PSBT hardware peněženkou.</translation>
+        <source>Creates a Partially Signed Baricoin Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <translation type="unfinished">Vytvořit částečně podepsanou Baricoin transakci (Partially Signed Baricoin Transaction - PSBT) k použtí kupříkladu s offline %1 peněženkou nebo s jinou kompatibilní PSBT hardware peněženkou.</translation>
     </message>
     <message>
         <source> from wallet '%1'</source>
@@ -2490,8 +2490,8 @@ Pokud vidíte tuto chybu, měli byste požádat, aby obchodník poskytl adresu k
         <translation type="unfinished">Poplatek můžete navýšit později (vysílá se "Replace-By-Fee" - nahrazení poplatkem, BIP-125).</translation>
     </message>
     <message>
-        <source>Please, review your transaction proposal. This will produce a Partially Signed Fujicoin Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation type="unfinished">Zkontrolujte prosím svůj návrh transakce. Výsledkem bude částečně podepsaná fujicoinová transakce (PSBT), kterou můžete uložit nebo kopírovat a poté podepsat např. pomocí offline %1 peněženky nebo hardwarové peněženky kompatibilní s PSBT.</translation>
+        <source>Please, review your transaction proposal. This will produce a Partially Signed Baricoin Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <translation type="unfinished">Zkontrolujte prosím svůj návrh transakce. Výsledkem bude částečně podepsaná baricoinová transakce (PSBT), kterou můžete uložit nebo kopírovat a poté podepsat např. pomocí offline %1 peněženky nebo hardwarové peněženky kompatibilní s PSBT.</translation>
     </message>
     <message>
         <source>Please, review your transaction.</source>
@@ -2562,8 +2562,8 @@ Pokud vidíte tuto chybu, měli byste požádat, aby obchodník poskytl adresu k
         </translation>
     </message>
     <message>
-        <source>Warning: Invalid Fujicoin address</source>
-        <translation type="unfinished">Upozornění: Neplatná fujicoinová adresa</translation>
+        <source>Warning: Invalid Baricoin address</source>
+        <translation type="unfinished">Upozornění: Neplatná baricoinová adresa</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2601,8 +2601,8 @@ Pokud vidíte tuto chybu, měli byste požádat, aby obchodník poskytl adresu k
         <translation type="unfinished">Vyber již použitou adresu</translation>
     </message>
     <message>
-        <source>The Fujicoin address to send the payment to</source>
-        <translation type="unfinished">Fujicoinová adresa příjemce</translation>
+        <source>The Baricoin address to send the payment to</source>
+        <translation type="unfinished">Baricoinová adresa příjemce</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -2617,8 +2617,8 @@ Pokud vidíte tuto chybu, měli byste požádat, aby obchodník poskytl adresu k
         <translation type="unfinished">Částka k odeslání ve vybrané měně</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less fujicoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation type="unfinished">Poplatek se odečte od posílané částky. Příjemce tak dostane méně fujicoinů, než zadáš do pole Částka. Pokud vybereš více příjemců, tak se poplatek rovnoměrně rozloží.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less baricoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation type="unfinished">Poplatek se odečte od posílané částky. Příjemce tak dostane méně baricoinů, než zadáš do pole Částka. Pokud vybereš více příjemců, tak se poplatek rovnoměrně rozloží.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -2645,8 +2645,8 @@ Pokud vidíte tuto chybu, měli byste požádat, aby obchodník poskytl adresu k
         <translation type="unfinished">Zadej označení této adresy; obojí se ti pak uloží do adresáře</translation>
     </message>
     <message>
-        <source>A message that was attached to the fujicoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Fujicoin network.</source>
-        <translation type="unfinished">Zpráva, která byla připojena k fujicoin: URI a která se ti pro přehled uloží k transakci. Poznámka: Tahle zpráva se neposílá s platbou po fujicoinové síti.</translation>
+        <source>A message that was attached to the baricoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Baricoin network.</source>
+        <translation type="unfinished">Zpráva, která byla připojena k baricoin: URI a která se ti pro přehled uloží k transakci. Poznámka: Tahle zpráva se neposílá s platbou po baricoinové síti.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2668,12 +2668,12 @@ Pokud vidíte tuto chybu, měli byste požádat, aby obchodník poskytl adresu k
         <translation>&amp;Podepiš zprávu</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive fujicoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation type="unfinished">Podepsáním zprávy/smlouvy svými adresami můžeš prokázat, že jsi na ně schopen přijmout fujicoiny. Buď opatrný a nepodepisuj nic vágního nebo náhodného; například při phishingových útocích můžeš být lákán, abys něco takového podepsal. Podepisuj pouze naprosto úplná a detailní prohlášení, se kterými souhlasíš.</translation>
+        <source>You can sign messages/agreements with your addresses to prove you can receive baricoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation type="unfinished">Podepsáním zprávy/smlouvy svými adresami můžeš prokázat, že jsi na ně schopen přijmout baricoiny. Buď opatrný a nepodepisuj nic vágního nebo náhodného; například při phishingových útocích můžeš být lákán, abys něco takového podepsal. Podepisuj pouze naprosto úplná a detailní prohlášení, se kterými souhlasíš.</translation>
     </message>
     <message>
-        <source>The Fujicoin address to sign the message with</source>
-        <translation type="unfinished">Fujicoinová adresa, kterou se zpráva podepíše</translation>
+        <source>The Baricoin address to sign the message with</source>
+        <translation type="unfinished">Baricoinová adresa, kterou se zpráva podepíše</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2696,8 +2696,8 @@ Pokud vidíte tuto chybu, měli byste požádat, aby obchodník poskytl adresu k
         <translation>Zkopíruj tento podpis do schránky</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Fujicoin address</source>
-        <translation>Podepiš zprávu, čímž prokážeš, že jsi vlastníkem této fujicoinové adresy</translation>
+        <source>Sign the message to prove you own this Baricoin address</source>
+        <translation>Podepiš zprávu, čímž prokážeš, že jsi vlastníkem této baricoinové adresy</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2720,8 +2720,8 @@ Pokud vidíte tuto chybu, měli byste požádat, aby obchodník poskytl adresu k
         <translation type="unfinished">K ověření podpisu zprávy zadej adresu příjemce, zprávu (ověř si, že správně kopíruješ zalomení řádků, mezery, tabulátory apod.) a podpis. Dávej pozor na to, abys nezkopíroval do podpisu víc, než co je v samotné podepsané zprávě, abys nebyl napálen man-in-the-middle útokem. Poznamenejme však, že takto lze pouze prokázat, že podepisující je schopný na dané adrese přijmout platbu, ale není možnéprokázat, že odeslal jakoukoli transakci!</translation>
     </message>
     <message>
-        <source>The Fujicoin address the message was signed with</source>
-        <translation type="unfinished">Fujicoinová adresa, kterou je zpráva podepsána</translation>
+        <source>The Baricoin address the message was signed with</source>
+        <translation type="unfinished">Baricoinová adresa, kterou je zpráva podepsána</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
@@ -2732,8 +2732,8 @@ Pokud vidíte tuto chybu, měli byste požádat, aby obchodník poskytl adresu k
         <translation type="unfinished">Podpis daný při podpisu zprávy</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Fujicoin address</source>
-        <translation>Ověř zprávu, aby ses ujistil, že byla podepsána danou fujicoinovou adresou</translation>
+        <source>Verify the message to ensure it was signed with the specified Baricoin address</source>
+        <translation>Ověř zprávu, aby ses ujistil, že byla podepsána danou baricoinovou adresou</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -3336,14 +3336,14 @@ Přejděte do Soubor &gt; Otevřít peněženku pro načtení peněženky.
     </message>
 </context>
 <context>
-    <name>fujicoin-core</name>
+    <name>baricoin-core</name>
     <message>
         <source>The %s developers</source>
         <translation type="unfinished">Vývojáři %s</translation>
     </message>
     <message>
-        <source>%s corrupt. Try using the wallet tool fujicoin-wallet to salvage or restoring a backup.</source>
-        <translation type="unfinished">Soubor %s je poškozen. Zkus použít fujicoin-wallet pro opravu nebo obnov zálohu.</translation>
+        <source>%s corrupt. Try using the wallet tool baricoin-wallet to salvage or restoring a backup.</source>
+        <translation type="unfinished">Soubor %s je poškozen. Zkus použít baricoin-wallet pro opravu nebo obnov zálohu.</translation>
     </message>
     <message>
         <source>-maxtxfee is set very high! Fees this large could be paid on a single transaction.</source>
@@ -3382,8 +3382,8 @@ Přejděte do Soubor &gt; Otevřít peněženku pro načtení peněženky.
         <translation type="unfinished">Chyba: záznam identifikátoru souboru výpisu je nesprávný. Získáno "%s", očekáváno "%s".</translation>
     </message>
     <message>
-        <source>Error: Dumpfile version is not supported. This version of fujicoin-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
-        <translation type="unfinished">Chyba: verze souboru výpisu není podporována. Tato verze peněženky Fujicoin podporuje pouze soubory výpisu verze 1. Získán soubor výpisu verze %s</translation>
+        <source>Error: Dumpfile version is not supported. This version of baricoin-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
+        <translation type="unfinished">Chyba: verze souboru výpisu není podporována. Tato verze peněženky Baricoin podporuje pouze soubory výpisu verze 1. Získán soubor výpisu verze %s</translation>
     </message>
     <message>
         <source>Error: Listening for incoming connections failed (listen returned error %s)</source>

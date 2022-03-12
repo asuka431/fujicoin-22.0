@@ -10,7 +10,7 @@
 #include <util/tokenpipe.h>
 #include <warnings.h>
 
-#include <config/fujicoin-config.h>
+#include <config/baricoin-config.h>
 
 #include <assert.h>
 #include <atomic>

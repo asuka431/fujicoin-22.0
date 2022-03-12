@@ -2,11 +2,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_UTIL_CHECK_H
-#define FUJICOIN_UTIL_CHECK_H
+#ifndef BARICOIN_UTIL_CHECK_H
+#define BARICOIN_UTIL_CHECK_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/fujicoin-config.h>
+#include <config/baricoin-config.h>
 #endif
 
 #include <tinyformat.h>
@@ -72,4 +72,4 @@ T get_pure_r_value(T&& val)
 #define Assume(val) ([&]() -> decltype(get_pure_r_value(val)) { auto&& check = (val); return std::forward<decltype(get_pure_r_value(val))>(check); }())
 #endif
 
-#endif // FUJICOIN_UTIL_CHECK_H
+#endif // BARICOIN_UTIL_CHECK_H

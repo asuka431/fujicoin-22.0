@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_VERSIONBITS_H
-#define FUJICOIN_VERSIONBITS_H
+#ifndef BARICOIN_VERSIONBITS_H
+#define BARICOIN_VERSIONBITS_H
 
 #include <chain.h>
 #include <sync.h>
@@ -100,4 +100,4 @@ public:
     void Clear();
 };
 
-#endif // FUJICOIN_VERSIONBITS_H
+#endif // BARICOIN_VERSIONBITS_H

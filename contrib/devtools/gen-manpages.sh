@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Copyright (c) 2016-2020 The Fujicoin Core developers
+# Copyright (c) 2016-2020 The Baricoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -10,18 +10,18 @@ BUILDDIR=${BUILDDIR:-$TOPDIR}
 BINDIR=${BINDIR:-$BUILDDIR/src}
 MANDIR=${MANDIR:-$TOPDIR/doc/man}
 
-FUJICOIND=${FUJICOIND:-$BINDIR/fujicoind}
-FUJICOINCLI=${FUJICOINCLI:-$BINDIR/fujicoin-cli}
-FUJICOINTX=${FUJICOINTX:-$BINDIR/fujicoin-tx}
-WALLET_TOOL=${WALLET_TOOL:-$BINDIR/fujicoin-wallet}
-FUJICOINUTIL=${FUJICOINQT:-$BINDIR/fujicoin-util}
-FUJICOINQT=${FUJICOINQT:-$BINDIR/qt/fujicoin-qt}
+BARICOIND=${BARICOIND:-$BINDIR/baricoind}
+BARICOINCLI=${BARICOINCLI:-$BINDIR/baricoin-cli}
+BARICOINTX=${BARICOINTX:-$BINDIR/baricoin-tx}
+WALLET_TOOL=${WALLET_TOOL:-$BINDIR/baricoin-wallet}
+BARICOINUTIL=${BARICOINQT:-$BINDIR/baricoin-util}
+BARICOINQT=${BARICOINQT:-$BINDIR/qt/baricoin-qt}
 
-[ ! -x $FUJICOIND ] && echo "$FUJICOIND not found or not executable." && exit 1
+[ ! -x $BARICOIND ] && echo "$BARICOIND not found or not executable." && exit 1
 
 # Don't allow man pages to be generated for binaries built from a dirty tree
 DIRTY=""
-for cmd in $FUJICOIND $FUJICOINCLI $FUJICOINTX $WALLET_TOOL $FUJICOINUTIL $FUJICOINQT; do
+for cmd in $BARICOIND $BARICOINCLI $BARICOINTX $WALLET_TOOL $BARICOINUTIL $BARICOINQT; do
   VERSION_OUTPUT=$($cmd --version)
   if [[ $VERSION_OUTPUT == *"dirty"* ]]; then
     DIRTY="${DIRTY}${cmd}\n"
@@ -36,17 +36,17 @@ then
 fi
 
 # The autodetected version git tag can screw up manpage output a little bit
-read -r -a FJCVER <<< "$($FUJICOINCLI --version | head -n1 | awk -F'[ -]' '{ print $6, $7 }')"
+read -r -a BARIVER <<< "$($BARICOINCLI --version | head -n1 | awk -F'[ -]' '{ print $6, $7 }')"
 
 # Create a footer file with copyright content.
-# This gets autodetected fine for fujicoind if --version-string is not set,
-# but has different outcomes for fujicoin-qt and fujicoin-cli.
+# This gets autodetected fine for baricoind if --version-string is not set,
+# but has different outcomes for baricoin-qt and baricoin-cli.
 echo "[COPYRIGHT]" > footer.h2m
-$FUJICOIND --version | sed -n '1!p' >> footer.h2m
+$BARICOIND --version | sed -n '1!p' >> footer.h2m
 
-for cmd in $FUJICOIND $FUJICOINCLI $FUJICOINTX $WALLET_TOOL $FUJICOINUTIL $FUJICOINQT; do
+for cmd in $BARICOIND $BARICOINCLI $BARICOINTX $WALLET_TOOL $BARICOINUTIL $BARICOINQT; do
   cmdname="${cmd##*/}"
-  help2man -N --version-string=${FJCVER[0]} --include=footer.h2m -o ${MANDIR}/${cmdname}.1 ${cmd}
+  help2man -N --version-string=${BARIVER[0]} --include=footer.h2m -o ${MANDIR}/${cmdname}.1 ${cmd}
 done
 
 rm -f footer.h2m

@@ -67,8 +67,8 @@
         <translation type="unfinished">Marii</translation>
     </message>
     <message>
-        <source>Enter a Fujicoin address (e.g. %1)</source>
-        <translation type="unfinished">Nyora kero ye Fujicoin (sekuti %1)</translation>
+        <source>Enter a Baricoin address (e.g. %1)</source>
+        <translation type="unfinished">Nyora kero ye Baricoin (sekuti %1)</translation>
     </message>
     <message>
         <source>None</source>
@@ -122,7 +122,7 @@
     </message>
     </context>
 <context>
-    <name>FujicoinGUI</name>
+    <name>BaricoinGUI</name>
     <message>
         <source>E&amp;xit</source>
         <translation>Buda</translation>
@@ -183,7 +183,7 @@
         <translation>Ruzivo</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Fujicoin network.</source>
+        <source>%n active connection(s) to Baricoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />

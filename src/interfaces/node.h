@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_INTERFACES_NODE_H
-#define FUJICOIN_INTERFACES_NODE_H
+#ifndef BARICOIN_INTERFACES_NODE_H
+#define BARICOIN_INTERFACES_NODE_H
 
 #include <amount.h>     // For CAmount
 #include <external_signer.h>
@@ -50,7 +50,7 @@ struct BlockAndHeaderTipInfo
     double verification_progress;
 };
 
-//! Top-level interface for a fujicoin node (fujicoind process).
+//! Top-level interface for a baricoin node (baricoind process).
 class Node
 {
 public:
@@ -241,4 +241,4 @@ struct BlockTip {
 
 } // namespace interfaces
 
-#endif // FUJICOIN_INTERFACES_NODE_H
+#endif // BARICOIN_INTERFACES_NODE_H

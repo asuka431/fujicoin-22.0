@@ -2,9 +2,9 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_COMPAT_SANITY_H
-#define FUJICOIN_COMPAT_SANITY_H
+#ifndef BARICOIN_COMPAT_SANITY_H
+#define BARICOIN_COMPAT_SANITY_H
 
 bool glibcxx_sanity_test();
 
-#endif // FUJICOIN_COMPAT_SANITY_H
+#endif // BARICOIN_COMPAT_SANITY_H

@@ -1,5 +1,5 @@
 ---
-name: "fujicoin-core-win-22"
+name: "baricoin-core-win-22"
 enable_cache: true
 distro: "ubuntu"
 suites:
@@ -24,8 +24,8 @@ packages:
 - "python3"
 - "python3-pip"
 remotes:
-- "url": "https://github.com/fujicoin/fujicoin.git"
-  "dir": "fujicoin"
+- "url": "https://github.com/baricoin/baricoin.git"
+  "dir": "baricoin"
 files: []
 script: |
   set -e -o pipefail
@@ -95,7 +95,7 @@ script: |
   create_per-host_compiler_wrapper "2000-01-01 12:00:00"
   export PATH=${WRAP_DIR}:${PATH}
 
-  cd fujicoin
+  cd baricoin
   BASEPREFIX="${PWD}/depends"
   # Build dependencies for each host
   for i in $HOSTS; do
@@ -134,7 +134,7 @@ script: |
     make ${MAKEOPTS}
     make ${MAKEOPTS} -C src check-security
     make ${MAKEOPTS} -C src check-symbols
-    make deploy FUJICOIN_WIN_INSTALLER="${OUTDIR}/${DISTNAME}-win64-setup-unsigned.exe"
+    make deploy BARICOIN_WIN_INSTALLER="${OUTDIR}/${DISTNAME}-win64-setup-unsigned.exe"
     make install DESTDIR=${INSTALLPATH}
     cd installed
     mv ${DISTNAME}/bin/*.dll ${DISTNAME}/lib/

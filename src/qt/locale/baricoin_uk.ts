@@ -66,11 +66,11 @@
         <translation type="unfinished">Адреси отримання</translation>
     </message>
     <message>
-        <source>These are your Fujicoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Це ваші адреси Fujicoin для надсилання платежів. Завжди перевіряйте суму та адресу одержувача перед відправленням монет.</translation>
+        <source>These are your Baricoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">Це ваші адреси Baricoin для надсилання платежів. Завжди перевіряйте суму та адресу одержувача перед відправленням монет.</translation>
     </message>
     <message>
-        <source>These are your Fujicoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
+        <source>These are your Baricoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Це ваші Біткоїн адреси для отримання платежів. Використовуйте кнопку "Створити нову адресу для отримання" на вкладці отримання, щоб створити нові адреси.
 Підпис можливий лише з адресами типу "legacy".</translation>
@@ -164,7 +164,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Підтвердить шифрування гаманця</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR FUJICOINS&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BARICOINS&lt;/b&gt;!</source>
         <translation type="unfinished">Увага: Якщо ви зашифруєте гаманець і забудете пароль, ви &lt;b&gt;ВТРАТИТЕ ВСІ СВОЇ БІТКОЇНИ&lt;/b&gt;!</translation>
     </message>
     <message>
@@ -184,7 +184,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Введіть стару та нову парольну фразу для гаманця.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your fujicoins from being stolen by malware infecting your computer.</source>
+        <source>Remember that encrypting your wallet cannot fully protect your baricoins from being stolen by malware infecting your computer.</source>
         <translation type="unfinished">Пам’ятайте, що шифрування гаманця не може повністю захистити ваші біткоїни від крадіжки, у випадку якщо ваш комп’ютер буде інфіковано шкідливими програмами.</translation>
     </message>
     <message>
@@ -244,7 +244,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
 </context>
 <context>
-    <name>FujicoinApplication</name>
+    <name>BaricoinApplication</name>
     <message>
         <source>Runaway exception</source>
         <translation type="unfinished">Небажана виняткова ситуація</translation>
@@ -293,8 +293,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Кількість</translation>
     </message>
     <message>
-        <source>Enter a Fujicoin address (e.g. %1)</source>
-        <translation type="unfinished">Введіть адресу Fujicoin (наприклад %1)</translation>
+        <source>Enter a Baricoin address (e.g. %1)</source>
+        <translation type="unfinished">Введіть адресу Baricoin (наприклад %1)</translation>
     </message>
     <message>
         <source>Unroutable</source>
@@ -430,7 +430,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
 </context>
 <context>
-    <name>FujicoinGUI</name>
+    <name>BaricoinGUI</name>
     <message>
         <source>&amp;Overview</source>
         <translation>&amp;Огляд</translation>
@@ -493,7 +493,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Проксі &lt;b&gt;увімкнено&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a Fujicoin address</source>
+        <source>Send coins to a Baricoin address</source>
         <translation>Відправити монети на вказану адресу</translation>
     </message>
     <message>
@@ -545,16 +545,16 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">&amp;Підписати повідомлення…</translation>
     </message>
     <message>
-        <source>Sign messages with your Fujicoin addresses to prove you own them</source>
-        <translation>Підтвердіть, що ви є власником повідомлення підписавши його вашою Fujicoin-адресою</translation>
+        <source>Sign messages with your Baricoin addresses to prove you own them</source>
+        <translation>Підтвердіть, що ви є власником повідомлення підписавши його вашою Baricoin-адресою</translation>
     </message>
     <message>
         <source>&amp;Verify message…</source>
         <translation type="unfinished">П&amp;еревірити повідомлення…</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Fujicoin addresses</source>
-        <translation>Перевірте повідомлення для впевненості, що воно підписано вказаною Fujicoin-адресою</translation>
+        <source>Verify messages to ensure they were signed with specified Baricoin addresses</source>
+        <translation>Перевірте повідомлення для впевненості, що воно підписано вказаною Baricoin-адресою</translation>
     </message>
     <message>
         <source>&amp;Load PSBT from file…</source>
@@ -621,8 +621,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Встановлення з'єднань…</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and fujicoin: URIs)</source>
-        <translation type="unfinished">Створити запит платежу (генерує QR-код та fujicoin: URI)</translation>
+        <source>Request payments (generates QR codes and baricoin: URIs)</source>
+        <translation type="unfinished">Створити запит платежу (генерує QR-код та baricoin: URI)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -693,7 +693,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Адреси для &amp;отримання</translation>
     </message>
     <message>
-        <source>Open a fujicoin: URI</source>
+        <source>Open a baricoin: URI</source>
         <translation type="unfinished">Відкрити біткоїн URI</translation>
     </message>
     <message>
@@ -713,7 +713,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Закрити всі гаманці</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Fujicoin command-line options</source>
+        <source>Show the %1 help message to get a list with possible Baricoin command-line options</source>
         <translation type="unfinished">Показати довідку %1 для отримання переліку можливих параметрів командного рядка.</translation>
     </message>
     <message>
@@ -753,7 +753,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">%1 клієнт</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Fujicoin network.</source>
+        <source>%n active connection(s) to Baricoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform>%n активне з'єднання до мережі Біткоїн.</numerusform>
@@ -1188,8 +1188,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Редагувати адресу для відправлення</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Fujicoin address.</source>
-        <translation type="unfinished">Введена адреса "%1" не є дійсною Fujicoin адресою.</translation>
+        <source>The entered address "%1" is not a valid Baricoin address.</source>
+        <translation type="unfinished">Введена адреса "%1" не є дійсною Baricoin адресою.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -1263,7 +1263,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         </translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Fujicoin block chain.</source>
+        <source>%1 will download and store a copy of the Baricoin block chain.</source>
         <translation type="unfinished">%1 буде завантажувати та зберігати копію блокчейна.</translation>
     </message>
     <message>
@@ -1356,11 +1356,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Форма</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the fujicoin network, as detailed below.</source>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the baricoin network, as detailed below.</source>
         <translation type="unfinished">Нещодавні транзакції ще не відображаються, тому баланс вашого гаманця може бути неточним. Ця інформація буде вірною після того, як ваш гаманець завершить синхронізацію з мережею Біткоїн, враховуйте показники нижче.</translation>
     </message>
     <message>
-        <source>Attempting to spend fujicoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <source>Attempting to spend baricoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
         <translation type="unfinished">Спроба відправити біткоїни, які ще не відображаються, не буде прийнята мережею.</translation>
     </message>
     <message>
@@ -1407,7 +1407,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
 <context>
     <name>OpenURIDialog</name>
     <message>
-        <source>Open fujicoin URI</source>
+        <source>Open baricoin URI</source>
         <translation type="unfinished">Відкрити біткоїн URI</translation>
     </message>
     </context>
@@ -1526,11 +1526,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Шлях до скрипту &amp;зовнішнього підписувача</translation>
     </message>
     <message>
-        <source>Full path to a Fujicoin Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
-        <translation type="unfinished">Повний шлях до скрипту, сумісного з Fujicoin Core (наприклад, C:\Downloads\hwi.exe або /Users/you/Downloads/hwi.py). Обережно: зловмисні програми можуть вкрасти Ваші монети!</translation>
+        <source>Full path to a Baricoin Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
+        <translation type="unfinished">Повний шлях до скрипту, сумісного з Baricoin Core (наприклад, C:\Downloads\hwi.exe або /Users/you/Downloads/hwi.py). Обережно: зловмисні програми можуть вкрасти Ваші монети!</translation>
     </message>
     <message>
-        <source>Automatically open the Fujicoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <source>Automatically open the Baricoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
         <translation>Автоматично відкривати порт для клієнту Біткоїн на роутері. Працює лише, якщо ваш роутер підтримує UPnP, і ця функція увімкнена.</translation>
     </message>
     <message>
@@ -1538,7 +1538,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation>Перенаправити порт за допомогою &amp;UPnP</translation>
     </message>
     <message>
-        <source>Automatically open the Fujicoin client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
+        <source>Automatically open the Baricoin client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
         <translation type="unfinished">Автоматично відкривати порт клієнта Біткоїн в маршрутизаторі. Це працює, якщо ваш маршрутизатор підтримує NAT-PMP, і ця функція увімкнута. Зовнішній порт може бути випадковим.</translation>
     </message>
     <message>
@@ -1554,8 +1554,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Дозволити вхідні з'єднання</translation>
     </message>
     <message>
-        <source>Connect to the Fujicoin network through a SOCKS5 proxy.</source>
-        <translation type="unfinished">Підключення до мережі Fujicoin через SOCKS5 проксі.</translation>
+        <source>Connect to the Baricoin network through a SOCKS5 proxy.</source>
+        <translation type="unfinished">Підключення до мережі Baricoin через SOCKS5 проксі.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1626,7 +1626,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Показати або сховати керування входами.</translation>
     </message>
     <message>
-        <source>Connect to the Fujicoin network through a separate SOCKS5 proxy for Tor onion services.</source>
+        <source>Connect to the Baricoin network through a separate SOCKS5 proxy for Tor onion services.</source>
         <translation type="unfinished">Підключитися до мережі Біткоїн через окремий проксі-сервер SOCKS5 для сервісів Tor.</translation>
     </message>
     <message>
@@ -1714,7 +1714,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation>Форма</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Fujicoin network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Baricoin network after a connection is established, but this process has not completed yet.</source>
         <translation>Показана інформація вже може бути застарілою. Ваш гаманець буде автоматично синхронізовано з мережею Біткоїн після встановлення підключення, але цей процес ще не завершено.</translation>
     </message>
     <message>
@@ -1917,7 +1917,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Помилка запиту платежу</translation>
     </message>
     <message>
-        <source>Cannot start fujicoin: click-to-pay handler</source>
+        <source>Cannot start baricoin: click-to-pay handler</source>
         <translation type="unfinished">Не вдається запустити біткоїн: обробник клацни-плати</translation>
     </message>
     <message>
@@ -1925,8 +1925,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Обробка URI</translation>
     </message>
     <message>
-        <source>'fujicoin://' is not a valid URI. Use 'fujicoin:' instead.</source>
-        <translation type="unfinished">'fujicoin://' не вірний URI. Використовуйте 'fujicoin:'.</translation>
+        <source>'baricoin://' is not a valid URI. Use 'baricoin:' instead.</source>
+        <translation type="unfinished">'baricoin://' не вірний URI. Використовуйте 'baricoin:'.</translation>
     </message>
     <message>
         <source>Cannot process payment request because BIP70 is not supported.
@@ -1937,7 +1937,7 @@ If you are receiving this error you should request the merchant provide a BIP21 
 Якщо ви отримуєте цю помилку, вам слід вимагати у продавця надати URI, який сумісний з BIP21.</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Fujicoin address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid Baricoin address or malformed URI parameters.</source>
         <translation type="unfinished">Неможливо обробити URI! Причиною цього може бути некоректна біткоїн-адреса або неправильні параметри URI.</translation>
     </message>
     <message>
@@ -2432,8 +2432,8 @@ For more information on using this console, type %6.
         <translation type="unfinished">&amp;Повідомлення:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Fujicoin network.</source>
-        <translation type="unfinished">Необов'язкове повідомлення на додаток до запиту платежу, котре буде показане під час відкриття запиту. Примітка: Це повідомлення не буде відправлено з платежем через мережу Fujicoin.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Baricoin network.</source>
+        <translation type="unfinished">Необов'язкове повідомлення на додаток до запиту платежу, котре буде показане під час відкриття запиту. Примітка: Це повідомлення не буде відправлено з платежем через мережу Baricoin.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2725,7 +2725,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
 Примітка: Оскільки в розрахунку враховуються байти, комісія "100 сатоші за квБ" для транзакції розміром 500 віртуальних байт (половина 1 квБ) в результаті становить всього 50 сатоші.</translation>
     </message>
     <message>
-        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for fujicoin transactions than the network can process.</source>
+        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for baricoin transactions than the network can process.</source>
         <translation type="unfinished">Якщо обсяг транзакцій менше, ніж простір у блоках, майнери, а також вузли ретрансляції можуть стягувати мінімальну плату. Сплата лише цієї мінімальної суми може призвести до ніколи не підтверджуваної транзакції, коли буде більше попиту на біткоїн-транзакції, ніж мережа може обробити.</translation>
     </message>
     <message>
@@ -2811,8 +2811,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">С&amp;творити непідписану</translation>
     </message>
     <message>
-        <source>Creates a Partially Signed Fujicoin Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation type="unfinished">Створює частково підписану транзакцію Fujicoin (PSBT) для використання, наприклад, офлайн-гаманець %1 або гаманця, сумісного з PSBT.</translation>
+        <source>Creates a Partially Signed Baricoin Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <translation type="unfinished">Створює частково підписану транзакцію Baricoin (PSBT) для використання, наприклад, офлайн-гаманець %1 або гаманця, сумісного з PSBT.</translation>
     </message>
     <message>
         <source> from wallet '%1'</source>
@@ -2886,7 +2886,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">Ви можете збільшити комісію пізніше (сигналізує Заміна-Через-Комісію, BIP-125).</translation>
     </message>
     <message>
-        <source>Please, review your transaction proposal. This will produce a Partially Signed Fujicoin Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <source>Please, review your transaction proposal. This will produce a Partially Signed Baricoin Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
         <translation type="unfinished">Перевірте запропоновану транзакцію. Буде сформована PSBT-транзакція, яку ви можете зберегти або скопіювати, а потім підписати з використанням, наприклад, офлайн гаманця %1 або апаратного гаманця, сумісний з PSBT.</translation>
     </message>
     <message>
@@ -2958,7 +2958,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         </translation>
     </message>
     <message>
-        <source>Warning: Invalid Fujicoin address</source>
+        <source>Warning: Invalid Baricoin address</source>
         <translation type="unfinished">Увага: Неприпустима біткоїн-адреса.</translation>
     </message>
     <message>
@@ -2997,8 +2997,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">Обрати ранiш використовувану адресу</translation>
     </message>
     <message>
-        <source>The Fujicoin address to send the payment to</source>
-        <translation type="unfinished">Адреса Fujicoin для відправлення платежу</translation>
+        <source>The Baricoin address to send the payment to</source>
+        <translation type="unfinished">Адреса Baricoin для відправлення платежу</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -3013,7 +3013,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">Сума у вибраній одиниці, яку потрібно надіслати</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less fujicoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less baricoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
         <translation type="unfinished">Комісію буде знято зі вказаної суми. До отримувача надійде менше біткоїнів, ніж було вказано в полі кількості. Якщо ж отримувачів декілька - комісію буде розподілено між ними.</translation>
     </message>
     <message>
@@ -3041,8 +3041,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">Введіть мітку для цієї адреси для додавання її в список використаних адрес</translation>
     </message>
     <message>
-        <source>A message that was attached to the fujicoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Fujicoin network.</source>
-        <translation type="unfinished">Повідомлення, що було додане до fujicoin:URI та буде збережено разом з транзакцією для довідки. Примітка: Це повідомлення не буде відправлено в мережу Fujicoin.</translation>
+        <source>A message that was attached to the baricoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Baricoin network.</source>
+        <translation type="unfinished">Повідомлення, що було додане до baricoin:URI та буде збережено разом з транзакцією для довідки. Примітка: Це повідомлення не буде відправлено в мережу Baricoin.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -3064,12 +3064,12 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation>&amp;Підписати повідомлення</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive fujicoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <source>You can sign messages/agreements with your addresses to prove you can receive baricoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
         <translation type="unfinished">Ви можете підписувати повідомлення/угоди своїми адресами, щоб довести можливість отримання біткоїнів, що будуть надіслані на них. Остерігайтеся підписувати будь-що нечітке чи неочікуване, так як за допомогою фішинг-атаки вас можуть спробувати ввести в оману для отримання вашого підпису під чужими словами. Підписуйте лише чіткі твердження, з якими ви повністю згодні.</translation>
     </message>
     <message>
-        <source>The Fujicoin address to sign the message with</source>
-        <translation type="unfinished">Адреса Fujicoin для підпису цього повідомлення</translation>
+        <source>The Baricoin address to sign the message with</source>
+        <translation type="unfinished">Адреса Baricoin для підпису цього повідомлення</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -3092,7 +3092,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation>Копіювати поточну сигнатуру до системного буферу обміну</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Fujicoin address</source>
+        <source>Sign the message to prove you own this Baricoin address</source>
         <translation>Підпишіть повідомлення щоб довести, що ви є власником цієї адреси</translation>
     </message>
     <message>
@@ -3116,8 +3116,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">Введіть нижче адресу отримувача, повідомлення (впевніться, що ви точно скопіювали символи завершення рядка, табуляцію, пробіли тощо) та підпис для перевірки повідомлення. Впевніться, що в підпис не було додано зайвих символів: це допоможе уникнути атак типу «людина посередині». Зауважте, що це лише засвідчує можливість отримання транзакцій підписувачем, але не в стані підтвердити джерело жодної транзакції!</translation>
     </message>
     <message>
-        <source>The Fujicoin address the message was signed with</source>
-        <translation type="unfinished">Адреса Fujicoin, якою було підписано це повідомлення</translation>
+        <source>The Baricoin address the message was signed with</source>
+        <translation type="unfinished">Адреса Baricoin, якою було підписано це повідомлення</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
@@ -3128,8 +3128,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
         <translation type="unfinished">Підпис наданий при підписанні цього повідомлення</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Fujicoin address</source>
-        <translation>Перевірте повідомлення для впевненості, що воно підписано вказаною Fujicoin-адресою</translation>
+        <source>Verify the message to ensure it was signed with the specified Baricoin address</source>
+        <translation>Перевірте повідомлення для впевненості, що воно підписано вказаною Baricoin-адресою</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -3811,14 +3811,14 @@ Go to File &gt; Open Wallet to load a wallet.
     </message>
 </context>
 <context>
-    <name>fujicoin-core</name>
+    <name>baricoin-core</name>
     <message>
         <source>The %s developers</source>
         <translation type="unfinished">Розробники %s</translation>
     </message>
     <message>
-        <source>%s corrupt. Try using the wallet tool fujicoin-wallet to salvage or restoring a backup.</source>
-        <translation type="unfinished">%s пошкоджено. Спробуйте скористатися інструментом гаманця fujicoin-wallet для відновлення або відновлення резервної копії.</translation>
+        <source>%s corrupt. Try using the wallet tool baricoin-wallet to salvage or restoring a backup.</source>
+        <translation type="unfinished">%s пошкоджено. Спробуйте скористатися інструментом гаманця baricoin-wallet для відновлення або відновлення резервної копії.</translation>
     </message>
     <message>
         <source>-maxtxfee is set very high! Fees this large could be paid on a single transaction.</source>
@@ -3857,8 +3857,8 @@ Go to File &gt; Open Wallet to load a wallet.
         <translation type="unfinished">Помилка: Неправильний запис ідентифікатора файлу дампа. Отримано "%s", очікується "%s".</translation>
     </message>
     <message>
-        <source>Error: Dumpfile version is not supported. This version of fujicoin-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
-        <translation type="unfinished">Помилка: Версія файлу дампа не підтримується. Ця версія fujicoin-wallet підтримує лише файли дампа версії 1. Отримано файл дампа версії %s</translation>
+        <source>Error: Dumpfile version is not supported. This version of baricoin-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
+        <translation type="unfinished">Помилка: Версія файлу дампа не підтримується. Ця версія baricoin-wallet підтримує лише файли дампа версії 1. Отримано файл дампа версії %s</translation>
     </message>
     <message>
         <source>Error: Legacy wallets only support the "legacy", "p2sh-segwit", and "bech32" address types</source>

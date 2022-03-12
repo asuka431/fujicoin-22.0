@@ -7,11 +7,11 @@
  * Server/client environment: argument handling, config file parsing,
  * thread wrappers, startup time
  */
-#ifndef FUJICOIN_UTIL_SYSTEM_H
-#define FUJICOIN_UTIL_SYSTEM_H
+#ifndef BARICOIN_UTIL_SYSTEM_H
+#define BARICOIN_UTIL_SYSTEM_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/fujicoin-config.h>
+#include <config/baricoin-config.h>
 #endif
 
 #include <attributes.h>
@@ -39,8 +39,8 @@ class UniValue;
 // Application startup time (used for uptime calculation)
 int64_t GetStartupTime();
 
-extern const char * const FUJICOIN_CONF_FILENAME;
-extern const char * const FUJICOIN_SETTINGS_FILENAME;
+extern const char * const BARICOIN_CONF_FILENAME;
+extern const char * const BARICOIN_SETTINGS_FILENAME;
 
 void SetupEnvironment();
 bool SetupNetworking();
@@ -540,4 +540,4 @@ private:
 
 } // namespace util
 
-#endif // FUJICOIN_UTIL_SYSTEM_H
+#endif // BARICOIN_UTIL_SYSTEM_H

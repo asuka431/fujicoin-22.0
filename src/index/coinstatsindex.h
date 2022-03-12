@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_INDEX_COINSTATSINDEX_H
-#define FUJICOIN_INDEX_COINSTATSINDEX_H
+#ifndef BARICOIN_INDEX_COINSTATSINDEX_H
+#define BARICOIN_INDEX_COINSTATSINDEX_H
 
 #include <chain.h>
 #include <crypto/muhash.h>
@@ -58,4 +58,4 @@ public:
 /// The global UTXO set hash object.
 extern std::unique_ptr<CoinStatsIndex> g_coin_stats_index;
 
-#endif // FUJICOIN_INDEX_COINSTATSINDEX_H
+#endif // BARICOIN_INDEX_COINSTATSINDEX_H

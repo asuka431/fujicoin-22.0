@@ -66,13 +66,13 @@
         <translation type="unfinished">Adrese primalaca</translation>
     </message>
     <message>
-        <source>These are your Fujicoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Ovo su vaše Fujicoin adrese za slanje novca. Uvijek provjerite iznos i adresu primaoca prije slanja novca.</translation>
+        <source>These are your Baricoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">Ovo su vaše Baricoin adrese za slanje novca. Uvijek provjerite iznos i adresu primaoca prije slanja novca.</translation>
     </message>
     <message>
-        <source>These are your Fujicoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
+        <source>These are your Baricoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
-        <translation type="unfinished">Ovo su vaše Fujicoin adrese za primanje uplata. Upotrijebite dugme 'Stvori novu adresu prijema' na kartici primanja da biste kreirali nove adrese. Potpisivanje je moguće samo s adresama tipa 'legacy'.</translation>
+        <translation type="unfinished">Ovo su vaše Baricoin adrese za primanje uplata. Upotrijebite dugme 'Stvori novu adresu prijema' na kartici primanja da biste kreirali nove adrese. Potpisivanje je moguće samo s adresama tipa 'legacy'.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -163,7 +163,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Potvrdite šifriranje novčanika</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR FUJICOINS&lt;/b&gt;!</source>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BARICOINS&lt;/b&gt;!</source>
         <translation type="unfinished">Upozorenje: Ako šifrirate novčanik i izgubite lozinku, &lt;b&gt;IZGUBIT ĆETE SVE SVOJE BITKOINE!&lt;/b&gt;</translation>
     </message>
     <message>
@@ -183,8 +183,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Unesite staru i novu lozinku za novčanik.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your fujicoins from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished">Imajte na umu da šifriranje vašeg novčanika ne može u potpunosti zaštititi vaše fujicoine od krađe zlonamjernim softverom koji zarazi vaš računar.</translation>
+        <source>Remember that encrypting your wallet cannot fully protect your baricoins from being stolen by malware infecting your computer.</source>
+        <translation type="unfinished">Imajte na umu da šifriranje vašeg novčanika ne može u potpunosti zaštititi vaše baricoine od krađe zlonamjernim softverom koji zarazi vaš računar.</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
@@ -239,7 +239,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
 </context>
 <context>
-    <name>FujicoinApplication</name>
+    <name>BaricoinApplication</name>
     <message>
         <source>A fatal error occurred. %1 can no longer continue safely and will quit.</source>
         <translation type="unfinished">Dogodila se fatalna greška. %1 više ne može sigurno nastaviti i prestat će raditi.</translation>
@@ -329,7 +329,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     </context>
 <context>
-    <name>FujicoinGUI</name>
+    <name>BaricoinGUI</name>
     <message>
         <source>&amp;Overview</source>
         <translation>&amp;Pregled</translation>
@@ -388,8 +388,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Proxy je &lt;b&gt;omogućen&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a Fujicoin address</source>
-        <translation>Pošaljite kovanice na Fujicoin adresu</translation>
+        <source>Send coins to a Baricoin address</source>
+        <translation>Pošaljite kovanice na Baricoin adresu</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -420,12 +420,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation>Šifrirajte privatne ključeve koji pripadaju vašem novčaniku</translation>
     </message>
     <message>
-        <source>Sign messages with your Fujicoin addresses to prove you own them</source>
-        <translation>Potpišite poruke sa svojim Fujicoin adresama da biste dokazali da ste njihov vlasnik</translation>
+        <source>Sign messages with your Baricoin addresses to prove you own them</source>
+        <translation>Potpišite poruke sa svojim Baricoin adresama da biste dokazali da ste njihov vlasnik</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Fujicoin addresses</source>
-        <translation>Potvrdite poruke kako biste bili sigurni da su potpisane navedenim Fujicoin adresama</translation>
+        <source>Verify messages to ensure they were signed with specified Baricoin addresses</source>
+        <translation>Potvrdite poruke kako biste bili sigurni da su potpisane navedenim Baricoin adresama</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -444,8 +444,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation>Alatna traka kartica</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and fujicoin: URIs)</source>
-        <translation type="unfinished">Zatražite uplate (generira QR kodove i fujicoin: URI-je)</translation>
+        <source>Request payments (generates QR codes and baricoin: URIs)</source>
+        <translation type="unfinished">Zatražite uplate (generira QR kodove i baricoin: URI-je)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -496,12 +496,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation>U toku</translation>
     </message>
     <message>
-        <source>Load Partially Signed Fujicoin Transaction</source>
-        <translation type="unfinished">Učitajte Djelomično Potpisanu Fujicoin Transakciju</translation>
+        <source>Load Partially Signed Baricoin Transaction</source>
+        <translation type="unfinished">Učitajte Djelomično Potpisanu Baricoin Transakciju</translation>
     </message>
     <message>
-        <source>Load Partially Signed Fujicoin Transaction from clipboard</source>
-        <translation type="unfinished">Učitajte djelomično potpisanu fujicoin transakciju iz međuspremnika</translation>
+        <source>Load Partially Signed Baricoin Transaction from clipboard</source>
+        <translation type="unfinished">Učitajte djelomično potpisanu baricoin transakciju iz međuspremnika</translation>
     </message>
     <message>
         <source>Node window</source>
@@ -520,8 +520,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">&amp;Primanje adresa</translation>
     </message>
     <message>
-        <source>Open a fujicoin: URI</source>
-        <translation type="unfinished">Otvorite fujicoin: URI</translation>
+        <source>Open a baricoin: URI</source>
+        <translation type="unfinished">Otvorite baricoin: URI</translation>
     </message>
     <message>
         <source>Open Wallet</source>
@@ -540,8 +540,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Zatvori sve novčanike</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Fujicoin command-line options</source>
-        <translation type="unfinished">Pokažite %1 poruku za pomoć da biste dobili listu s mogućim opcijama Fujicoin naredbenog retka</translation>
+        <source>Show the %1 help message to get a list with possible Baricoin command-line options</source>
+        <translation type="unfinished">Pokažite %1 poruku za pomoć da biste dobili listu s mogućim opcijama Baricoin naredbenog retka</translation>
     </message>
     <message>
         <source>&amp;Mask values</source>
@@ -576,7 +576,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">%1 klijent</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Fujicoin network.</source>
+        <source>%n active connection(s) to Baricoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />
@@ -914,8 +914,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Uredite adresu za slanje</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Fujicoin address.</source>
-        <translation type="unfinished">Unesena adresa "%1" nije važeća Fujicoin adresa.</translation>
+        <source>The entered address "%1" is not a valid Baricoin address.</source>
+        <translation type="unfinished">Unesena adresa "%1" nije važeća Baricoin adresa.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -977,8 +977,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         </translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Fujicoin block chain.</source>
-        <translation type="unfinished">%1 će preuzeti i pohraniti kopiju lanca Fujicoin blokova.</translation>
+        <source>%1 will download and store a copy of the Baricoin block chain.</source>
+        <translation type="unfinished">%1 će preuzeti i pohraniti kopiju lanca Baricoin blokova.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1054,12 +1054,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Obrazac</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the fujicoin network, as detailed below.</source>
-        <translation type="unfinished">Nedavne transakcije možda još nisu vidljive, pa stoga stanje na vašem novčaniku može biti pogrešno. Ove će informacije biti točne nakon što se novčanik završi sa sinhronizacijom s fujicoin mrežom, kao što je detaljno opisano u nastavku.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the baricoin network, as detailed below.</source>
+        <translation type="unfinished">Nedavne transakcije možda još nisu vidljive, pa stoga stanje na vašem novčaniku može biti pogrešno. Ove će informacije biti točne nakon što se novčanik završi sa sinhronizacijom s baricoin mrežom, kao što je detaljno opisano u nastavku.</translation>
     </message>
     <message>
-        <source>Attempting to spend fujicoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation type="unfinished">Pokušaj trošenja fujicoina na koje utječu još uvijek ne prikazane transakcije mreža neće prihvatiti.</translation>
+        <source>Attempting to spend baricoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation type="unfinished">Pokušaj trošenja baricoina na koje utječu još uvijek ne prikazane transakcije mreža neće prihvatiti.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1093,8 +1093,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
 <context>
     <name>OpenURIDialog</name>
     <message>
-        <source>Open fujicoin URI</source>
-        <translation type="unfinished">Otvorite fujicoin URI</translation>
+        <source>Open baricoin URI</source>
+        <translation type="unfinished">Otvorite baricoin URI</translation>
     </message>
     </context>
 <context>
@@ -1176,24 +1176,24 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Ako onemogućite trošenje nepotvrđene promjene, promjena iz transakcije neće se moći koristiti dok ta transakcija nema barem jednu potvrdu. Ovo također utječe na način izračunavanja vašeg stanja.</translation>
     </message>
     <message>
-        <source>Automatically open the Fujicoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatski otvorite port Fujicoin klijenta na ruteru. Ovo radi samo kada vaš ruter podržava UPnP i ako je omogućen.</translation>
+        <source>Automatically open the Baricoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatski otvorite port Baricoin klijenta na ruteru. Ovo radi samo kada vaš ruter podržava UPnP i ako je omogućen.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Map port koristi &amp;UPnP</translation>
     </message>
     <message>
-        <source>Automatically open the Fujicoin client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
-        <translation type="unfinished">Automatski otvorite port Fujicoin klijenta na ruteru. Ovo radi samo kada vaš ruter podržava NAT-PMP i ako je omogućen. Vanjski port može biti nasumičan.</translation>
+        <source>Automatically open the Baricoin client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
+        <translation type="unfinished">Automatski otvorite port Baricoin klijenta na ruteru. Ovo radi samo kada vaš ruter podržava NAT-PMP i ako je omogućen. Vanjski port može biti nasumičan.</translation>
     </message>
     <message>
         <source>Accept connections from outside.</source>
         <translation type="unfinished">Prihvatite veze izvana.</translation>
     </message>
     <message>
-        <source>Connect to the Fujicoin network through a SOCKS5 proxy.</source>
-        <translation type="unfinished">Povežite se s Fujicoin mrežom putem SOCKS5 proxyja.</translation>
+        <source>Connect to the Baricoin network through a SOCKS5 proxy.</source>
+        <translation type="unfinished">Povežite se s Baricoin mrežom putem SOCKS5 proxyja.</translation>
     </message>
     <message>
         <source>Port of the proxy (e.g. 9050)</source>
@@ -1235,8 +1235,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation>Obrazac</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Fujicoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Moguće je da su prikazane informacije zastarjele.Vaš novčanik se automatski sinhronizira sa Fujicoin mrežom nakon što je konekcija uspostavljena, ali proces nije još uvijek dovršen.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Baricoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>Moguće je da su prikazane informacije zastarjele.Vaš novčanik se automatski sinhronizira sa Baricoin mrežom nakon što je konekcija uspostavljena, ali proces nije još uvijek dovršen.</translation>
     </message>
     <message>
         <source>Recent transactions</source>

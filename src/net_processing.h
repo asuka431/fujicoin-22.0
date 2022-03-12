@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_NET_PROCESSING_H
-#define FUJICOIN_NET_PROCESSING_H
+#ifndef BARICOIN_NET_PROCESSING_H
+#define BARICOIN_NET_PROCESSING_H
 
 #include <net.h>
 #include <validationinterface.h>
@@ -74,4 +74,4 @@ public:
                                 const std::chrono::microseconds time_received, const std::atomic<bool>& interruptMsgProc) = 0;
 };
 
-#endif // FUJICOIN_NET_PROCESSING_H
+#endif // BARICOIN_NET_PROCESSING_H

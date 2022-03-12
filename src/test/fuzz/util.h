@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_TEST_FUZZ_UTIL_H
-#define FUJICOIN_TEST_FUZZ_UTIL_H
+#ifndef BARICOIN_TEST_FUZZ_UTIL_H
+#define BARICOIN_TEST_FUZZ_UTIL_H
 
 #include <amount.h>
 #include <arith_uint256.h>
@@ -422,4 +422,4 @@ public:
     return FuzzedSock{fuzzed_data_provider};
 }
 
-#endif // FUJICOIN_TEST_FUZZ_UTIL_H
+#endif // BARICOIN_TEST_FUZZ_UTIL_H

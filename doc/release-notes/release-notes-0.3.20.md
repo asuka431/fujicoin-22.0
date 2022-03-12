@@ -1,6 +1,6 @@
 Please checkout the git integration branch from:
 
-https://github.com/fujicoin/fujicoin
+https://github.com/baricoin/baricoin
 
 ... and help test.  The new features that need testing are:
 

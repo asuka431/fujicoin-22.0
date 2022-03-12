@@ -66,13 +66,13 @@
         <translation type="unfinished">تاپشۇرۇۋېلىش ئادرېسى</translation>
     </message>
     <message>
-        <source>These are your Fujicoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">بۇلار سىز Fujicoin چىقىم قىلىدىغان ئادرېس. تەڭگە چىقىم قىلىشتىن ئىلگىرى، سومما ۋە تاپشۇرۇۋېلىش ئادرېسىنىڭ توغرا ئىكەنلىكىنى تەكشۈرۈشنى ئۇنۇتماڭ.</translation>
+        <source>These are your Baricoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">بۇلار سىز Baricoin چىقىم قىلىدىغان ئادرېس. تەڭگە چىقىم قىلىشتىن ئىلگىرى، سومما ۋە تاپشۇرۇۋېلىش ئادرېسىنىڭ توغرا ئىكەنلىكىنى تەكشۈرۈشنى ئۇنۇتماڭ.</translation>
     </message>
     <message>
-        <source>These are your Fujicoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
+        <source>These are your Baricoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
-        <translation type="unfinished">بۇ Fujicoin تاپشۇرۇۋېلىشقا ئىشلىتىدىغان ئادرېسىڭىز. «قوبۇللاش» بەتكۈچتىكى «يېڭى تاپشۇرۇۋېلىش ئادرېسى قۇر» توپچىنى چېكىپ يېڭى ئادرېس قۇرالايسىز.
+        <translation type="unfinished">بۇ Baricoin تاپشۇرۇۋېلىشقا ئىشلىتىدىغان ئادرېسىڭىز. «قوبۇللاش» بەتكۈچتىكى «يېڭى تاپشۇرۇۋېلىش ئادرېسى قۇر» توپچىنى چېكىپ يېڭى ئادرېس قۇرالايسىز.
 پەقەت «ئەنئەنىۋى(legacy)» تىپتىكى ئادرېسلا ئىمزانى قوللايدۇ.</translation>
     </message>
     <message>
@@ -155,7 +155,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     </context>
 <context>
-    <name>FujicoinGUI</name>
+    <name>BaricoinGUI</name>
     <message numerus="yes">
         <source>Processed %n block(s) of transaction history.</source>
         <translation>
@@ -164,7 +164,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         </translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Fujicoin network.</source>
+        <source>%n active connection(s) to Baricoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />

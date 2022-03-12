@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_TEST_UTIL_NET_H
-#define FUJICOIN_TEST_UTIL_NET_H
+#ifndef BARICOIN_TEST_UTIL_NET_H
+#define BARICOIN_TEST_UTIL_NET_H
 
 #include <compat.h>
 #include <netaddress.h>
@@ -143,4 +143,4 @@ private:
 
 std::vector<NodeEvictionCandidate> GetRandomNodeEvictionCandidates(int n_candidates, FastRandomContext& random_context);
 
-#endif // FUJICOIN_TEST_UTIL_NET_H
+#endif // BARICOIN_TEST_UTIL_NET_H

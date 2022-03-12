@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2020 The Fujicoin Core developers
+# Copyright (c) 2020 The Baricoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test deprecation of reqSigs and addresses RPC fields."""
@@ -7,14 +7,14 @@
 from test_framework.messages import (
     tx_from_hex,
 )
-from test_framework.test_framework import FujicoinTestFramework
+from test_framework.test_framework import BaricoinTestFramework
 from test_framework.util import (
     assert_equal,
     hex_str_to_bytes
 )
 
 
-class AddressesDeprecationTest(FujicoinTestFramework):
+class AddressesDeprecationTest(BaricoinTestFramework):
     def set_test_params(self):
         self.num_nodes = 2
         self.extra_args = [[], ["-deprecatedrpc=addresses"]]

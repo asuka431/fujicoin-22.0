@@ -3,8 +3,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_UTIL_EPOCHGUARD_H
-#define FUJICOIN_UTIL_EPOCHGUARD_H
+#ifndef BARICOIN_UTIL_EPOCHGUARD_H
+#define BARICOIN_UTIL_EPOCHGUARD_H
 
 #include <threadsafety.h>
 
@@ -88,4 +88,4 @@ public:
 
 #define WITH_FRESH_EPOCH(epoch) const Epoch::Guard PASTE2(epoch_guard_, __COUNTER__)(epoch)
 
-#endif // FUJICOIN_UTIL_EPOCHGUARD_H
+#endif // BARICOIN_UTIL_EPOCHGUARD_H

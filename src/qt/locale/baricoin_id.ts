@@ -66,13 +66,13 @@
         <translation type="unfinished">Alamat-alamat penerima</translation>
     </message>
     <message>
-        <source>These are your Fujicoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Berikut ini adalah alamat-alamat Fujicoin Anda yang digunakan untuk mengirimkan pembayaran. Selalu periksa jumlah dan alamat penerima sebelum mengirimkan koin-koin.</translation>
+        <source>These are your Baricoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">Berikut ini adalah alamat-alamat Baricoin Anda yang digunakan untuk mengirimkan pembayaran. Selalu periksa jumlah dan alamat penerima sebelum mengirimkan koin-koin.</translation>
     </message>
     <message>
-        <source>These are your Fujicoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
+        <source>These are your Baricoin addresses for receiving payments. Use the 'Create new receiving address' button in the receive tab to create new addresses.
 Signing is only possible with addresses of the type 'legacy'.</source>
-        <translation type="unfinished">Berikut ini adalah alamat-alamat fujicoinmu untuk menerima pembayaran. Gunakan tombol 'Buat alamat penerima baru' di tab menerima untuk membuat alamat baru. Tanda tangan hanya bisa digunakan dengan tipe alamat 'warisan'</translation>
+        <translation type="unfinished">Berikut ini adalah alamat-alamat baricoinmu untuk menerima pembayaran. Gunakan tombol 'Buat alamat penerima baru' di tab menerima untuk membuat alamat baru. Tanda tangan hanya bisa digunakan dengan tipe alamat 'warisan'</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -159,8 +159,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Konfirmasi pengenkripsian dompet</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR FUJICOINS&lt;/b&gt;!</source>
-        <translation type="unfinished">Peringatan: Jika Anda mengenkripsi dompet Anda dan lupa kata sandi Anda, Anda akan &lt;b&gt;KEHILANGAN SEMUA FUJICOIN ANDA&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BARICOINS&lt;/b&gt;!</source>
+        <translation type="unfinished">Peringatan: Jika Anda mengenkripsi dompet Anda dan lupa kata sandi Anda, Anda akan &lt;b&gt;KEHILANGAN SEMUA BARICOIN ANDA&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -179,8 +179,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Masukan passphrase lama dan passphrase baru ke dompet</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your fujicoins from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished">Mengenkripsi dompet Anda tidak dapat sepenuhnya melindungi fujicoin Anda dari pencurian oleh malware yang menginfeksi komputer Anda.</translation>
+        <source>Remember that encrypting your wallet cannot fully protect your baricoins from being stolen by malware infecting your computer.</source>
+        <translation type="unfinished">Mengenkripsi dompet Anda tidak dapat sepenuhnya melindungi baricoin Anda dari pencurian oleh malware yang menginfeksi komputer Anda.</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
@@ -235,7 +235,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
 </context>
 <context>
-    <name>FujicoinApplication</name>
+    <name>BaricoinApplication</name>
     <message>
         <source>Runaway exception</source>
         <translation type="unfinished">Pengecualian pelarian</translation>
@@ -284,8 +284,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Jumlah</translation>
     </message>
     <message>
-        <source>Enter a Fujicoin address (e.g. %1)</source>
-        <translation type="unfinished">Masukkan alamat Fujicoin (contoh %1)</translation>
+        <source>Enter a Baricoin address (e.g. %1)</source>
+        <translation type="unfinished">Masukkan alamat Baricoin (contoh %1)</translation>
     </message>
     <message>
         <source>Unroutable</source>
@@ -373,7 +373,7 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     </context>
 <context>
-    <name>FujicoinGUI</name>
+    <name>BaricoinGUI</name>
     <message>
         <source>&amp;Overview</source>
         <translation>&amp;Kilasan</translation>
@@ -432,8 +432,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Proxy di &lt;b&gt;aktifkan&lt;/b&gt;: %1</translation>
     </message>
     <message>
-        <source>Send coins to a Fujicoin address</source>
-        <translation>Kirim koin ke alamat Fujicoin</translation>
+        <source>Send coins to a Baricoin address</source>
+        <translation>Kirim koin ke alamat Baricoin</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -484,16 +484,16 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Tanda tangani dan kirim pessan...</translation>
     </message>
     <message>
-        <source>Sign messages with your Fujicoin addresses to prove you own them</source>
-        <translation>Tanda tangani sebuah pesan menggunakan alamat Fujicoin Anda untuk membuktikan bahwa Anda adalah pemiliknya</translation>
+        <source>Sign messages with your Baricoin addresses to prove you own them</source>
+        <translation>Tanda tangani sebuah pesan menggunakan alamat Baricoin Anda untuk membuktikan bahwa Anda adalah pemiliknya</translation>
     </message>
     <message>
         <source>&amp;Verify message…</source>
         <translation type="unfinished">&amp;Verifikasi pesan...</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Fujicoin addresses</source>
-        <translation>Verifikasi pesan untuk memastikan bahwa pesan tersebut ditanda tangani oleh suatu alamat Fujicoin tertentu</translation>
+        <source>Verify messages to ensure they were signed with specified Baricoin addresses</source>
+        <translation>Verifikasi pesan untuk memastikan bahwa pesan tersebut ditanda tangani oleh suatu alamat Baricoin tertentu</translation>
     </message>
     <message>
         <source>&amp;Load PSBT from file…</source>
@@ -560,8 +560,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Menghubungkan ke peers...</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and fujicoin: URIs)</source>
-        <translation type="unfinished">Permintaan pembayaran (membuat kode QR dan fujicoin: URIs)</translation>
+        <source>Request payments (generates QR codes and baricoin: URIs)</source>
+        <translation type="unfinished">Permintaan pembayaran (membuat kode QR dan baricoin: URIs)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -614,12 +614,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation>Terbaru</translation>
     </message>
     <message>
-        <source>Load Partially Signed Fujicoin Transaction</source>
-        <translation type="unfinished">Muat transaksi Fujicoin yang ditandatangani seperapat</translation>
+        <source>Load Partially Signed Baricoin Transaction</source>
+        <translation type="unfinished">Muat transaksi Baricoin yang ditandatangani seperapat</translation>
     </message>
     <message>
-        <source>Load Partially Signed Fujicoin Transaction from clipboard</source>
-        <translation type="unfinished">Muat transaksi Fujicoin yang ditandatangani seperapat dari clipboard</translation>
+        <source>Load Partially Signed Baricoin Transaction from clipboard</source>
+        <translation type="unfinished">Muat transaksi Baricoin yang ditandatangani seperapat dari clipboard</translation>
     </message>
     <message>
         <source>Node window</source>
@@ -638,8 +638,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Address &amp;Penerima</translation>
     </message>
     <message>
-        <source>Open a fujicoin: URI</source>
-        <translation type="unfinished">Buka URI fujicoin:</translation>
+        <source>Open a baricoin: URI</source>
+        <translation type="unfinished">Buka URI baricoin:</translation>
     </message>
     <message>
         <source>Open Wallet</source>
@@ -658,8 +658,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Tutup semua dompet</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Fujicoin command-line options</source>
-        <translation type="unfinished">Tampilkan %1 pesan bantuan untuk mendapatkan daftar opsi baris perintah Fujicoin yang memungkinkan</translation>
+        <source>Show the %1 help message to get a list with possible Baricoin command-line options</source>
+        <translation type="unfinished">Tampilkan %1 pesan bantuan untuk mendapatkan daftar opsi baris perintah Baricoin yang memungkinkan</translation>
     </message>
     <message>
         <source>&amp;Mask values</source>
@@ -694,10 +694,10 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">%1 klien</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Fujicoin network.</source>
+        <source>%n active connection(s) to Baricoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
-            <numerusform>%n koneksi yang aktif ke jaringan Fujicoin</numerusform>
+            <numerusform>%n koneksi yang aktif ke jaringan Baricoin</numerusform>
         </translation>
     </message>
     <message>
@@ -1099,8 +1099,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Ubah alamat pengirim</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Fujicoin address.</source>
-        <translation type="unfinished">Alamat yang dimasukkan "%1" bukanlah alamat Fujicoin yang valid.</translation>
+        <source>The entered address "%1" is not a valid Baricoin address.</source>
+        <translation type="unfinished">Alamat yang dimasukkan "%1" bukanlah alamat Baricoin yang valid.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -1172,8 +1172,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         </translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Fujicoin block chain.</source>
-        <translation type="unfinished">%1 akan mengunduh dan menyimpan salinan Fujicoin block chain.</translation>
+        <source>%1 will download and store a copy of the Baricoin block chain.</source>
+        <translation type="unfinished">%1 akan mengunduh dan menyimpan salinan Baricoin block chain.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1261,12 +1261,12 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Formulir</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the fujicoin network, as detailed below.</source>
-        <translation type="unfinished">Transaksi-transaksi terkini mungkin belum terlihat dan oleh karenanya, saldo dompet Anda mungkin tidak tepat. Informasi ini akan akurat ketika dompet Anda tersinkronisasi dengan jaringan Fujicoin, seperti rincian berikut.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the baricoin network, as detailed below.</source>
+        <translation type="unfinished">Transaksi-transaksi terkini mungkin belum terlihat dan oleh karenanya, saldo dompet Anda mungkin tidak tepat. Informasi ini akan akurat ketika dompet Anda tersinkronisasi dengan jaringan Baricoin, seperti rincian berikut.</translation>
     </message>
     <message>
-        <source>Attempting to spend fujicoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation type="unfinished">Usaha untuk menggunakan fujicoin yang dipengaruhi oleh transaksi yang belum terlihat tidak akan diterima oleh jaringan.</translation>
+        <source>Attempting to spend baricoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation type="unfinished">Usaha untuk menggunakan baricoin yang dipengaruhi oleh transaksi yang belum terlihat tidak akan diterima oleh jaringan.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1316,8 +1316,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
 <context>
     <name>OpenURIDialog</name>
     <message>
-        <source>Open fujicoin URI</source>
-        <translation type="unfinished">Buka URI fujicoin:</translation>
+        <source>Open baricoin URI</source>
+        <translation type="unfinished">Buka URI baricoin:</translation>
     </message>
     </context>
 <context>
@@ -1423,20 +1423,20 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">&amp;Jalur skrip penanda tangan eksternal</translation>
     </message>
     <message>
-        <source>Full path to a Fujicoin Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
-        <translation type="unfinished">Jalur lengkap ke skrip yang kompatibel dengan Fujicoin Core (seperti C:\Downloads\hwi.exe atau /Users/you/Downloads/hwi.py). Hati-hati: malware dapat mencuri koin Anda!</translation>
+        <source>Full path to a Baricoin Core compatible script (e.g. C:\Downloads\hwi.exe or /Users/you/Downloads/hwi.py). Beware: malware can steal your coins!</source>
+        <translation type="unfinished">Jalur lengkap ke skrip yang kompatibel dengan Baricoin Core (seperti C:\Downloads\hwi.exe atau /Users/you/Downloads/hwi.py). Hati-hati: malware dapat mencuri koin Anda!</translation>
     </message>
     <message>
-        <source>Automatically open the Fujicoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Otomatis membuka port client Fujicoin di router. Hanya berjalan apabila router anda mendukung UPnP dan di-enable.</translation>
+        <source>Automatically open the Baricoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Otomatis membuka port client Baricoin di router. Hanya berjalan apabila router anda mendukung UPnP dan di-enable.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Petakan port dengan &amp;UPnP</translation>
     </message>
     <message>
-        <source>Automatically open the Fujicoin client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
-        <translation type="unfinished">Otomatis membuka port client Fujicoin di router. Hanya berjalan apabila router anda mendukung NAT-PMP dan di-enable. Port eksternal bisa jadi acak. </translation>
+        <source>Automatically open the Baricoin client port on the router. This only works when your router supports NAT-PMP and it is enabled. The external port could be random.</source>
+        <translation type="unfinished">Otomatis membuka port client Baricoin di router. Hanya berjalan apabila router anda mendukung NAT-PMP dan di-enable. Port eksternal bisa jadi acak. </translation>
     </message>
     <message>
         <source>Map port using NA&amp;T-PMP</source>
@@ -1451,8 +1451,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Terima koneksi-koneksi masuk</translation>
     </message>
     <message>
-        <source>Connect to the Fujicoin network through a SOCKS5 proxy.</source>
-        <translation type="unfinished">Hubungkan ke jaringan Fujicoin melalui SOCKS5 proxy.</translation>
+        <source>Connect to the Baricoin network through a SOCKS5 proxy.</source>
+        <translation type="unfinished">Hubungkan ke jaringan Baricoin melalui SOCKS5 proxy.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1519,8 +1519,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Ingin menunjukkan cara pengaturan koin atau tidak.</translation>
     </message>
     <message>
-        <source>Connect to the Fujicoin network through a separate SOCKS5 proxy for Tor onion services.</source>
-        <translation type="unfinished">Hubungkan kepada Fujicoin network menggunakan proxy SOCKS5 yang terpisah untuk servis Tor onion</translation>
+        <source>Connect to the Baricoin network through a separate SOCKS5 proxy for Tor onion services.</source>
+        <translation type="unfinished">Hubungkan kepada Baricoin network menggunakan proxy SOCKS5 yang terpisah untuk servis Tor onion</translation>
     </message>
     <message>
         <source>Use separate SOCKS&amp;5 proxy to reach peers via Tor onion services:</source>
@@ -1603,8 +1603,8 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation>Formulir</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Fujicoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Informasi terlampir mungkin sudah kedaluwarsa. Dompet Anda secara otomatis mensinkronisasi dengan jaringan Fujicoin ketika sebuah hubungan terbentuk, namun proses ini belum selesai.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Baricoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>Informasi terlampir mungkin sudah kedaluwarsa. Dompet Anda secara otomatis mensinkronisasi dengan jaringan Baricoin ketika sebuah hubungan terbentuk, namun proses ini belum selesai.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1794,16 +1794,16 @@ Signing is only possible with addresses of the type 'legacy'.</source>
         <translation type="unfinished">Terjadi kesalahan pada permintaan pembayaran</translation>
     </message>
     <message>
-        <source>Cannot start fujicoin: click-to-pay handler</source>
-        <translation type="unfinished">Tidak bisa memulai fujicoin: handler click-to-pay</translation>
+        <source>Cannot start baricoin: click-to-pay handler</source>
+        <translation type="unfinished">Tidak bisa memulai baricoin: handler click-to-pay</translation>
     </message>
     <message>
         <source>URI handling</source>
         <translation type="unfinished">Pengelolaan URI</translation>
     </message>
     <message>
-        <source>'fujicoin://' is not a valid URI. Use 'fujicoin:' instead.</source>
-        <translation type="unfinished">'fujicoin://' bukanlah alamat URI yang valid. Silakan gunakan 'fujicoin:'.</translation>
+        <source>'baricoin://' is not a valid URI. Use 'baricoin:' instead.</source>
+        <translation type="unfinished">'baricoin://' bukanlah alamat URI yang valid. Silakan gunakan 'baricoin:'.</translation>
     </message>
     <message>
         <source>Cannot process payment request because BIP70 is not supported.
@@ -1814,8 +1814,8 @@ Akibat celah keamanan yang meluas di BIP70, sangat disarankan agar mengabaikan p
 Jika Anda menerima kesalahan ini, Anda harus meminta pedagang untuk memberikan URI yang kompatibel dengan BIP21. </translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Fujicoin address or malformed URI parameters.</source>
-        <translation type="unfinished">URI tidak bisa dimengerti! Hal ini bisa disebabkan karena alamat Fujicoin yang tidak sah atau parameter URI yang tidak tepat.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid Baricoin address or malformed URI parameters.</source>
+        <translation type="unfinished">URI tidak bisa dimengerti! Hal ini bisa disebabkan karena alamat Baricoin yang tidak sah atau parameter URI yang tidak tepat.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -2267,8 +2267,8 @@ Untuk informasi lebih lanjut tentang menggunakan konsol ini, ketik %6.
         <translation type="unfinished">&amp;Pesan:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Fujicoin network.</source>
-        <translation type="unfinished">Pesan opsional untuk dilampirkan ke permintaan pembayaran, yang akan ditampilkan ketika permintaan dibuka. Catatan: Pesan tidak akan dikirim dengan pembayaran melalui jaringan Fujicoin.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Baricoin network.</source>
+        <translation type="unfinished">Pesan opsional untuk dilampirkan ke permintaan pembayaran, yang akan ditampilkan ketika permintaan dibuka. Catatan: Pesan tidak akan dikirim dengan pembayaran melalui jaringan Baricoin.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2536,8 +2536,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
 Catatan: Karena biaya dihitung berdasarkan per byte, tarif biaya "100 satoshi per kvB" untuk ukuran transaksi 500 byte virtual (setengah dari 1 kvB) pada akhirnya akan menghasilkan biaya hanya 50 satoshi. </translation>
     </message>
     <message>
-        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for fujicoin transactions than the network can process.</source>
-        <translation type="unfinished">Ketika volume transaksi lebih sedikit daripada ruang di blok, penambang serta simpul yang menyiarkanikan dapat memberlakukan biaya minimum. Anda boleh hanya membayar biaya minimum, tetapi perlu diketahui bahwa ini dapat menghasilkan transaksi yang tidak pernah dikonfirmasi setelah ada lebih banyak permintaan untuk transaksi fujicoin daripada yang dapat diproses jaringan.</translation>
+        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for baricoin transactions than the network can process.</source>
+        <translation type="unfinished">Ketika volume transaksi lebih sedikit daripada ruang di blok, penambang serta simpul yang menyiarkanikan dapat memberlakukan biaya minimum. Anda boleh hanya membayar biaya minimum, tetapi perlu diketahui bahwa ini dapat menghasilkan transaksi yang tidak pernah dikonfirmasi setelah ada lebih banyak permintaan untuk transaksi baricoin daripada yang dapat diproses jaringan.</translation>
     </message>
     <message>
         <source>A too low fee might result in a never confirming transaction (read the tooltip)</source>
@@ -2626,8 +2626,8 @@ Catatan: Karena biaya dihitung berdasarkan per byte, tarif biaya "100 satoshi pe
         <translation type="unfinished">bu&amp;at Tidak ditandai</translation>
     </message>
     <message>
-        <source>Creates a Partially Signed Fujicoin Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation type="unfinished">Membuat sebagian tertanda transaksi fujicoin (PSBT) untuk digunakan dengan contoh dompet offline %1, atau dompet yang kompatibel dengan PSBT</translation>
+        <source>Creates a Partially Signed Baricoin Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <translation type="unfinished">Membuat sebagian tertanda transaksi baricoin (PSBT) untuk digunakan dengan contoh dompet offline %1, atau dompet yang kompatibel dengan PSBT</translation>
     </message>
     <message>
         <source> from wallet '%1'</source>
@@ -2763,8 +2763,8 @@ Catatan: Karena biaya dihitung berdasarkan per byte, tarif biaya "100 satoshi pe
         </translation>
     </message>
     <message>
-        <source>Warning: Invalid Fujicoin address</source>
-        <translation type="unfinished">Peringatan: Alamat Fujicoin tidak valid</translation>
+        <source>Warning: Invalid Baricoin address</source>
+        <translation type="unfinished">Peringatan: Alamat Baricoin tidak valid</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2798,8 +2798,8 @@ Catatan: Karena biaya dihitung berdasarkan per byte, tarif biaya "100 satoshi pe
         <translation type="unfinished">Pilih alamat yang telah digunakan sebelumnya</translation>
     </message>
     <message>
-        <source>The Fujicoin address to send the payment to</source>
-        <translation type="unfinished">Alamat Fujicoin untuk mengirim pembayaran</translation>
+        <source>The Baricoin address to send the payment to</source>
+        <translation type="unfinished">Alamat Baricoin untuk mengirim pembayaran</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -2818,8 +2818,8 @@ Catatan: Karena biaya dihitung berdasarkan per byte, tarif biaya "100 satoshi pe
         <translation type="unfinished">Jumlah yang ingin dikirim dalam unit yang dipilih</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less fujicoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation type="unfinished">Biaya akan diambil dari jumlah yang dikirim. Penerima akan menerima fujicoin lebih sedikit daripada yang di masukkan di bidang jumlah. Jika ada beberapa penerima, biaya dibagi rata.</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less baricoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation type="unfinished">Biaya akan diambil dari jumlah yang dikirim. Penerima akan menerima baricoin lebih sedikit daripada yang di masukkan di bidang jumlah. Jika ada beberapa penerima, biaya dibagi rata.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -2846,8 +2846,8 @@ Catatan: Karena biaya dihitung berdasarkan per byte, tarif biaya "100 satoshi pe
         <translation type="unfinished">Masukkan label untuk alamat ini untuk dimasukan dalam daftar alamat yang pernah digunakan</translation>
     </message>
     <message>
-        <source>A message that was attached to the fujicoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Fujicoin network.</source>
-        <translation type="unfinished">Pesan yang dilampirkan ke fujicoin: URI yang akan disimpan dengan transaksi untuk referensi Anda. Catatan: Pesan ini tidak akan dikirim melalui jaringan Fujicoin.</translation>
+        <source>A message that was attached to the baricoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Baricoin network.</source>
+        <translation type="unfinished">Pesan yang dilampirkan ke baricoin: URI yang akan disimpan dengan transaksi untuk referensi Anda. Catatan: Pesan ini tidak akan dikirim melalui jaringan Baricoin.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2869,12 +2869,12 @@ Catatan: Karena biaya dihitung berdasarkan per byte, tarif biaya "100 satoshi pe
         <translation>&amp;Tandakan Pesan</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive fujicoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation type="unfinished">Anda dapat menandatangani pesan / perjanjian dengan alamat Anda untuk membuktikan bahwa Anda dapat menerima fujicoin yang dikirimkan kepada mereka. Berhati-hatilah untuk tidak menandatangani apa pun yang samar-samar atau acak, karena serangan phishing mungkin mencoba menipu Anda untuk menandatangani identitas Anda kepada mereka. Hanya tandatangani pernyataan terperinci yang Anda setujui.</translation>
+        <source>You can sign messages/agreements with your addresses to prove you can receive baricoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation type="unfinished">Anda dapat menandatangani pesan / perjanjian dengan alamat Anda untuk membuktikan bahwa Anda dapat menerima baricoin yang dikirimkan kepada mereka. Berhati-hatilah untuk tidak menandatangani apa pun yang samar-samar atau acak, karena serangan phishing mungkin mencoba menipu Anda untuk menandatangani identitas Anda kepada mereka. Hanya tandatangani pernyataan terperinci yang Anda setujui.</translation>
     </message>
     <message>
-        <source>The Fujicoin address to sign the message with</source>
-        <translation type="unfinished">Alamat Fujicoin untuk menandatangani pesan</translation>
+        <source>The Baricoin address to sign the message with</source>
+        <translation type="unfinished">Alamat Baricoin untuk menandatangani pesan</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2901,8 +2901,8 @@ Catatan: Karena biaya dihitung berdasarkan per byte, tarif biaya "100 satoshi pe
         <translation>Salin tanda tangan terpilih ke sistem klipboard</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Fujicoin address</source>
-        <translation>Tandai pesan untuk menyetujui kamu pemiliki alamat Fujicoin ini</translation>
+        <source>Sign the message to prove you own this Baricoin address</source>
+        <translation>Tandai pesan untuk menyetujui kamu pemiliki alamat Baricoin ini</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2925,8 +2925,8 @@ Catatan: Karena biaya dihitung berdasarkan per byte, tarif biaya "100 satoshi pe
         <translation type="unfinished">Masukkan alamat penerima, pesan (pastikan Anda menyalin persis jeda baris, spasi, tab, dll) dan tanda tangan di bawah untuk memverifikasi pesan. Berhati-hatilah untuk tidak memberi informasi lebih ke tanda tangan daripada apa yang ada dalam pesan yang ditandatangani itu sendiri, untuk menghindari dikelabui oleh serangan man-in-the-middle. Perhatikan bahwa ini hanya membuktikan pihak penandatangan menerima dengan alamat, tapi tidak dapat membuktikan pengiriman dari transaksi apa pun!</translation>
     </message>
     <message>
-        <source>The Fujicoin address the message was signed with</source>
-        <translation type="unfinished">Alamat Fujicoin yang menandatangani pesan</translation>
+        <source>The Baricoin address the message was signed with</source>
+        <translation type="unfinished">Alamat Baricoin yang menandatangani pesan</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
@@ -2937,8 +2937,8 @@ Catatan: Karena biaya dihitung berdasarkan per byte, tarif biaya "100 satoshi pe
         <translation type="unfinished"> Tanda tangan diberikan saat pesan telah ditandatangani</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Fujicoin address</source>
-        <translation>Verifikasi pesan untuk memastikannya ditandatangani dengan alamat Fujicoin tersebut</translation>
+        <source>Verify the message to ensure it was signed with the specified Baricoin address</source>
+        <translation>Verifikasi pesan untuk memastikannya ditandatangani dengan alamat Baricoin tersebut</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -3567,7 +3567,7 @@ Pergi ke File &gt; Open Wallet untuk memuat dompet.
     </message>
 </context>
 <context>
-    <name>fujicoin-core</name>
+    <name>baricoin-core</name>
     <message>
         <source>The %s developers</source>
         <translation type="unfinished">Pengembang %s</translation>
@@ -3609,8 +3609,8 @@ Pergi ke File &gt; Open Wallet untuk memuat dompet.
         <translation type="unfinished">Kesalahan: Rekaman pengenal dumpfile salah. Mendapat "%s", diharapkan "%s". </translation>
     </message>
     <message>
-        <source>Error: Dumpfile version is not supported. This version of fujicoin-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
-        <translation type="unfinished">Kesalahan: Versi Dumpfile tidak didukung. Versi dompet fujicoin ini hanya mendukung dumpfile versi 1. Dumpfile yang didapat adalah versi %s</translation>
+        <source>Error: Dumpfile version is not supported. This version of baricoin-wallet only supports version 1 dumpfiles. Got dumpfile with version %s</source>
+        <translation type="unfinished">Kesalahan: Versi Dumpfile tidak didukung. Versi dompet baricoin ini hanya mendukung dumpfile versi 1. Dumpfile yang didapat adalah versi %s</translation>
     </message>
     <message>
         <source>Error: Legacy wallets only support the "legacy", "p2sh-segwit", and "bech32" address types</source>

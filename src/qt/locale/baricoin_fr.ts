@@ -66,8 +66,8 @@
         <translation type="unfinished">Adresses de réception</translation>
     </message>
     <message>
-        <source>These are your Fujicoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation type="unfinished">Ce sont vos adresses Fujicoin pour envoyer des paiements. Vérifiez toujours le montant et l’adresse du destinataire avant d’envoyer des pièces.</translation>
+        <source>These are your Baricoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation type="unfinished">Ce sont vos adresses Baricoin pour envoyer des paiements. Vérifiez toujours le montant et l’adresse du destinataire avant d’envoyer des pièces.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -158,8 +158,8 @@
         <translation type="unfinished">Confirmer le chiffrement du porte-monnaie</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR FUJICOINS&lt;/b&gt;!</source>
-        <translation type="unfinished">Avertissement : Si vous chiffrez votre porte-monnaie et perdez votre phrase de passe, vous &lt;b&gt;PERDREZ TOUS VOS FUJICOINS&lt;/b&gt; !</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR BARICOINS&lt;/b&gt;!</source>
+        <translation type="unfinished">Avertissement : Si vous chiffrez votre porte-monnaie et perdez votre phrase de passe, vous &lt;b&gt;PERDREZ TOUS VOS BARICOINS&lt;/b&gt; !</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -178,8 +178,8 @@
         <translation type="unfinished">Saisir l’ancienne puis la nouvelle phrase de passe du porte-monnaie.</translation>
     </message>
     <message>
-        <source>Remember that encrypting your wallet cannot fully protect your fujicoins from being stolen by malware infecting your computer.</source>
-        <translation type="unfinished">N’oubliez pas que le chiffrement de votre porte-monnaie ne peut pas protéger entièrement vos fujicoins contre le vol par des programmes malveillants qui infecteraient votre ordinateur.</translation>
+        <source>Remember that encrypting your wallet cannot fully protect your baricoins from being stolen by malware infecting your computer.</source>
+        <translation type="unfinished">N’oubliez pas que le chiffrement de votre porte-monnaie ne peut pas protéger entièrement vos baricoins contre le vol par des programmes malveillants qui infecteraient votre ordinateur.</translation>
     </message>
     <message>
         <source>Wallet to be encrypted</source>
@@ -238,7 +238,7 @@
     </message>
 </context>
 <context>
-    <name>FujicoinApplication</name>
+    <name>BaricoinApplication</name>
     <message>
         <source>Internal error</source>
         <translation type="unfinished">erreur interne</translation>
@@ -275,8 +275,8 @@
         <translation type="unfinished">Montant</translation>
     </message>
     <message>
-        <source>Enter a Fujicoin address (e.g. %1)</source>
-        <translation type="unfinished">Saisir une adresse Fujicoin (p. ex. %1)</translation>
+        <source>Enter a Baricoin address (e.g. %1)</source>
+        <translation type="unfinished">Saisir une adresse Baricoin (p. ex. %1)</translation>
     </message>
     <message>
         <source>Inbound</source>
@@ -362,7 +362,7 @@
     </message>
 </context>
 <context>
-    <name>FujicoinGUI</name>
+    <name>BaricoinGUI</name>
     <message>
         <source>&amp;Overview</source>
         <translation>&amp;Vue d’ensemble</translation>
@@ -421,8 +421,8 @@
         <translation type="unfinished">Le serveur mandataire est &lt;b&gt;activé&lt;/b&gt; : %1</translation>
     </message>
     <message>
-        <source>Send coins to a Fujicoin address</source>
-        <translation>Envoyer des pièces à une adresse Fujicoin</translation>
+        <source>Send coins to a Baricoin address</source>
+        <translation>Envoyer des pièces à une adresse Baricoin</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -453,12 +453,12 @@
         <translation>Chiffrer les clés privées qui appartiennent à votre porte-monnaie</translation>
     </message>
     <message>
-        <source>Sign messages with your Fujicoin addresses to prove you own them</source>
-        <translation>Signer les messages avec vos adresses Fujicoin pour prouver que vous les détenez</translation>
+        <source>Sign messages with your Baricoin addresses to prove you own them</source>
+        <translation>Signer les messages avec vos adresses Baricoin pour prouver que vous les détenez</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Fujicoin addresses</source>
-        <translation>Vérifier les messages pour s’assurer qu’ils ont été signés avec les adresses Fujicoin indiquées</translation>
+        <source>Verify messages to ensure they were signed with specified Baricoin addresses</source>
+        <translation>Vérifier les messages pour s’assurer qu’ils ont été signés avec les adresses Baricoin indiquées</translation>
     </message>
     <message>
         <source>Load PSBT from clipboard…</source>
@@ -493,8 +493,8 @@
         <translation>Barre d’outils des onglets</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and fujicoin: URIs)</source>
-        <translation type="unfinished">Demander des paiements (génère des codes QR et des URI fujicoin:)</translation>
+        <source>Request payments (generates QR codes and baricoin: URIs)</source>
+        <translation type="unfinished">Demander des paiements (génère des codes QR et des URI baricoin:)</translation>
     </message>
     <message>
         <source>Show the list of used sending addresses and labels</source>
@@ -560,8 +560,8 @@
         <translation type="unfinished">&amp;Adresses de réception</translation>
     </message>
     <message>
-        <source>Open a fujicoin: URI</source>
-        <translation type="unfinished">Ouvrir une URI fujicoin:</translation>
+        <source>Open a baricoin: URI</source>
+        <translation type="unfinished">Ouvrir une URI baricoin:</translation>
     </message>
     <message>
         <source>Open Wallet</source>
@@ -576,8 +576,8 @@
         <translation type="unfinished">Fermer le porte-monnaie</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Fujicoin command-line options</source>
-        <translation type="unfinished">Afficher le message d’aide de %1 pour obtenir la liste des options de ligne de commande Fujicoin possibles.</translation>
+        <source>Show the %1 help message to get a list with possible Baricoin command-line options</source>
+        <translation type="unfinished">Afficher le message d’aide de %1 pour obtenir la liste des options de ligne de commande Baricoin possibles.</translation>
     </message>
     <message>
         <source>default wallet</source>
@@ -608,7 +608,7 @@
         <translation type="unfinished">Client %1</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Fujicoin network.</source>
+        <source>%n active connection(s) to Baricoin network.</source>
         <extracomment>A substring of the tooltip.</extracomment>
         <translation type="unfinished">
             <numerusform />
@@ -961,8 +961,8 @@
         <translation type="unfinished">Modifier l’adresse d’envoi</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Fujicoin address.</source>
-        <translation type="unfinished">L’adresse saisie « %1 » n’est pas une adresse Fujicoin valide.</translation>
+        <source>The entered address "%1" is not a valid Baricoin address.</source>
+        <translation type="unfinished">L’adresse saisie « %1 » n’est pas une adresse Baricoin valide.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -1023,8 +1023,8 @@
         </translation>
     </message>
     <message>
-        <source>%1 will download and store a copy of the Fujicoin block chain.</source>
-        <translation type="unfinished">%1 téléchargera et stockera une copie de la chaîne de blocs Fujicoin.</translation>
+        <source>%1 will download and store a copy of the Baricoin block chain.</source>
+        <translation type="unfinished">%1 téléchargera et stockera une copie de la chaîne de blocs Baricoin.</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1100,12 +1100,12 @@
         <translation type="unfinished">Formulaire</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the fujicoin network, as detailed below.</source>
-        <translation type="unfinished">Les transactions récentes ne sont peut-être pas encore visibles et par conséquent le solde de votre porte-monnaie est peut-être erroné. Ces informations seront justes quand votre porte-monnaie aura fini de se synchroniser avec le réseau Fujicoin, comme décrit ci-dessous.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the baricoin network, as detailed below.</source>
+        <translation type="unfinished">Les transactions récentes ne sont peut-être pas encore visibles et par conséquent le solde de votre porte-monnaie est peut-être erroné. Ces informations seront justes quand votre porte-monnaie aura fini de se synchroniser avec le réseau Baricoin, comme décrit ci-dessous.</translation>
     </message>
     <message>
-        <source>Attempting to spend fujicoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation type="unfinished">Toute tentative de dépense de fujicoins affectés par des transactions qui ne sont pas encore affichées ne sera pas acceptée par le réseau.</translation>
+        <source>Attempting to spend baricoins that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation type="unfinished">Toute tentative de dépense de baricoins affectés par des transactions qui ne sont pas encore affichées ne sera pas acceptée par le réseau.</translation>
     </message>
     <message>
         <source>Number of blocks left</source>
@@ -1143,8 +1143,8 @@
 <context>
     <name>OpenURIDialog</name>
     <message>
-        <source>Open fujicoin URI</source>
-        <translation type="unfinished">Ouvrir une URI fujicoin</translation>
+        <source>Open baricoin URI</source>
+        <translation type="unfinished">Ouvrir une URI baricoin</translation>
     </message>
     <message>
         <source>URI:</source>
@@ -1246,8 +1246,8 @@
         <translation type="unfinished">&amp;Dépenser la monnaie non confirmée</translation>
     </message>
     <message>
-        <source>Automatically open the Fujicoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Ouvrir automatiquement le port du client Fujicoin sur le routeur. Cela ne fonctionne que si votre routeur prend en charge l’UPnP et si la fonction est activée.</translation>
+        <source>Automatically open the Baricoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Ouvrir automatiquement le port du client Baricoin sur le routeur. Cela ne fonctionne que si votre routeur prend en charge l’UPnP et si la fonction est activée.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1262,8 +1262,8 @@
         <translation type="unfinished">Permettre les connexions e&amp;ntrantes</translation>
     </message>
     <message>
-        <source>Connect to the Fujicoin network through a SOCKS5 proxy.</source>
-        <translation type="unfinished">Se connecter au réseau Fujicoin par un mandataire SOCKS5.</translation>
+        <source>Connect to the Baricoin network through a SOCKS5 proxy.</source>
+        <translation type="unfinished">Se connecter au réseau Baricoin par un mandataire SOCKS5.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1393,8 +1393,8 @@
         <translation>Formulaire</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Fujicoin network after a connection is established, but this process has not completed yet.</source>
-        <translation>Les informations affichées peuvent être obsolètes. Votre porte-monnaie se synchronise automatiquement avec le réseau Fujicoin dès qu’une connexion est établie, mais ce processus n’est pas encore achevé.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Baricoin network after a connection is established, but this process has not completed yet.</source>
+        <translation>Les informations affichées peuvent être obsolètes. Votre porte-monnaie se synchronise automatiquement avec le réseau Baricoin dès qu’une connexion est établie, mais ce processus n’est pas encore achevé.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1479,20 +1479,20 @@
         <translation type="unfinished">Erreur de demande de paiement</translation>
     </message>
     <message>
-        <source>Cannot start fujicoin: click-to-pay handler</source>
-        <translation type="unfinished">Impossible de démarrer le gestionnaire de cliquer-pour-payer fujicoin:</translation>
+        <source>Cannot start baricoin: click-to-pay handler</source>
+        <translation type="unfinished">Impossible de démarrer le gestionnaire de cliquer-pour-payer baricoin:</translation>
     </message>
     <message>
         <source>URI handling</source>
         <translation type="unfinished">Gestion des URI</translation>
     </message>
     <message>
-        <source>'fujicoin://' is not a valid URI. Use 'fujicoin:' instead.</source>
-        <translation type="unfinished">'fujicoin://' n’est pas une URI valide. Utilisez plutôt 'fujicoin:'.</translation>
+        <source>'baricoin://' is not a valid URI. Use 'baricoin:' instead.</source>
+        <translation type="unfinished">'baricoin://' n’est pas une URI valide. Utilisez plutôt 'baricoin:'.</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Fujicoin address or malformed URI parameters.</source>
-        <translation type="unfinished">L’URI ne peut pas être analysée ! Cela peut être causé par une adresse Fujicoin invalide ou par des paramètres d’URI mal formés.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid Baricoin address or malformed URI parameters.</source>
+        <translation type="unfinished">L’URI ne peut pas être analysée ! Cela peut être causé par une adresse Baricoin invalide ou par des paramètres d’URI mal formés.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1836,8 +1836,8 @@
         <translation type="unfinished">M&amp;essage :</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Fujicoin network.</source>
-        <translation type="unfinished">Un message facultatif à joindre à la demande de paiement et qui sera affiché à l’ouverture de celle-ci. Note : Le message ne sera pas envoyé avec le paiement par le réseau Fujicoin.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Baricoin network.</source>
+        <translation type="unfinished">Un message facultatif à joindre à la demande de paiement et qui sera affiché à l’ouverture de celle-ci. Note : Le message ne sera pas envoyé avec le paiement par le réseau Baricoin.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2085,8 +2085,8 @@
         <translation type="unfinished">Cacher les paramètres de frais de transaction</translation>
     </message>
     <message>
-        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for fujicoin transactions than the network can process.</source>
-        <translation type="unfinished">Quand le volume des transactions est inférieur à l’espace dans les blocs, les mineurs et les nœuds de relais peuvent imposer des frais minimaux. Il est correct de payer ces frais minimaux, mais soyez conscient que cette transaction pourrait n’être jamais confirmée si la demande en transactions de fujicoins dépassait la capacité de traitement du réseau.</translation>
+        <source>When there is less transaction volume than space in the blocks, miners as well as relaying nodes may enforce a minimum fee. Paying only this minimum fee is just fine, but be aware that this can result in a never confirming transaction once there is more demand for baricoin transactions than the network can process.</source>
+        <translation type="unfinished">Quand le volume des transactions est inférieur à l’espace dans les blocs, les mineurs et les nœuds de relais peuvent imposer des frais minimaux. Il est correct de payer ces frais minimaux, mais soyez conscient que cette transaction pourrait n’être jamais confirmée si la demande en transactions de baricoins dépassait la capacité de traitement du réseau.</translation>
     </message>
     <message>
         <source>A too low fee might result in a never confirming transaction (read the tooltip)</source>
@@ -2166,8 +2166,8 @@
         <translation type="unfinished">Cr&amp;éer une transaction non signée</translation>
     </message>
     <message>
-        <source>Creates a Partially Signed Fujicoin Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation type="unfinished">Crée une transaction Fujicoin partiellement signée (TBPS) à utiliser, par exemple, avec un porte-monnaie %1 hors ligne ou avec un porte-monnaie matériel compatible TBPS.</translation>
+        <source>Creates a Partially Signed Baricoin Transaction (PSBT) for use with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
+        <translation type="unfinished">Crée une transaction Baricoin partiellement signée (TBPS) à utiliser, par exemple, avec un porte-monnaie %1 hors ligne ou avec un porte-monnaie matériel compatible TBPS.</translation>
     </message>
     <message>
         <source> from wallet '%1'</source>
@@ -2273,8 +2273,8 @@
         </translation>
     </message>
     <message>
-        <source>Warning: Invalid Fujicoin address</source>
-        <translation type="unfinished">Avertissement : L’adresse Fujicoin est invalide</translation>
+        <source>Warning: Invalid Baricoin address</source>
+        <translation type="unfinished">Avertissement : L’adresse Baricoin est invalide</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2312,8 +2312,8 @@
         <translation type="unfinished">Choisir une adresse déjà utilisée</translation>
     </message>
     <message>
-        <source>The Fujicoin address to send the payment to</source>
-        <translation type="unfinished">L’adresse Fujicoin à laquelle envoyer le paiement</translation>
+        <source>The Baricoin address to send the payment to</source>
+        <translation type="unfinished">L’adresse Baricoin à laquelle envoyer le paiement</translation>
     </message>
     <message>
         <source>Paste address from clipboard</source>
@@ -2328,8 +2328,8 @@
         <translation type="unfinished">Le montant à envoyer dans l’unité sélectionnée</translation>
     </message>
     <message>
-        <source>The fee will be deducted from the amount being sent. The recipient will receive less fujicoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation type="unfinished">Les frais seront déduits du montant envoyé. Le destinataire recevra moins de fujicoins que le montant saisi dans le champ de montant. Si plusieurs destinataires sont sélectionnés, les frais seront partagés également..</translation>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive less baricoins than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation type="unfinished">Les frais seront déduits du montant envoyé. Le destinataire recevra moins de baricoins que le montant saisi dans le champ de montant. Si plusieurs destinataires sont sélectionnés, les frais seront partagés également..</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>
@@ -2356,8 +2356,8 @@
         <translation type="unfinished">Saisir une étiquette pour cette adresse afin de l’ajouter à la liste d’adresses utilisées</translation>
     </message>
     <message>
-        <source>A message that was attached to the fujicoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Fujicoin network.</source>
-        <translation type="unfinished">Un message qui était joint à l’URI fujicoin: et qui sera stocké avec la transaction pour référence. Note : Ce message ne sera pas envoyé par le réseau Fujicoin.</translation>
+        <source>A message that was attached to the baricoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Baricoin network.</source>
+        <translation type="unfinished">Un message qui était joint à l’URI baricoin: et qui sera stocké avec la transaction pour référence. Note : Ce message ne sera pas envoyé par le réseau Baricoin.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2379,12 +2379,12 @@
         <translation>&amp;Signer un message</translation>
     </message>
     <message>
-        <source>You can sign messages/agreements with your addresses to prove you can receive fujicoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation type="unfinished">Vous pouvez signer des messages ou des accords avec vos adresses pour prouver que vous pouvez recevoir des fujicoins à ces dernières. Faites attention de ne rien signer de vague ou au hasard, car des attaques d’hameçonnage pourraient essayer de vous faire signer avec votre identité afin de l’usurper. Ne signez que des déclarations entièrement détaillées et avec lesquelles vous êtes d’accord.</translation>
+        <source>You can sign messages/agreements with your addresses to prove you can receive baricoins sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation type="unfinished">Vous pouvez signer des messages ou des accords avec vos adresses pour prouver que vous pouvez recevoir des baricoins à ces dernières. Faites attention de ne rien signer de vague ou au hasard, car des attaques d’hameçonnage pourraient essayer de vous faire signer avec votre identité afin de l’usurper. Ne signez que des déclarations entièrement détaillées et avec lesquelles vous êtes d’accord.</translation>
     </message>
     <message>
-        <source>The Fujicoin address to sign the message with</source>
-        <translation type="unfinished">L’adresse Fujicoin avec laquelle signer le message</translation>
+        <source>The Baricoin address to sign the message with</source>
+        <translation type="unfinished">L’adresse Baricoin avec laquelle signer le message</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2403,8 +2403,8 @@
         <translation>Copier la signature actuelle dans le presse-papiers</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Fujicoin address</source>
-        <translation>Signer le message afin de prouver que vous détenez cette adresse Fujicoin</translation>
+        <source>Sign the message to prove you own this Baricoin address</source>
+        <translation>Signer le message afin de prouver que vous détenez cette adresse Baricoin</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2427,8 +2427,8 @@
         <translation type="unfinished">Saisir ci-dessous l’adresse du destinataire, le message (s’assurer de copier fidèlement les retours à la ligne, les espaces, les tabulations, etc.) et la signature pour vérifier le message. Faire attention à ne pas déduire davantage de la signature que ce qui est contenu dans le message signé même, pour éviter d’être trompé par une attaque d’homme du milieu. Prendre en compte que cela ne fait que prouver que le signataire reçoit l’adresse et ne peut pas prouver la provenance d’une transaction !</translation>
     </message>
     <message>
-        <source>The Fujicoin address the message was signed with</source>
-        <translation type="unfinished">L’adresse Fujicoin avec laquelle le message a été signé</translation>
+        <source>The Baricoin address the message was signed with</source>
+        <translation type="unfinished">L’adresse Baricoin avec laquelle le message a été signé</translation>
     </message>
     <message>
         <source>The signed message to verify</source>
@@ -2439,8 +2439,8 @@
         <translation type="unfinished">La signature donnée quand le message a été signé</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Fujicoin address</source>
-        <translation>Vérifier le message pour s’assurer qu’il a été signé avec l’adresse Fujicoin indiquée</translation>
+        <source>Verify the message to ensure it was signed with the specified Baricoin address</source>
+        <translation>Vérifier le message pour s’assurer qu’il a été signé avec l’adresse Baricoin indiquée</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -3020,7 +3020,7 @@
     </message>
 </context>
 <context>
-    <name>fujicoin-core</name>
+    <name>baricoin-core</name>
     <message>
         <source>The %s developers</source>
         <translation type="unfinished">Les développeurs de %s</translation>

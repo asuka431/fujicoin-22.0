@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_WALLET_RPCWALLET_H
-#define FUJICOIN_WALLET_RPCWALLET_H
+#ifndef BARICOIN_WALLET_RPCWALLET_H
+#define BARICOIN_WALLET_RPCWALLET_H
 
 #include <span.h>
 
@@ -37,4 +37,4 @@ LegacyScriptPubKeyMan& EnsureLegacyScriptPubKeyMan(CWallet& wallet, bool also_cr
 
 RPCHelpMan getaddressinfo();
 RPCHelpMan signrawtransactionwithwallet();
-#endif //FUJICOIN_WALLET_RPCWALLET_H
+#endif //BARICOIN_WALLET_RPCWALLET_H

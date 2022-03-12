@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_UTIL_SOCK_H
-#define FUJICOIN_UTIL_SOCK_H
+#ifndef BARICOIN_UTIL_SOCK_H
+#define BARICOIN_UTIL_SOCK_H
 
 #include <compat.h>
 #include <threadinterrupt.h>
@@ -182,4 +182,4 @@ std::string NetworkErrorString(int err);
 /** Close socket and set hSocket to INVALID_SOCKET */
 bool CloseSocket(SOCKET& hSocket);
 
-#endif // FUJICOIN_UTIL_SOCK_H
+#endif // BARICOIN_UTIL_SOCK_H

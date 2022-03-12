@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Copyright (c) 2014-2020 The Fujicoin Core developers
+# Copyright (c) 2014-2020 The Baricoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test RPCs related to blockchainstate.
@@ -35,7 +35,7 @@ from test_framework.messages import (
     msg_block,
 )
 from test_framework.p2p import P2PInterface
-from test_framework.test_framework import FujicoinTestFramework
+from test_framework.test_framework import BaricoinTestFramework
 from test_framework.util import (
     assert_equal,
     assert_greater_than,
@@ -49,7 +49,7 @@ from test_framework.util import (
 from test_framework.wallet import MiniWallet
 
 
-class BlockchainTest(FujicoinTestFramework):
+class BlockchainTest(BaricoinTestFramework):
     def set_test_params(self):
         self.setup_clean_chain = True
         self.num_nodes = 1

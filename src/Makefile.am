@@ -24,42 +24,42 @@ else
 LIBUNIVALUE = $(UNIVALUE_LIBS)
 endif
 
-FUJICOIN_INCLUDES=-I$(builddir) -I$(srcdir)/secp256k1/include $(BDB_CPPFLAGS) $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS)
+BARICOIN_INCLUDES=-I$(builddir) -I$(srcdir)/secp256k1/include $(BDB_CPPFLAGS) $(BOOST_CPPFLAGS) $(LEVELDB_CPPFLAGS)
 
-FUJICOIN_INCLUDES += $(UNIVALUE_CFLAGS)
+BARICOIN_INCLUDES += $(UNIVALUE_CFLAGS)
 
-LIBFUJICOIN_SERVER=libfujicoin_server.a
-LIBFUJICOIN_COMMON=libfujicoin_common.a
-LIBFUJICOIN_CONSENSUS=libfujicoin_consensus.a
-LIBFUJICOIN_CLI=libfujicoin_cli.a
-LIBFUJICOIN_UTIL=libfujicoin_util.a
-LIBFUJICOIN_CRYPTO_BASE=crypto/libfujicoin_crypto_base.a
-LIBFUJICOINQT=qt/libfujicoinqt.a
+LIBBARICOIN_SERVER=libbaricoin_server.a
+LIBBARICOIN_COMMON=libbaricoin_common.a
+LIBBARICOIN_CONSENSUS=libbaricoin_consensus.a
+LIBBARICOIN_CLI=libbaricoin_cli.a
+LIBBARICOIN_UTIL=libbaricoin_util.a
+LIBBARICOIN_CRYPTO_BASE=crypto/libbaricoin_crypto_base.a
+LIBBARICOINQT=qt/libbaricoinqt.a
 LIBSECP256K1=secp256k1/libsecp256k1.la
 
 if ENABLE_ZMQ
-LIBFUJICOIN_ZMQ=libfujicoin_zmq.a
+LIBBARICOIN_ZMQ=libbaricoin_zmq.a
 endif
-if BUILD_FUJICOIN_LIBS
-LIBFUJICOINCONSENSUS=libfujicoinconsensus.la
+if BUILD_BARICOIN_LIBS
+LIBBARICOINCONSENSUS=libbaricoinconsensus.la
 endif
 if ENABLE_WALLET
-LIBFUJICOIN_WALLET=libfujicoin_wallet.a
-LIBFUJICOIN_WALLET_TOOL=libfujicoin_wallet_tool.a
+LIBBARICOIN_WALLET=libbaricoin_wallet.a
+LIBBARICOIN_WALLET_TOOL=libbaricoin_wallet_tool.a
 endif
 
-LIBFUJICOIN_CRYPTO= $(LIBFUJICOIN_CRYPTO_BASE)
+LIBBARICOIN_CRYPTO= $(LIBBARICOIN_CRYPTO_BASE)
 if ENABLE_SSE41
-LIBFUJICOIN_CRYPTO_SSE41 = crypto/libfujicoin_crypto_sse41.a
-LIBFUJICOIN_CRYPTO += $(LIBFUJICOIN_CRYPTO_SSE41)
+LIBBARICOIN_CRYPTO_SSE41 = crypto/libbaricoin_crypto_sse41.a
+LIBBARICOIN_CRYPTO += $(LIBBARICOIN_CRYPTO_SSE41)
 endif
 if ENABLE_AVX2
-LIBFUJICOIN_CRYPTO_AVX2 = crypto/libfujicoin_crypto_avx2.a
-LIBFUJICOIN_CRYPTO += $(LIBFUJICOIN_CRYPTO_AVX2)
+LIBBARICOIN_CRYPTO_AVX2 = crypto/libbaricoin_crypto_avx2.a
+LIBBARICOIN_CRYPTO += $(LIBBARICOIN_CRYPTO_AVX2)
 endif
 if ENABLE_SHANI
-LIBFUJICOIN_CRYPTO_SHANI = crypto/libfujicoin_crypto_shani.a
-LIBFUJICOIN_CRYPTO += $(LIBFUJICOIN_CRYPTO_SHANI)
+LIBBARICOIN_CRYPTO_SHANI = crypto/libbaricoin_crypto_shani.a
+LIBBARICOIN_CRYPTO += $(LIBBARICOIN_CRYPTO_SHANI)
 endif
 
 $(LIBSECP256K1): $(wildcard secp256k1/src/*.h) $(wildcard secp256k1/src/*.c) $(wildcard secp256k1/include/*)
@@ -68,53 +68,53 @@ $(LIBSECP256K1): $(wildcard secp256k1/src/*.h) $(wildcard secp256k1/src/*.c) $(w
 # Make is not made aware of per-object dependencies to avoid limiting building parallelization
 # But to build the less dependent modules first, we manually select their order here:
 EXTRA_LIBRARIES += \
-  $(LIBFUJICOIN_CRYPTO) \
-  $(LIBFUJICOIN_UTIL) \
-  $(LIBFUJICOIN_COMMON) \
-  $(LIBFUJICOIN_CONSENSUS) \
-  $(LIBFUJICOIN_SERVER) \
-  $(LIBFUJICOIN_CLI) \
-  $(LIBFUJICOIN_IPC) \
-  $(LIBFUJICOIN_WALLET) \
-  $(LIBFUJICOIN_WALLET_TOOL) \
-  $(LIBFUJICOIN_ZMQ)
+  $(LIBBARICOIN_CRYPTO) \
+  $(LIBBARICOIN_UTIL) \
+  $(LIBBARICOIN_COMMON) \
+  $(LIBBARICOIN_CONSENSUS) \
+  $(LIBBARICOIN_SERVER) \
+  $(LIBBARICOIN_CLI) \
+  $(LIBBARICOIN_IPC) \
+  $(LIBBARICOIN_WALLET) \
+  $(LIBBARICOIN_WALLET_TOOL) \
+  $(LIBBARICOIN_ZMQ)
 
-lib_LTLIBRARIES = $(LIBFUJICOINCONSENSUS)
+lib_LTLIBRARIES = $(LIBBARICOINCONSENSUS)
 
 bin_PROGRAMS =
 noinst_PROGRAMS =
 TESTS =
 BENCHMARKS =
 
-if BUILD_FUJICOIND
-  bin_PROGRAMS += fujicoind
+if BUILD_BARICOIND
+  bin_PROGRAMS += baricoind
 endif
 
-if BUILD_FUJICOIN_NODE
-  bin_PROGRAMS += fujicoin-node
+if BUILD_BARICOIN_NODE
+  bin_PROGRAMS += baricoin-node
 endif
 
-if BUILD_FUJICOIN_CLI
-  bin_PROGRAMS += fujicoin-cli
+if BUILD_BARICOIN_CLI
+  bin_PROGRAMS += baricoin-cli
 endif
 
-if BUILD_FUJICOIN_TX
-  bin_PROGRAMS += fujicoin-tx
+if BUILD_BARICOIN_TX
+  bin_PROGRAMS += baricoin-tx
 endif
 
 if ENABLE_WALLET
-if BUILD_FUJICOIN_WALLET
-  bin_PROGRAMS += fujicoin-wallet
+if BUILD_BARICOIN_WALLET
+  bin_PROGRAMS += baricoin-wallet
 endif
 endif
 
-if BUILD_FUJICOIN_UTIL
-  bin_PROGRAMS += fujicoin-util
+if BUILD_BARICOIN_UTIL
+  bin_PROGRAMS += baricoin-util
 endif
 
 .PHONY: FORCE check-symbols check-security
-# fujicoin core #
-FUJICOIN_CORE_H = \
+# baricoin core #
+BARICOIN_CORE_H = \
   addrdb.h \
   addrman.h \
   attributes.h \
@@ -310,17 +310,17 @@ obj/build.h: FORCE
 	@$(MKDIR_P) $(builddir)/obj
 	@$(top_srcdir)/share/genbuild.sh "$(abs_top_builddir)/src/obj/build.h" \
 	  "$(abs_top_srcdir)"
-libfujicoin_util_a-clientversion.$(OBJEXT): obj/build.h
+libbaricoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
-ipc/capnp/libfujicoin_ipc_a-ipc.$(OBJEXT): $(libfujicoin_ipc_mpgen_input:=.h)
+ipc/capnp/libbaricoin_ipc_a-ipc.$(OBJEXT): $(libbaricoin_ipc_mpgen_input:=.h)
 
-# server: shared between fujicoind and fujicoin-qt
+# server: shared between baricoind and baricoin-qt
 # Contains code accessing mempool and chain state that is meant to be separated
 # from wallet and gui code (see node/README.md). Shared code should go in
-# libfujicoin_common or libfujicoin_util libraries, instead.
-libfujicoin_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(FUJICOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(NATPMP_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
-libfujicoin_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libfujicoin_server_a_SOURCES = \
+# libbaricoin_common or libbaricoin_util libraries, instead.
+libbaricoin_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BARICOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(NATPMP_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
+libbaricoin_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libbaricoin_server_a_SOURCES = \
   addrdb.cpp \
   addrman.cpp \
   banman.cpp \
@@ -376,19 +376,19 @@ libfujicoin_server_a_SOURCES = \
   validation.cpp \
   validationinterface.cpp \
   versionbits.cpp \
-  $(FUJICOIN_CORE_H)
+  $(BARICOIN_CORE_H)
 
 if ENABLE_WALLET
-libfujicoin_server_a_SOURCES += wallet/init.cpp
+libbaricoin_server_a_SOURCES += wallet/init.cpp
 endif
 if !ENABLE_WALLET
-libfujicoin_server_a_SOURCES += dummywallet.cpp
+libbaricoin_server_a_SOURCES += dummywallet.cpp
 endif
 
 if ENABLE_ZMQ
-libfujicoin_zmq_a_CPPFLAGS = $(AM_CPPFLAGS) $(FUJICOIN_INCLUDES) $(ZMQ_CFLAGS)
-libfujicoin_zmq_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libfujicoin_zmq_a_SOURCES = \
+libbaricoin_zmq_a_CPPFLAGS = $(AM_CPPFLAGS) $(BARICOIN_INCLUDES) $(ZMQ_CFLAGS)
+libbaricoin_zmq_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libbaricoin_zmq_a_SOURCES = \
   zmq/zmqabstractnotifier.cpp \
   zmq/zmqnotificationinterface.cpp \
   zmq/zmqpublishnotifier.cpp \
@@ -397,11 +397,11 @@ libfujicoin_zmq_a_SOURCES = \
 endif
 
 
-# wallet: shared between fujicoind and fujicoin-qt, but only linked
+# wallet: shared between baricoind and baricoin-qt, but only linked
 # when wallet enabled
-libfujicoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(FUJICOIN_INCLUDES) $(SQLITE_CFLAGS)
-libfujicoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libfujicoin_wallet_a_SOURCES = \
+libbaricoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BARICOIN_INCLUDES) $(SQLITE_CFLAGS)
+libbaricoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libbaricoin_wallet_a_SOURCES = \
   wallet/coincontrol.cpp \
   wallet/context.cpp \
   wallet/crypter.cpp \
@@ -422,25 +422,25 @@ libfujicoin_wallet_a_SOURCES = \
   wallet/walletdb.cpp \
   wallet/walletutil.cpp \
   wallet/coinselection.cpp \
-  $(FUJICOIN_CORE_H)
+  $(BARICOIN_CORE_H)
 
 if USE_SQLITE
-libfujicoin_wallet_a_SOURCES += wallet/sqlite.cpp
+libbaricoin_wallet_a_SOURCES += wallet/sqlite.cpp
 endif
 if USE_BDB
-libfujicoin_wallet_a_SOURCES += wallet/bdb.cpp wallet/salvage.cpp
+libbaricoin_wallet_a_SOURCES += wallet/bdb.cpp wallet/salvage.cpp
 endif
 
-libfujicoin_wallet_tool_a_CPPFLAGS = $(AM_CPPFLAGS) $(FUJICOIN_INCLUDES)
-libfujicoin_wallet_tool_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libfujicoin_wallet_tool_a_SOURCES = \
+libbaricoin_wallet_tool_a_CPPFLAGS = $(AM_CPPFLAGS) $(BARICOIN_INCLUDES)
+libbaricoin_wallet_tool_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libbaricoin_wallet_tool_a_SOURCES = \
   wallet/wallettool.cpp \
-  $(FUJICOIN_CORE_H)
+  $(BARICOIN_CORE_H)
 
 # crypto primitives library
-crypto_libfujicoin_crypto_base_a_CPPFLAGS = $(AM_CPPFLAGS)
-crypto_libfujicoin_crypto_base_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-crypto_libfujicoin_crypto_base_a_SOURCES = \
+crypto_libbaricoin_crypto_base_a_CPPFLAGS = $(AM_CPPFLAGS)
+crypto_libbaricoin_crypto_base_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+crypto_libbaricoin_crypto_base_a_SOURCES = \
   crypto/aes.cpp \
   crypto/aes.h \
   crypto/chacha_poly_aead.h \
@@ -474,31 +474,31 @@ crypto_libfujicoin_crypto_base_a_SOURCES = \
   crypto/scrypt.h
 
 if USE_ASM
-crypto_libfujicoin_crypto_base_a_SOURCES += crypto/sha256_sse4.cpp
+crypto_libbaricoin_crypto_base_a_SOURCES += crypto/sha256_sse4.cpp
 endif
 
-crypto_libfujicoin_crypto_sse41_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-crypto_libfujicoin_crypto_sse41_a_CPPFLAGS = $(AM_CPPFLAGS)
-crypto_libfujicoin_crypto_sse41_a_CXXFLAGS += $(SSE41_CXXFLAGS)
-crypto_libfujicoin_crypto_sse41_a_CPPFLAGS += -DENABLE_SSE41
-crypto_libfujicoin_crypto_sse41_a_SOURCES = crypto/sha256_sse41.cpp
+crypto_libbaricoin_crypto_sse41_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+crypto_libbaricoin_crypto_sse41_a_CPPFLAGS = $(AM_CPPFLAGS)
+crypto_libbaricoin_crypto_sse41_a_CXXFLAGS += $(SSE41_CXXFLAGS)
+crypto_libbaricoin_crypto_sse41_a_CPPFLAGS += -DENABLE_SSE41
+crypto_libbaricoin_crypto_sse41_a_SOURCES = crypto/sha256_sse41.cpp
 
-crypto_libfujicoin_crypto_avx2_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-crypto_libfujicoin_crypto_avx2_a_CPPFLAGS = $(AM_CPPFLAGS)
-crypto_libfujicoin_crypto_avx2_a_CXXFLAGS += $(AVX2_CXXFLAGS)
-crypto_libfujicoin_crypto_avx2_a_CPPFLAGS += -DENABLE_AVX2
-crypto_libfujicoin_crypto_avx2_a_SOURCES = crypto/sha256_avx2.cpp
+crypto_libbaricoin_crypto_avx2_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+crypto_libbaricoin_crypto_avx2_a_CPPFLAGS = $(AM_CPPFLAGS)
+crypto_libbaricoin_crypto_avx2_a_CXXFLAGS += $(AVX2_CXXFLAGS)
+crypto_libbaricoin_crypto_avx2_a_CPPFLAGS += -DENABLE_AVX2
+crypto_libbaricoin_crypto_avx2_a_SOURCES = crypto/sha256_avx2.cpp
 
-crypto_libfujicoin_crypto_shani_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-crypto_libfujicoin_crypto_shani_a_CPPFLAGS = $(AM_CPPFLAGS)
-crypto_libfujicoin_crypto_shani_a_CXXFLAGS += $(SHANI_CXXFLAGS)
-crypto_libfujicoin_crypto_shani_a_CPPFLAGS += -DENABLE_SHANI
-crypto_libfujicoin_crypto_shani_a_SOURCES = crypto/sha256_shani.cpp
+crypto_libbaricoin_crypto_shani_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+crypto_libbaricoin_crypto_shani_a_CPPFLAGS = $(AM_CPPFLAGS)
+crypto_libbaricoin_crypto_shani_a_CXXFLAGS += $(SHANI_CXXFLAGS)
+crypto_libbaricoin_crypto_shani_a_CPPFLAGS += -DENABLE_SHANI
+crypto_libbaricoin_crypto_shani_a_SOURCES = crypto/sha256_shani.cpp
 
 # consensus: shared between all executables that validate any consensus rules.
-libfujicoin_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(FUJICOIN_INCLUDES)
-libfujicoin_consensus_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libfujicoin_consensus_a_SOURCES = \
+libbaricoin_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(BARICOIN_INCLUDES)
+libbaricoin_consensus_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libbaricoin_consensus_a_SOURCES = \
   amount.h \
   arith_uint256.cpp \
   arith_uint256.h \
@@ -516,7 +516,7 @@ libfujicoin_consensus_a_SOURCES = \
   primitives/transaction.h \
   pubkey.cpp \
   pubkey.h \
-  script/fujicoinconsensus.cpp \
+  script/baricoinconsensus.cpp \
   script/interpreter.cpp \
   script/interpreter.h \
   script/script.cpp \
@@ -532,10 +532,10 @@ libfujicoin_consensus_a_SOURCES = \
   util/strencodings.h \
   version.h
 
-# common: shared between fujicoind, and fujicoin-qt and non-server tools
-libfujicoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(FUJICOIN_INCLUDES)
-libfujicoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libfujicoin_common_a_SOURCES = \
+# common: shared between baricoind, and baricoin-qt and non-server tools
+libbaricoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BARICOIN_INCLUDES)
+libbaricoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libbaricoin_common_a_SOURCES = \
   base58.cpp \
   bech32.cpp \
   bloom.cpp \
@@ -567,14 +567,14 @@ libfujicoin_common_a_SOURCES = \
   script/signingprovider.cpp \
   script/standard.cpp \
   warnings.cpp \
-  $(FUJICOIN_CORE_H)
+  $(BARICOIN_CORE_H)
 
 # util: shared between all executables.
 # This library *must* be included to make sure that the glibc
 # backward-compatibility objects and their sanity checks are linked.
-libfujicoin_util_a_CPPFLAGS = $(AM_CPPFLAGS) $(FUJICOIN_INCLUDES)
-libfujicoin_util_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libfujicoin_util_a_SOURCES = \
+libbaricoin_util_a_CPPFLAGS = $(AM_CPPFLAGS) $(BARICOIN_INCLUDES)
+libbaricoin_util_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libbaricoin_util_a_SOURCES = \
   support/lockedpool.cpp \
   chainparamsbase.cpp \
   clientversion.cpp \
@@ -613,152 +613,152 @@ libfujicoin_util_a_SOURCES = \
   util/string.cpp \
   util/time.cpp \
   util/tokenpipe.cpp \
-  $(FUJICOIN_CORE_H)
+  $(BARICOIN_CORE_H)
 
 if USE_LIBEVENT
-libfujicoin_util_a_SOURCES += util/url.cpp
+libbaricoin_util_a_SOURCES += util/url.cpp
 endif
 
 if GLIBC_BACK_COMPAT
-libfujicoin_util_a_SOURCES += compat/glibc_compat.cpp
+libbaricoin_util_a_SOURCES += compat/glibc_compat.cpp
 AM_LDFLAGS += $(COMPAT_LDFLAGS)
 endif
 
-# cli: shared between fujicoin-cli and fujicoin-qt
-libfujicoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(FUJICOIN_INCLUDES)
-libfujicoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libfujicoin_cli_a_SOURCES = \
+# cli: shared between baricoin-cli and baricoin-qt
+libbaricoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BARICOIN_INCLUDES)
+libbaricoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libbaricoin_cli_a_SOURCES = \
   compat/stdin.h \
   compat/stdin.cpp \
   rpc/client.cpp \
-  $(FUJICOIN_CORE_H)
+  $(BARICOIN_CORE_H)
 
-nodist_libfujicoin_util_a_SOURCES = $(srcdir)/obj/build.h
+nodist_libbaricoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
-# fujicoind & fujicoin-node binaries #
-fujicoin_daemon_sources = fujicoind.cpp
-fujicoin_bin_cppflags = $(AM_CPPFLAGS) $(FUJICOIN_INCLUDES)
-fujicoin_bin_cxxflags = $(AM_CXXFLAGS) $(PIE_FLAGS)
-fujicoin_bin_ldflags = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+# baricoind & baricoin-node binaries #
+baricoin_daemon_sources = baricoind.cpp
+baricoin_bin_cppflags = $(AM_CPPFLAGS) $(BARICOIN_INCLUDES)
+baricoin_bin_cxxflags = $(AM_CXXFLAGS) $(PIE_FLAGS)
+baricoin_bin_ldflags = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-fujicoin_daemon_sources += fujicoind-res.rc
+baricoin_daemon_sources += baricoind-res.rc
 endif
 
-fujicoin_bin_ldadd = \
-  $(LIBFUJICOIN_WALLET) \
-  $(LIBFUJICOIN_COMMON) \
-  $(LIBFUJICOIN_UTIL) \
+baricoin_bin_ldadd = \
+  $(LIBBARICOIN_WALLET) \
+  $(LIBBARICOIN_COMMON) \
+  $(LIBBARICOIN_UTIL) \
   $(LIBUNIVALUE) \
-  $(LIBFUJICOIN_ZMQ) \
-  $(LIBFUJICOIN_CONSENSUS) \
-  $(LIBFUJICOIN_CRYPTO) \
+  $(LIBBARICOIN_ZMQ) \
+  $(LIBBARICOIN_CONSENSUS) \
+  $(LIBBARICOIN_CRYPTO) \
   $(LIBLEVELDB) \
   $(LIBLEVELDB_SSE42) \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
-fujicoin_bin_ldadd += $(BOOST_LIBS) $(BDB_LIBS) $(MINIUPNPC_LIBS) $(NATPMP_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(SQLITE_LIBS)
+baricoin_bin_ldadd += $(BOOST_LIBS) $(BDB_LIBS) $(MINIUPNPC_LIBS) $(NATPMP_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(SQLITE_LIBS)
 
-fujicoind_SOURCES = $(fujicoin_daemon_sources) init/fujicoind.cpp
-fujicoind_CPPFLAGS = $(fujicoin_bin_cppflags)
-fujicoind_CXXFLAGS = $(fujicoin_bin_cxxflags)
-fujicoind_LDFLAGS = $(fujicoin_bin_ldflags)
-fujicoind_LDADD = $(LIBFUJICOIN_SERVER) $(fujicoin_bin_ldadd)
+baricoind_SOURCES = $(baricoin_daemon_sources) init/baricoind.cpp
+baricoind_CPPFLAGS = $(baricoin_bin_cppflags)
+baricoind_CXXFLAGS = $(baricoin_bin_cxxflags)
+baricoind_LDFLAGS = $(baricoin_bin_ldflags)
+baricoind_LDADD = $(LIBBARICOIN_SERVER) $(baricoin_bin_ldadd)
 
-fujicoin_node_SOURCES = $(fujicoin_daemon_sources) init/fujicoin-node.cpp
-fujicoin_node_CPPFLAGS = $(fujicoin_bin_cppflags)
-fujicoin_node_CXXFLAGS = $(fujicoin_bin_cxxflags)
-fujicoin_node_LDFLAGS = $(fujicoin_bin_ldflags)
-fujicoin_node_LDADD = $(LIBFUJICOIN_SERVER) $(fujicoin_bin_ldadd) $(LIBFUJICOIN_IPC) $(LIBMULTIPROCESS_LIBS)
+baricoin_node_SOURCES = $(baricoin_daemon_sources) init/baricoin-node.cpp
+baricoin_node_CPPFLAGS = $(baricoin_bin_cppflags)
+baricoin_node_CXXFLAGS = $(baricoin_bin_cxxflags)
+baricoin_node_LDFLAGS = $(baricoin_bin_ldflags)
+baricoin_node_LDADD = $(LIBBARICOIN_SERVER) $(baricoin_bin_ldadd) $(LIBBARICOIN_IPC) $(LIBMULTIPROCESS_LIBS)
 
-# fujicoin-cli binary #
-fujicoin_cli_SOURCES = fujicoin-cli.cpp
-fujicoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(FUJICOIN_INCLUDES) $(EVENT_CFLAGS)
-fujicoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-fujicoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+# baricoin-cli binary #
+baricoin_cli_SOURCES = baricoin-cli.cpp
+baricoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BARICOIN_INCLUDES) $(EVENT_CFLAGS)
+baricoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+baricoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-fujicoin_cli_SOURCES += fujicoin-cli-res.rc
+baricoin_cli_SOURCES += baricoin-cli-res.rc
 endif
 
-fujicoin_cli_LDADD = \
-  $(LIBFUJICOIN_CLI) \
+baricoin_cli_LDADD = \
+  $(LIBBARICOIN_CLI) \
   $(LIBUNIVALUE) \
-  $(LIBFUJICOIN_UTIL) \
-  $(LIBFUJICOIN_CRYPTO)
+  $(LIBBARICOIN_UTIL) \
+  $(LIBBARICOIN_CRYPTO)
 
-fujicoin_cli_LDADD += $(BOOST_LIBS) $(EVENT_LIBS)
+baricoin_cli_LDADD += $(BOOST_LIBS) $(EVENT_LIBS)
 #
 
-# fujicoin-tx binary #
-fujicoin_tx_SOURCES = fujicoin-tx.cpp
-fujicoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(FUJICOIN_INCLUDES)
-fujicoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-fujicoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+# baricoin-tx binary #
+baricoin_tx_SOURCES = baricoin-tx.cpp
+baricoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BARICOIN_INCLUDES)
+baricoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+baricoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-fujicoin_tx_SOURCES += fujicoin-tx-res.rc
+baricoin_tx_SOURCES += baricoin-tx-res.rc
 endif
 
-fujicoin_tx_LDADD = \
+baricoin_tx_LDADD = \
   $(LIBUNIVALUE) \
-  $(LIBFUJICOIN_COMMON) \
-  $(LIBFUJICOIN_UTIL) \
-  $(LIBFUJICOIN_CONSENSUS) \
-  $(LIBFUJICOIN_CRYPTO) \
+  $(LIBBARICOIN_COMMON) \
+  $(LIBBARICOIN_UTIL) \
+  $(LIBBARICOIN_CONSENSUS) \
+  $(LIBBARICOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-fujicoin_tx_LDADD += $(BOOST_LIBS)
+baricoin_tx_LDADD += $(BOOST_LIBS)
 #
 
-# fujicoin-wallet binary #
-fujicoin_wallet_SOURCES = fujicoin-wallet.cpp
-fujicoin_wallet_CPPFLAGS = $(fujicoin_bin_cppflags)
-fujicoin_wallet_CXXFLAGS = $(fujicoin_bin_cxxflags)
-fujicoin_wallet_LDFLAGS = $(fujicoin_bin_ldflags)
-fujicoin_wallet_LDADD = $(LIBFUJICOIN_WALLET_TOOL) $(fujicoin_bin_ldadd)
+# baricoin-wallet binary #
+baricoin_wallet_SOURCES = baricoin-wallet.cpp
+baricoin_wallet_CPPFLAGS = $(baricoin_bin_cppflags)
+baricoin_wallet_CXXFLAGS = $(baricoin_bin_cxxflags)
+baricoin_wallet_LDFLAGS = $(baricoin_bin_ldflags)
+baricoin_wallet_LDADD = $(LIBBARICOIN_WALLET_TOOL) $(baricoin_bin_ldadd)
 
 if TARGET_WINDOWS
-fujicoin_wallet_SOURCES += fujicoin-wallet-res.rc
+baricoin_wallet_SOURCES += baricoin-wallet-res.rc
 endif
 #
 
-# fujicoin-util binary #
-fujicoin_util_SOURCES = fujicoin-util.cpp
-fujicoin_util_CPPFLAGS = $(AM_CPPFLAGS) $(FUJICOIN_INCLUDES)
-fujicoin_util_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-fujicoin_util_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+# baricoin-util binary #
+baricoin_util_SOURCES = baricoin-util.cpp
+baricoin_util_CPPFLAGS = $(AM_CPPFLAGS) $(BARICOIN_INCLUDES)
+baricoin_util_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+baricoin_util_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-fujicoin_util_SOURCES += fujicoin-util-res.rc
+baricoin_util_SOURCES += baricoin-util-res.rc
 endif
 
-fujicoin_util_LDADD = \
-  $(LIBFUJICOIN_COMMON) \
-  $(LIBFUJICOIN_UTIL) \
+baricoin_util_LDADD = \
+  $(LIBBARICOIN_COMMON) \
+  $(LIBBARICOIN_UTIL) \
   $(LIBUNIVALUE) \
-  $(LIBFUJICOIN_CONSENSUS) \
-  $(LIBFUJICOIN_CRYPTO) \
+  $(LIBBARICOIN_CONSENSUS) \
+  $(LIBBARICOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-fujicoin_util_LDADD += $(BOOST_LIBS)
+baricoin_util_LDADD += $(BOOST_LIBS)
 #
 
-# fujicoinconsensus library #
-if BUILD_FUJICOIN_LIBS
-include_HEADERS = script/fujicoinconsensus.h
-libfujicoinconsensus_la_SOURCES = support/cleanse.cpp $(crypto_libfujicoin_crypto_base_a_SOURCES) $(libfujicoin_consensus_a_SOURCES)
+# baricoinconsensus library #
+if BUILD_BARICOIN_LIBS
+include_HEADERS = script/baricoinconsensus.h
+libbaricoinconsensus_la_SOURCES = support/cleanse.cpp $(crypto_libbaricoin_crypto_base_a_SOURCES) $(libbaricoin_consensus_a_SOURCES)
 
 if GLIBC_BACK_COMPAT
-  libfujicoinconsensus_la_SOURCES += compat/glibc_compat.cpp
+  libbaricoinconsensus_la_SOURCES += compat/glibc_compat.cpp
 endif
 
-libfujicoinconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
-libfujicoinconsensus_la_LIBADD = $(LIBSECP256K1)
-libfujicoinconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_FUJICOIN_INTERNAL
-libfujicoinconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libbaricoinconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
+libbaricoinconsensus_la_LIBADD = $(LIBSECP256K1)
+libbaricoinconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_BARICOIN_INTERNAL
+libbaricoinconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
 endif
 #
@@ -794,12 +794,12 @@ CLEANFILES += obj/build.h
 EXTRA_DIST = $(CTAES_DIST)
 
 
-config/fujicoin-config.h: config/stamp-h1
+config/baricoin-config.h: config/stamp-h1
 	@$(MAKE) -C $(top_builddir) $(subdir)/$(@)
-config/stamp-h1: $(top_srcdir)/$(subdir)/config/fujicoin-config.h.in $(top_builddir)/config.status
+config/stamp-h1: $(top_srcdir)/$(subdir)/config/baricoin-config.h.in $(top_builddir)/config.status
 	$(AM_V_at)$(MAKE) -C $(top_builddir) $(subdir)/$(@)
-$(top_srcdir)/$(subdir)/config/fujicoin-config.h.in:  $(am__configure_deps)
-	$(AM_V_at)$(MAKE) -C $(top_srcdir) $(subdir)/config/fujicoin-config.h.in
+$(top_srcdir)/$(subdir)/config/baricoin-config.h.in:  $(am__configure_deps)
+	$(AM_V_at)$(MAKE) -C $(top_srcdir) $(subdir)/config/baricoin-config.h.in
 
 clean-local:
 	-$(MAKE) -C secp256k1 clean
@@ -835,15 +835,15 @@ if HARDEN
 	$(AM_V_at) $(PYTHON) $(top_srcdir)/contrib/devtools/security-check.py $(bin_PROGRAMS)
 endif
 
-libfujicoin_ipc_mpgen_input = \
+libbaricoin_ipc_mpgen_input = \
   ipc/capnp/echo.capnp \
   ipc/capnp/init.capnp
-EXTRA_DIST += $(libfujicoin_ipc_mpgen_input)
+EXTRA_DIST += $(libbaricoin_ipc_mpgen_input)
 %.capnp:
 
 if BUILD_MULTIPROCESS
-LIBFUJICOIN_IPC=libfujicoin_ipc.a
-libfujicoin_ipc_a_SOURCES = \
+LIBBARICOIN_IPC=libbaricoin_ipc.a
+libbaricoin_ipc_a_SOURCES = \
   ipc/capnp/init-types.h \
   ipc/capnp/protocol.cpp \
   ipc/capnp/protocol.h \
@@ -852,20 +852,20 @@ libfujicoin_ipc_a_SOURCES = \
   ipc/process.cpp \
   ipc/process.h \
   ipc/protocol.h
-libfujicoin_ipc_a_CPPFLAGS = $(AM_CPPFLAGS) $(FUJICOIN_INCLUDES)
-libfujicoin_ipc_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS) $(LIBMULTIPROCESS_CFLAGS)
+libbaricoin_ipc_a_CPPFLAGS = $(AM_CPPFLAGS) $(BARICOIN_INCLUDES)
+libbaricoin_ipc_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS) $(LIBMULTIPROCESS_CFLAGS)
 
 include $(MPGEN_PREFIX)/include/mpgen.mk
-libfujicoin_ipc_mpgen_output = \
-  $(libfujicoin_ipc_mpgen_input:=.c++) \
-  $(libfujicoin_ipc_mpgen_input:=.h) \
-  $(libfujicoin_ipc_mpgen_input:=.proxy-client.c++) \
-  $(libfujicoin_ipc_mpgen_input:=.proxy-server.c++) \
-  $(libfujicoin_ipc_mpgen_input:=.proxy-types.c++) \
-  $(libfujicoin_ipc_mpgen_input:=.proxy-types.h) \
-  $(libfujicoin_ipc_mpgen_input:=.proxy.h)
-nodist_libfujicoin_ipc_a_SOURCES = $(libfujicoin_ipc_mpgen_output)
-CLEANFILES += $(libfujicoin_ipc_mpgen_output)
+libbaricoin_ipc_mpgen_output = \
+  $(libbaricoin_ipc_mpgen_input:=.c++) \
+  $(libbaricoin_ipc_mpgen_input:=.h) \
+  $(libbaricoin_ipc_mpgen_input:=.proxy-client.c++) \
+  $(libbaricoin_ipc_mpgen_input:=.proxy-server.c++) \
+  $(libbaricoin_ipc_mpgen_input:=.proxy-types.c++) \
+  $(libbaricoin_ipc_mpgen_input:=.proxy-types.h) \
+  $(libbaricoin_ipc_mpgen_input:=.proxy.h)
+nodist_libbaricoin_ipc_a_SOURCES = $(libbaricoin_ipc_mpgen_output)
+CLEANFILES += $(libbaricoin_ipc_mpgen_output)
 endif
 
 if EMBEDDED_LEVELDB

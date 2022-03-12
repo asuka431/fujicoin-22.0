@@ -3,11 +3,11 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_VALIDATION_H
-#define FUJICOIN_VALIDATION_H
+#ifndef BARICOIN_VALIDATION_H
+#define BARICOIN_VALIDATION_H
 
 #if defined(HAVE_CONFIG_H)
-#include <config/fujicoin-config.h>
+#include <config/baricoin-config.h>
 #endif
 
 #include <amount.h>
@@ -1068,4 +1068,4 @@ bool LoadMempool(CTxMemPool& pool, CChainState& active_chainstate, FopenFn mocka
  */
 const AssumeutxoData* ExpectedAssumeutxo(const int height, const CChainParams& params);
 
-#endif // FUJICOIN_VALIDATION_H
+#endif // BARICOIN_VALIDATION_H

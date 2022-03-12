@@ -10,8 +10,8 @@
 //
 // For more information, see BIP 173 and BIP 350.
 
-#ifndef FUJICOIN_BECH32_H
-#define FUJICOIN_BECH32_H
+#ifndef BARICOIN_BECH32_H
+#define BARICOIN_BECH32_H
 
 #include <stdint.h>
 #include <string>
@@ -46,4 +46,4 @@ DecodeResult Decode(const std::string& str);
 
 } // namespace bech32
 
-#endif // FUJICOIN_BECH32_H
+#endif // BARICOIN_BECH32_H

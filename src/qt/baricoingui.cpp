@@ -2,9 +2,9 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include <qt/fujicoingui.h>
+#include <qt/baricoingui.h>
 
-#include <qt/fujicoinunits.h>
+#include <qt/baricoinunits.h>
 #include <qt/clientmodel.h>
 #include <qt/createwalletdialog.h>
 #include <qt/guiconstants.h>
@@ -66,7 +66,7 @@
 #include <QWindow>
 
 
-const std::string FujicoinGUI::DEFAULT_UIPLATFORM =
+const std::string BaricoinGUI::DEFAULT_UIPLATFORM =
 #if defined(Q_OS_MAC)
         "macosx"
 #elif defined(Q_OS_WIN)
@@ -76,7 +76,7 @@ const std::string FujicoinGUI::DEFAULT_UIPLATFORM =
 #endif
         ;
 
-FujicoinGUI::FujicoinGUI(interfaces::Node& node, const PlatformStyle *_platformStyle, const NetworkStyle *networkStyle, QWidget *parent) :
+BaricoinGUI::BaricoinGUI(interfaces::Node& node, const PlatformStyle *_platformStyle, const NetworkStyle *networkStyle, QWidget *parent) :
     QMainWindow(parent),
     m_node(node),
     trayIconMenu{new QMenu()},
@@ -209,8 +209,8 @@ FujicoinGUI::FujicoinGUI(interfaces::Node& node, const PlatformStyle *_platformS
         openOptionsDialogWithTab(OptionsDialog::TAB_NETWORK);
     });
 
-    connect(labelBlocksIcon, &GUIUtil::ClickableLabel::clicked, this, &FujicoinGUI::showModalOverlay);
-    connect(progressBar, &GUIUtil::ClickableProgressBar::clicked, this, &FujicoinGUI::showModalOverlay);
+    connect(labelBlocksIcon, &GUIUtil::ClickableLabel::clicked, this, &BaricoinGUI::showModalOverlay);
+    connect(progressBar, &GUIUtil::ClickableProgressBar::clicked, this, &BaricoinGUI::showModalOverlay);
 
 #ifdef Q_OS_MAC
     m_app_nap_inhibitor = new CAppNapInhibitor;
@@ -219,7 +219,7 @@ FujicoinGUI::FujicoinGUI(interfaces::Node& node, const PlatformStyle *_platformS
     GUIUtil::handleCloseWindowShortcut(this);
 }
 
-FujicoinGUI::~FujicoinGUI()
+BaricoinGUI::~BaricoinGUI()
 {
     // Unsubscribe from notifications from core
     unsubscribeFromCoreSignals();
@@ -237,7 +237,7 @@ FujicoinGUI::~FujicoinGUI()
     delete rpcConsole;
 }
 
-void FujicoinGUI::createActions()
+void BaricoinGUI::createActions()
 {
     QActionGroup *tabGroup = new QActionGroup(this);
     connect(modalOverlay, &ModalOverlay::triggered, tabGroup, &QActionGroup::setEnabled);
@@ -250,7 +250,7 @@ void FujicoinGUI::createActions()
     tabGroup->addAction(overviewAction);
 
     sendCoinsAction = new QAction(platformStyle->SingleColorIcon(":/icons/send"), tr("&Send"), this);
-    sendCoinsAction->setStatusTip(tr("Send coins to a Fujicoin address"));
+    sendCoinsAction->setStatusTip(tr("Send coins to a Baricoin address"));
     sendCoinsAction->setToolTip(sendCoinsAction->statusTip());
     sendCoinsAction->setCheckable(true);
     sendCoinsAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_2));
@@ -261,7 +261,7 @@ void FujicoinGUI::createActions()
     sendCoinsMenuAction->setToolTip(sendCoinsMenuAction->statusTip());
 
     receiveCoinsAction = new QAction(platformStyle->SingleColorIcon(":/icons/receiving_addresses"), tr("&Receive"), this);
-    receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and fujicoin: URIs)"));
+    receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and baricoin: URIs)"));
     receiveCoinsAction->setToolTip(receiveCoinsAction->statusTip());
     receiveCoinsAction->setCheckable(true);
     receiveCoinsAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_3));
@@ -282,17 +282,17 @@ void FujicoinGUI::createActions()
     // These showNormalIfMinimized are needed because Send Coins and Receive Coins
     // can be triggered from the tray menu, and need to show the GUI to be useful.
     connect(overviewAction, &QAction::triggered, [this]{ showNormalIfMinimized(); });
-    connect(overviewAction, &QAction::triggered, this, &FujicoinGUI::gotoOverviewPage);
+    connect(overviewAction, &QAction::triggered, this, &BaricoinGUI::gotoOverviewPage);
     connect(sendCoinsAction, &QAction::triggered, [this]{ showNormalIfMinimized(); });
     connect(sendCoinsAction, &QAction::triggered, [this]{ gotoSendCoinsPage(); });
     connect(sendCoinsMenuAction, &QAction::triggered, [this]{ showNormalIfMinimized(); });
     connect(sendCoinsMenuAction, &QAction::triggered, [this]{ gotoSendCoinsPage(); });
     connect(receiveCoinsAction, &QAction::triggered, [this]{ showNormalIfMinimized(); });
-    connect(receiveCoinsAction, &QAction::triggered, this, &FujicoinGUI::gotoReceiveCoinsPage);
+    connect(receiveCoinsAction, &QAction::triggered, this, &BaricoinGUI::gotoReceiveCoinsPage);
     connect(receiveCoinsMenuAction, &QAction::triggered, [this]{ showNormalIfMinimized(); });
-    connect(receiveCoinsMenuAction, &QAction::triggered, this, &FujicoinGUI::gotoReceiveCoinsPage);
+    connect(receiveCoinsMenuAction, &QAction::triggered, this, &BaricoinGUI::gotoReceiveCoinsPage);
     connect(historyAction, &QAction::triggered, [this]{ showNormalIfMinimized(); });
-    connect(historyAction, &QAction::triggered, this, &FujicoinGUI::gotoHistoryPage);
+    connect(historyAction, &QAction::triggered, this, &BaricoinGUI::gotoHistoryPage);
 #endif // ENABLE_WALLET
 
     quitAction = new QAction(tr("E&xit"), this);
@@ -321,13 +321,13 @@ void FujicoinGUI::createActions()
     changePassphraseAction = new QAction(tr("&Change Passphrase…"), this);
     changePassphraseAction->setStatusTip(tr("Change the passphrase used for wallet encryption"));
     signMessageAction = new QAction(tr("Sign &message…"), this);
-    signMessageAction->setStatusTip(tr("Sign messages with your Fujicoin addresses to prove you own them"));
+    signMessageAction->setStatusTip(tr("Sign messages with your Baricoin addresses to prove you own them"));
     verifyMessageAction = new QAction(tr("&Verify message…"), this);
-    verifyMessageAction->setStatusTip(tr("Verify messages to ensure they were signed with specified Fujicoin addresses"));
+    verifyMessageAction->setStatusTip(tr("Verify messages to ensure they were signed with specified Baricoin addresses"));
     m_load_psbt_action = new QAction(tr("&Load PSBT from file…"), this);
-    m_load_psbt_action->setStatusTip(tr("Load Partially Signed Fujicoin Transaction"));
+    m_load_psbt_action->setStatusTip(tr("Load Partially Signed Baricoin Transaction"));
     m_load_psbt_clipboard_action = new QAction(tr("Load PSBT from clipboard…"), this);
-    m_load_psbt_clipboard_action->setStatusTip(tr("Load Partially Signed Fujicoin Transaction from clipboard"));
+    m_load_psbt_clipboard_action->setStatusTip(tr("Load Partially Signed Baricoin Transaction from clipboard"));
 
     openRPCConsoleAction = new QAction(tr("Node window"), this);
     openRPCConsoleAction->setStatusTip(tr("Open node debugging and diagnostic console"));
@@ -341,7 +341,7 @@ void FujicoinGUI::createActions()
     usedReceivingAddressesAction->setStatusTip(tr("Show the list of used receiving addresses and labels"));
 
     openAction = new QAction(tr("Open &URI…"), this);
-    openAction->setStatusTip(tr("Open a fujicoin: URI"));
+    openAction->setStatusTip(tr("Open a baricoin: URI"));
 
     m_open_wallet_action = new QAction(tr("Open Wallet"), this);
     m_open_wallet_action->setEnabled(false);
@@ -360,7 +360,7 @@ void FujicoinGUI::createActions()
 
     showHelpMessageAction = new QAction(tr("&Command-line options"), this);
     showHelpMessageAction->setMenuRole(QAction::NoRole);
-    showHelpMessageAction->setStatusTip(tr("Show the %1 help message to get a list with possible Fujicoin command-line options").arg(PACKAGE_NAME));
+    showHelpMessageAction->setStatusTip(tr("Show the %1 help message to get a list with possible Baricoin command-line options").arg(PACKAGE_NAME));
 
     m_mask_values_action = new QAction(tr("&Mask values"), this);
     m_mask_values_action->setShortcut(QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_M));
@@ -368,12 +368,12 @@ void FujicoinGUI::createActions()
     m_mask_values_action->setCheckable(true);
 
     connect(quitAction, &QAction::triggered, qApp, QApplication::quit);
-    connect(aboutAction, &QAction::triggered, this, &FujicoinGUI::aboutClicked);
+    connect(aboutAction, &QAction::triggered, this, &BaricoinGUI::aboutClicked);
     connect(aboutQtAction, &QAction::triggered, qApp, QApplication::aboutQt);
-    connect(optionsAction, &QAction::triggered, this, &FujicoinGUI::optionsClicked);
-    connect(toggleHideAction, &QAction::triggered, this, &FujicoinGUI::toggleHidden);
-    connect(showHelpMessageAction, &QAction::triggered, this, &FujicoinGUI::showHelpMessageClicked);
-    connect(openRPCConsoleAction, &QAction::triggered, this, &FujicoinGUI::showDebugWindow);
+    connect(optionsAction, &QAction::triggered, this, &BaricoinGUI::optionsClicked);
+    connect(toggleHideAction, &QAction::triggered, this, &BaricoinGUI::toggleHidden);
+    connect(showHelpMessageAction, &QAction::triggered, this, &BaricoinGUI::showHelpMessageClicked);
+    connect(openRPCConsoleAction, &QAction::triggered, this, &BaricoinGUI::showDebugWindow);
     // prevents an open debug window from becoming stuck/unusable on client shutdown
     connect(quitAction, &QAction::triggered, rpcConsole, &QWidget::hide);
 
@@ -391,7 +391,7 @@ void FujicoinGUI::createActions()
         connect(verifyMessageAction, &QAction::triggered, [this]{ gotoVerifyMessageTab(); });
         connect(usedSendingAddressesAction, &QAction::triggered, walletFrame, &WalletFrame::usedSendingAddresses);
         connect(usedReceivingAddressesAction, &QAction::triggered, walletFrame, &WalletFrame::usedReceivingAddresses);
-        connect(openAction, &QAction::triggered, this, &FujicoinGUI::openClicked);
+        connect(openAction, &QAction::triggered, this, &BaricoinGUI::openClicked);
         connect(m_open_wallet_menu, &QMenu::aboutToShow, [this] {
             m_open_wallet_menu->clear();
             for (const std::pair<const std::string, bool>& i : m_wallet_controller->listWalletDir()) {
@@ -411,7 +411,7 @@ void FujicoinGUI::createActions()
 
                 connect(action, &QAction::triggered, [this, path] {
                     auto activity = new OpenWalletActivity(m_wallet_controller, this);
-                    connect(activity, &OpenWalletActivity::opened, this, &FujicoinGUI::setCurrentWallet);
+                    connect(activity, &OpenWalletActivity::opened, this, &BaricoinGUI::setCurrentWallet);
                     connect(activity, &OpenWalletActivity::finished, activity, &QObject::deleteLater);
                     activity->open(path);
                 });
@@ -426,22 +426,22 @@ void FujicoinGUI::createActions()
         });
         connect(m_create_wallet_action, &QAction::triggered, [this] {
             auto activity = new CreateWalletActivity(m_wallet_controller, this);
-            connect(activity, &CreateWalletActivity::created, this, &FujicoinGUI::setCurrentWallet);
+            connect(activity, &CreateWalletActivity::created, this, &BaricoinGUI::setCurrentWallet);
             connect(activity, &CreateWalletActivity::finished, activity, &QObject::deleteLater);
             activity->create();
         });
         connect(m_close_all_wallets_action, &QAction::triggered, [this] {
             m_wallet_controller->closeAllWallets(this);
         });
-        connect(m_mask_values_action, &QAction::toggled, this, &FujicoinGUI::setPrivacy);
+        connect(m_mask_values_action, &QAction::toggled, this, &BaricoinGUI::setPrivacy);
     }
 #endif // ENABLE_WALLET
 
-    connect(new QShortcut(QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_C), this), &QShortcut::activated, this, &FujicoinGUI::showDebugWindowActivateConsole);
-    connect(new QShortcut(QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_D), this), &QShortcut::activated, this, &FujicoinGUI::showDebugWindow);
+    connect(new QShortcut(QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_C), this), &QShortcut::activated, this, &BaricoinGUI::showDebugWindowActivateConsole);
+    connect(new QShortcut(QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_D), this), &QShortcut::activated, this, &BaricoinGUI::showDebugWindow);
 }
 
-void FujicoinGUI::createMenuBar()
+void BaricoinGUI::createMenuBar()
 {
 #ifdef Q_OS_MAC
     // Create a decoupled menu bar on Mac which stays even if the window is closed
@@ -538,7 +538,7 @@ void FujicoinGUI::createMenuBar()
     help->addAction(aboutQtAction);
 }
 
-void FujicoinGUI::createToolBars()
+void BaricoinGUI::createToolBars()
 {
     if(walletFrame)
     {
@@ -559,7 +559,7 @@ void FujicoinGUI::createToolBars()
 
         m_wallet_selector = new QComboBox();
         m_wallet_selector->setSizeAdjustPolicy(QComboBox::AdjustToContents);
-        connect(m_wallet_selector, qOverload<int>(&QComboBox::currentIndexChanged), this, &FujicoinGUI::setCurrentWalletBySelectorIndex);
+        connect(m_wallet_selector, qOverload<int>(&QComboBox::currentIndexChanged), this, &BaricoinGUI::setCurrentWalletBySelectorIndex);
 
         m_wallet_selector_label = new QLabel();
         m_wallet_selector_label->setText(tr("Wallet:") + " ");
@@ -574,7 +574,7 @@ void FujicoinGUI::createToolBars()
     }
 }
 
-void FujicoinGUI::setClientModel(ClientModel *_clientModel, interfaces::BlockAndHeaderTipInfo* tip_info)
+void BaricoinGUI::setClientModel(ClientModel *_clientModel, interfaces::BlockAndHeaderTipInfo* tip_info)
 {
     this->clientModel = _clientModel;
     if(_clientModel)
@@ -588,12 +588,12 @@ void FujicoinGUI::setClientModel(ClientModel *_clientModel, interfaces::BlockAnd
         connect(connectionsControl, &GUIUtil::ClickableLabel::clicked, [this] {
             GUIUtil::PopupMenu(m_network_context_menu, QCursor::pos());
         });
-        connect(_clientModel, &ClientModel::numConnectionsChanged, this, &FujicoinGUI::setNumConnections);
-        connect(_clientModel, &ClientModel::networkActiveChanged, this, &FujicoinGUI::setNetworkActive);
+        connect(_clientModel, &ClientModel::numConnectionsChanged, this, &BaricoinGUI::setNumConnections);
+        connect(_clientModel, &ClientModel::networkActiveChanged, this, &BaricoinGUI::setNetworkActive);
 
         modalOverlay->setKnownBestHeight(tip_info->header_height, QDateTime::fromTime_t(tip_info->header_time));
         setNumBlocks(tip_info->block_height, QDateTime::fromTime_t(tip_info->block_time), tip_info->verification_progress, false, SynchronizationState::INIT_DOWNLOAD);
-        connect(_clientModel, &ClientModel::numBlocksChanged, this, &FujicoinGUI::setNumBlocks);
+        connect(_clientModel, &ClientModel::numBlocksChanged, this, &BaricoinGUI::setNumBlocks);
 
         // Receive and report messages from client model
         connect(_clientModel, &ClientModel::message, [this](const QString &title, const QString &message, unsigned int style){
@@ -601,7 +601,7 @@ void FujicoinGUI::setClientModel(ClientModel *_clientModel, interfaces::BlockAnd
         });
 
         // Show progress dialog
-        connect(_clientModel, &ClientModel::showProgress, this, &FujicoinGUI::showProgress);
+        connect(_clientModel, &ClientModel::showProgress, this, &BaricoinGUI::showProgress);
 
         rpcConsole->setClientModel(_clientModel, tip_info->block_height, tip_info->block_time, tip_info->verification_progress);
 
@@ -644,7 +644,7 @@ void FujicoinGUI::setClientModel(ClientModel *_clientModel, interfaces::BlockAnd
 }
 
 #ifdef ENABLE_WALLET
-void FujicoinGUI::setWalletController(WalletController* wallet_controller)
+void BaricoinGUI::setWalletController(WalletController* wallet_controller)
 {
     assert(!m_wallet_controller);
     assert(wallet_controller);
@@ -655,20 +655,20 @@ void FujicoinGUI::setWalletController(WalletController* wallet_controller)
     m_open_wallet_action->setEnabled(true);
     m_open_wallet_action->setMenu(m_open_wallet_menu);
 
-    GUIUtil::ExceptionSafeConnect(wallet_controller, &WalletController::walletAdded, this, &FujicoinGUI::addWallet);
-    connect(wallet_controller, &WalletController::walletRemoved, this, &FujicoinGUI::removeWallet);
+    GUIUtil::ExceptionSafeConnect(wallet_controller, &WalletController::walletAdded, this, &BaricoinGUI::addWallet);
+    connect(wallet_controller, &WalletController::walletRemoved, this, &BaricoinGUI::removeWallet);
 
     for (WalletModel* wallet_model : m_wallet_controller->getOpenWallets()) {
         addWallet(wallet_model);
     }
 }
 
-WalletController* FujicoinGUI::getWalletController()
+WalletController* BaricoinGUI::getWalletController()
 {
     return m_wallet_controller;
 }
 
-void FujicoinGUI::addWallet(WalletModel* walletModel)
+void BaricoinGUI::addWallet(WalletModel* walletModel)
 {
     if (!walletFrame) return;
 
@@ -683,22 +683,22 @@ void FujicoinGUI::addWallet(WalletModel* walletModel)
         m_wallet_selector_action->setVisible(true);
     }
 
-    connect(wallet_view, &WalletView::outOfSyncWarningClicked, this, &FujicoinGUI::showModalOverlay);
-    connect(wallet_view, &WalletView::transactionClicked, this, &FujicoinGUI::gotoHistoryPage);
-    connect(wallet_view, &WalletView::coinsSent, this, &FujicoinGUI::gotoHistoryPage);
+    connect(wallet_view, &WalletView::outOfSyncWarningClicked, this, &BaricoinGUI::showModalOverlay);
+    connect(wallet_view, &WalletView::transactionClicked, this, &BaricoinGUI::gotoHistoryPage);
+    connect(wallet_view, &WalletView::coinsSent, this, &BaricoinGUI::gotoHistoryPage);
     connect(wallet_view, &WalletView::message, [this](const QString& title, const QString& message, unsigned int style) {
         this->message(title, message, style);
     });
-    connect(wallet_view, &WalletView::encryptionStatusChanged, this, &FujicoinGUI::updateWalletStatus);
-    connect(wallet_view, &WalletView::incomingTransaction, this, &FujicoinGUI::incomingTransaction);
-    connect(wallet_view, &WalletView::hdEnabledStatusChanged, this, &FujicoinGUI::updateWalletStatus);
-    connect(this, &FujicoinGUI::setPrivacy, wallet_view, &WalletView::setPrivacy);
+    connect(wallet_view, &WalletView::encryptionStatusChanged, this, &BaricoinGUI::updateWalletStatus);
+    connect(wallet_view, &WalletView::incomingTransaction, this, &BaricoinGUI::incomingTransaction);
+    connect(wallet_view, &WalletView::hdEnabledStatusChanged, this, &BaricoinGUI::updateWalletStatus);
+    connect(this, &BaricoinGUI::setPrivacy, wallet_view, &WalletView::setPrivacy);
     wallet_view->setPrivacy(isPrivacyModeActivated());
     const QString display_name = walletModel->getDisplayName();
     m_wallet_selector->addItem(display_name, QVariant::fromValue(walletModel));
 }
 
-void FujicoinGUI::removeWallet(WalletModel* walletModel)
+void BaricoinGUI::removeWallet(WalletModel* walletModel)
 {
     if (!walletFrame) return;
 
@@ -719,7 +719,7 @@ void FujicoinGUI::removeWallet(WalletModel* walletModel)
     updateWindowTitle();
 }
 
-void FujicoinGUI::setCurrentWallet(WalletModel* wallet_model)
+void BaricoinGUI::setCurrentWallet(WalletModel* wallet_model)
 {
     if (!walletFrame) return;
     walletFrame->setCurrentWallet(wallet_model);
@@ -732,13 +732,13 @@ void FujicoinGUI::setCurrentWallet(WalletModel* wallet_model)
     updateWindowTitle();
 }
 
-void FujicoinGUI::setCurrentWalletBySelectorIndex(int index)
+void BaricoinGUI::setCurrentWalletBySelectorIndex(int index)
 {
     WalletModel* wallet_model = m_wallet_selector->itemData(index).value<WalletModel*>();
     if (wallet_model) setCurrentWallet(wallet_model);
 }
 
-void FujicoinGUI::removeAllWallets()
+void BaricoinGUI::removeAllWallets()
 {
     if(!walletFrame)
         return;
@@ -747,7 +747,7 @@ void FujicoinGUI::removeAllWallets()
 }
 #endif // ENABLE_WALLET
 
-void FujicoinGUI::setWalletActionsEnabled(bool enabled)
+void BaricoinGUI::setWalletActionsEnabled(bool enabled)
 {
     overviewAction->setEnabled(enabled);
     sendCoinsAction->setEnabled(enabled);
@@ -767,7 +767,7 @@ void FujicoinGUI::setWalletActionsEnabled(bool enabled)
     m_close_all_wallets_action->setEnabled(enabled);
 }
 
-void FujicoinGUI::createTrayIcon()
+void BaricoinGUI::createTrayIcon()
 {
     assert(QSystemTrayIcon::isSystemTrayAvailable());
 
@@ -780,7 +780,7 @@ void FujicoinGUI::createTrayIcon()
 #endif
 }
 
-void FujicoinGUI::createTrayIconMenu()
+void BaricoinGUI::createTrayIconMenu()
 {
 #ifndef Q_OS_MAC
     // return if trayIcon is unset (only on non-macOSes)
@@ -788,11 +788,11 @@ void FujicoinGUI::createTrayIconMenu()
         return;
 
     trayIcon->setContextMenu(trayIconMenu.get());
-    connect(trayIcon, &QSystemTrayIcon::activated, this, &FujicoinGUI::trayIconActivated);
+    connect(trayIcon, &QSystemTrayIcon::activated, this, &BaricoinGUI::trayIconActivated);
 #else
     // Note: On macOS, the Dock icon is used to provide the tray's functionality.
     MacDockIconHandler *dockIconHandler = MacDockIconHandler::instance();
-    connect(dockIconHandler, &MacDockIconHandler::dockIconClicked, this, &FujicoinGUI::macosDockIconActivated);
+    connect(dockIconHandler, &MacDockIconHandler::dockIconClicked, this, &BaricoinGUI::macosDockIconActivated);
     trayIconMenu->setAsDockMenu();
 #endif
 
@@ -819,7 +819,7 @@ void FujicoinGUI::createTrayIconMenu()
 }
 
 #ifndef Q_OS_MAC
-void FujicoinGUI::trayIconActivated(QSystemTrayIcon::ActivationReason reason)
+void BaricoinGUI::trayIconActivated(QSystemTrayIcon::ActivationReason reason)
 {
     if(reason == QSystemTrayIcon::Trigger)
     {
@@ -828,19 +828,19 @@ void FujicoinGUI::trayIconActivated(QSystemTrayIcon::ActivationReason reason)
     }
 }
 #else
-void FujicoinGUI::macosDockIconActivated()
+void BaricoinGUI::macosDockIconActivated()
 {
     show();
     activateWindow();
 }
 #endif
 
-void FujicoinGUI::optionsClicked()
+void BaricoinGUI::optionsClicked()
 {
     openOptionsDialogWithTab(OptionsDialog::TAB_MAIN);
 }
 
-void FujicoinGUI::aboutClicked()
+void BaricoinGUI::aboutClicked()
 {
     if(!clientModel)
         return;
@@ -849,25 +849,25 @@ void FujicoinGUI::aboutClicked()
     dlg.exec();
 }
 
-void FujicoinGUI::showDebugWindow()
+void BaricoinGUI::showDebugWindow()
 {
     GUIUtil::bringToFront(rpcConsole);
     Q_EMIT consoleShown(rpcConsole);
 }
 
-void FujicoinGUI::showDebugWindowActivateConsole()
+void BaricoinGUI::showDebugWindowActivateConsole()
 {
     rpcConsole->setTabFocus(RPCConsole::TabTypes::CONSOLE);
     showDebugWindow();
 }
 
-void FujicoinGUI::showHelpMessageClicked()
+void BaricoinGUI::showHelpMessageClicked()
 {
     GUIUtil::bringToFront(helpMessageDialog);
 }
 
 #ifdef ENABLE_WALLET
-void FujicoinGUI::openClicked()
+void BaricoinGUI::openClicked()
 {
     OpenURIDialog dlg(this);
     if(dlg.exec())
@@ -876,46 +876,46 @@ void FujicoinGUI::openClicked()
     }
 }
 
-void FujicoinGUI::gotoOverviewPage()
+void BaricoinGUI::gotoOverviewPage()
 {
     overviewAction->setChecked(true);
     if (walletFrame) walletFrame->gotoOverviewPage();
 }
 
-void FujicoinGUI::gotoHistoryPage()
+void BaricoinGUI::gotoHistoryPage()
 {
     historyAction->setChecked(true);
     if (walletFrame) walletFrame->gotoHistoryPage();
 }
 
-void FujicoinGUI::gotoReceiveCoinsPage()
+void BaricoinGUI::gotoReceiveCoinsPage()
 {
     receiveCoinsAction->setChecked(true);
     if (walletFrame) walletFrame->gotoReceiveCoinsPage();
 }
 
-void FujicoinGUI::gotoSendCoinsPage(QString addr)
+void BaricoinGUI::gotoSendCoinsPage(QString addr)
 {
     sendCoinsAction->setChecked(true);
     if (walletFrame) walletFrame->gotoSendCoinsPage(addr);
 }
 
-void FujicoinGUI::gotoSignMessageTab(QString addr)
+void BaricoinGUI::gotoSignMessageTab(QString addr)
 {
     if (walletFrame) walletFrame->gotoSignMessageTab(addr);
 }
 
-void FujicoinGUI::gotoVerifyMessageTab(QString addr)
+void BaricoinGUI::gotoVerifyMessageTab(QString addr)
 {
     if (walletFrame) walletFrame->gotoVerifyMessageTab(addr);
 }
-void FujicoinGUI::gotoLoadPSBT(bool from_clipboard)
+void BaricoinGUI::gotoLoadPSBT(bool from_clipboard)
 {
     if (walletFrame) walletFrame->gotoLoadPSBT(from_clipboard);
 }
 #endif // ENABLE_WALLET
 
-void FujicoinGUI::updateNetworkState()
+void BaricoinGUI::updateNetworkState()
 {
     int count = clientModel->getNumConnections();
     QString icon;
@@ -932,7 +932,7 @@ void FujicoinGUI::updateNetworkState()
 
     if (m_node.getNetworkActive()) {
         //: A substring of the tooltip.
-        tooltip = tr("%n active connection(s) to Fujicoin network.", "", count);
+        tooltip = tr("%n active connection(s) to Baricoin network.", "", count);
     } else {
         //: A substring of the tooltip.
         tooltip = tr("Network activity disabled.");
@@ -948,12 +948,12 @@ void FujicoinGUI::updateNetworkState()
     connectionsControl->setThemedPixmap(icon, STATUSBAR_ICONSIZE, STATUSBAR_ICONSIZE);
 }
 
-void FujicoinGUI::setNumConnections(int count)
+void BaricoinGUI::setNumConnections(int count)
 {
     updateNetworkState();
 }
 
-void FujicoinGUI::setNetworkActive(bool network_active)
+void BaricoinGUI::setNetworkActive(bool network_active)
 {
     updateNetworkState();
     m_network_context_menu->clear();
@@ -973,7 +973,7 @@ void FujicoinGUI::setNetworkActive(bool network_active)
         [this, new_state = !network_active] { m_node.setNetworkActive(new_state); });
 }
 
-void FujicoinGUI::updateHeadersSyncProgressLabel()
+void BaricoinGUI::updateHeadersSyncProgressLabel()
 {
     int64_t headersTipTime = clientModel->getHeaderTipTime();
     int headersTipHeight = clientModel->getHeaderTipHeight();
@@ -982,7 +982,7 @@ void FujicoinGUI::updateHeadersSyncProgressLabel()
         progressBarLabel->setText(tr("Syncing Headers (%1%)…").arg(QString::number(100.0 / (headersTipHeight+estHeadersLeft)*headersTipHeight, 'f', 1)));
 }
 
-void FujicoinGUI::openOptionsDialogWithTab(OptionsDialog::Tab tab)
+void BaricoinGUI::openOptionsDialogWithTab(OptionsDialog::Tab tab)
 {
     if (!clientModel || !clientModel->getOptionsModel())
         return;
@@ -993,7 +993,7 @@ void FujicoinGUI::openOptionsDialogWithTab(OptionsDialog::Tab tab)
     dlg.exec();
 }
 
-void FujicoinGUI::setNumBlocks(int count, const QDateTime& blockDate, double nVerificationProgress, bool header, SynchronizationState sync_state)
+void BaricoinGUI::setNumBlocks(int count, const QDateTime& blockDate, double nVerificationProgress, bool header, SynchronizationState sync_state)
 {
 // Disabling macOS App Nap on initial sync, disk and reindex operations.
 #ifdef Q_OS_MAC
@@ -1111,7 +1111,7 @@ void FujicoinGUI::setNumBlocks(int count, const QDateTime& blockDate, double nVe
     progressBar->setToolTip(tooltip);
 }
 
-void FujicoinGUI::message(const QString& title, QString message, unsigned int style, bool* ret, const QString& detailed_message)
+void BaricoinGUI::message(const QString& title, QString message, unsigned int style, bool* ret, const QString& detailed_message)
 {
     // Default title. On macOS, the window title is ignored (as required by the macOS Guidelines).
     QString strTitle{PACKAGE_NAME};
@@ -1171,7 +1171,7 @@ void FujicoinGUI::message(const QString& title, QString message, unsigned int st
     }
 }
 
-void FujicoinGUI::changeEvent(QEvent *e)
+void BaricoinGUI::changeEvent(QEvent *e)
 {
     if (e->type() == QEvent::PaletteChange) {
         overviewAction->setIcon(platformStyle->SingleColorIcon(QStringLiteral(":/icons/overview")));
@@ -1190,12 +1190,12 @@ void FujicoinGUI::changeEvent(QEvent *e)
             QWindowStateChangeEvent *wsevt = static_cast<QWindowStateChangeEvent*>(e);
             if(!(wsevt->oldState() & Qt::WindowMinimized) && isMinimized())
             {
-                QTimer::singleShot(0, this, &FujicoinGUI::hide);
+                QTimer::singleShot(0, this, &BaricoinGUI::hide);
                 e->ignore();
             }
             else if((wsevt->oldState() & Qt::WindowMinimized) && !isMinimized())
             {
-                QTimer::singleShot(0, this, &FujicoinGUI::show);
+                QTimer::singleShot(0, this, &BaricoinGUI::show);
                 e->ignore();
             }
         }
@@ -1203,7 +1203,7 @@ void FujicoinGUI::changeEvent(QEvent *e)
 #endif
 }
 
-void FujicoinGUI::closeEvent(QCloseEvent *event)
+void BaricoinGUI::closeEvent(QCloseEvent *event)
 {
 #ifndef Q_OS_MAC // Ignored on Mac
     if(clientModel && clientModel->getOptionsModel())
@@ -1226,7 +1226,7 @@ void FujicoinGUI::closeEvent(QCloseEvent *event)
 #endif
 }
 
-void FujicoinGUI::showEvent(QShowEvent *event)
+void BaricoinGUI::showEvent(QShowEvent *event)
 {
     // enable the debug window when the main window shows up
     openRPCConsoleAction->setEnabled(true);
@@ -1235,11 +1235,11 @@ void FujicoinGUI::showEvent(QShowEvent *event)
 }
 
 #ifdef ENABLE_WALLET
-void FujicoinGUI::incomingTransaction(const QString& date, int unit, const CAmount& amount, const QString& type, const QString& address, const QString& label, const QString& walletName)
+void BaricoinGUI::incomingTransaction(const QString& date, int unit, const CAmount& amount, const QString& type, const QString& address, const QString& label, const QString& walletName)
 {
     // On new transaction, make an info balloon
     QString msg = tr("Date: %1\n").arg(date) +
-                  tr("Amount: %1\n").arg(FujicoinUnits::formatWithUnit(unit, amount, true));
+                  tr("Amount: %1\n").arg(BaricoinUnits::formatWithUnit(unit, amount, true));
     if (m_node.walletClient().getWallets().size() > 1 && !walletName.isEmpty()) {
         msg += tr("Wallet: %1\n").arg(walletName);
     }
@@ -1253,14 +1253,14 @@ void FujicoinGUI::incomingTransaction(const QString& date, int unit, const CAmou
 }
 #endif // ENABLE_WALLET
 
-void FujicoinGUI::dragEnterEvent(QDragEnterEvent *event)
+void BaricoinGUI::dragEnterEvent(QDragEnterEvent *event)
 {
     // Accept only URIs
     if(event->mimeData()->hasUrls())
         event->acceptProposedAction();
 }
 
-void FujicoinGUI::dropEvent(QDropEvent *event)
+void BaricoinGUI::dropEvent(QDropEvent *event)
 {
     if(event->mimeData()->hasUrls())
     {
@@ -1272,7 +1272,7 @@ void FujicoinGUI::dropEvent(QDropEvent *event)
     event->acceptProposedAction();
 }
 
-bool FujicoinGUI::eventFilter(QObject *object, QEvent *event)
+bool BaricoinGUI::eventFilter(QObject *object, QEvent *event)
 {
     // Catch status tip events
     if (event->type() == QEvent::StatusTip)
@@ -1285,7 +1285,7 @@ bool FujicoinGUI::eventFilter(QObject *object, QEvent *event)
 }
 
 #ifdef ENABLE_WALLET
-bool FujicoinGUI::handlePaymentRequest(const SendCoinsRecipient& recipient)
+bool BaricoinGUI::handlePaymentRequest(const SendCoinsRecipient& recipient)
 {
     // URI has to be valid
     if (walletFrame && walletFrame->handlePaymentRequest(recipient))
@@ -1297,7 +1297,7 @@ bool FujicoinGUI::handlePaymentRequest(const SendCoinsRecipient& recipient)
     return false;
 }
 
-void FujicoinGUI::setHDStatus(bool privkeyDisabled, int hdEnabled)
+void BaricoinGUI::setHDStatus(bool privkeyDisabled, int hdEnabled)
 {
     labelWalletHDStatusIcon->setThemedPixmap(privkeyDisabled ? QStringLiteral(":/icons/eye") : hdEnabled ? QStringLiteral(":/icons/hd_enabled") : QStringLiteral(":/icons/hd_disabled"), STATUSBAR_ICONSIZE, STATUSBAR_ICONSIZE);
     labelWalletHDStatusIcon->setToolTip(privkeyDisabled ? tr("Private key <b>disabled</b>") : hdEnabled ? tr("HD key generation is <b>enabled</b>") : tr("HD key generation is <b>disabled</b>"));
@@ -1306,7 +1306,7 @@ void FujicoinGUI::setHDStatus(bool privkeyDisabled, int hdEnabled)
     labelWalletHDStatusIcon->setEnabled(hdEnabled);
 }
 
-void FujicoinGUI::setEncryptionStatus(int status)
+void BaricoinGUI::setEncryptionStatus(int status)
 {
     switch(status)
     {
@@ -1335,7 +1335,7 @@ void FujicoinGUI::setEncryptionStatus(int status)
     }
 }
 
-void FujicoinGUI::updateWalletStatus()
+void BaricoinGUI::updateWalletStatus()
 {
     if (!walletFrame) {
         return;
@@ -1350,7 +1350,7 @@ void FujicoinGUI::updateWalletStatus()
 }
 #endif // ENABLE_WALLET
 
-void FujicoinGUI::updateProxyIcon()
+void BaricoinGUI::updateProxyIcon()
 {
     std::string ip_port;
     bool proxy_enabled = clientModel->getProxyInfo(ip_port);
@@ -1368,7 +1368,7 @@ void FujicoinGUI::updateProxyIcon()
     }
 }
 
-void FujicoinGUI::updateWindowTitle()
+void BaricoinGUI::updateWindowTitle()
 {
     QString window_title = PACKAGE_NAME;
 #ifdef ENABLE_WALLET
@@ -1385,7 +1385,7 @@ void FujicoinGUI::updateWindowTitle()
     setWindowTitle(window_title);
 }
 
-void FujicoinGUI::showNormalIfMinimized(bool fToggleHidden)
+void BaricoinGUI::showNormalIfMinimized(bool fToggleHidden)
 {
     if(!clientModel)
         return;
@@ -1397,12 +1397,12 @@ void FujicoinGUI::showNormalIfMinimized(bool fToggleHidden)
     }
 }
 
-void FujicoinGUI::toggleHidden()
+void BaricoinGUI::toggleHidden()
 {
     showNormalIfMinimized(true);
 }
 
-void FujicoinGUI::detectShutdown()
+void BaricoinGUI::detectShutdown()
 {
     if (m_node.shutdownRequested())
     {
@@ -1412,7 +1412,7 @@ void FujicoinGUI::detectShutdown()
     }
 }
 
-void FujicoinGUI::showProgress(const QString &title, int nProgress)
+void BaricoinGUI::showProgress(const QString &title, int nProgress)
 {
     if (nProgress == 0) {
         progressDialog = new QProgressDialog(title, QString(), 0, 100);
@@ -1431,13 +1431,13 @@ void FujicoinGUI::showProgress(const QString &title, int nProgress)
     }
 }
 
-void FujicoinGUI::showModalOverlay()
+void BaricoinGUI::showModalOverlay()
 {
     if (modalOverlay && (progressBar->isVisible() || modalOverlay->isLayerVisible()))
         modalOverlay->toggleVisibility();
 }
 
-static bool ThreadSafeMessageBox(FujicoinGUI* gui, const bilingual_str& message, const std::string& caption, unsigned int style)
+static bool ThreadSafeMessageBox(BaricoinGUI* gui, const bilingual_str& message, const std::string& caption, unsigned int style)
 {
     bool modal = (style & CClientUIInterface::MODAL);
     // The SECURE flag has no effect in the Qt GUI.
@@ -1447,7 +1447,7 @@ static bool ThreadSafeMessageBox(FujicoinGUI* gui, const bilingual_str& message,
 
     QString detailed_message; // This is original message, in English, for googling and referencing.
     if (message.original != message.translated) {
-        detailed_message = FujicoinGUI::tr("Original message:") + "\n" + QString::fromStdString(message.original);
+        detailed_message = BaricoinGUI::tr("Original message:") + "\n" + QString::fromStdString(message.original);
     }
 
     // In case of modal message, use blocking connection to wait for user to click a button
@@ -1462,21 +1462,21 @@ static bool ThreadSafeMessageBox(FujicoinGUI* gui, const bilingual_str& message,
     return ret;
 }
 
-void FujicoinGUI::subscribeToCoreSignals()
+void BaricoinGUI::subscribeToCoreSignals()
 {
     // Connect signals to client
     m_handler_message_box = m_node.handleMessageBox(std::bind(ThreadSafeMessageBox, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3));
     m_handler_question = m_node.handleQuestion(std::bind(ThreadSafeMessageBox, this, std::placeholders::_1, std::placeholders::_3, std::placeholders::_4));
 }
 
-void FujicoinGUI::unsubscribeFromCoreSignals()
+void BaricoinGUI::unsubscribeFromCoreSignals()
 {
     // Disconnect signals from client
     m_handler_message_box->disconnect();
     m_handler_question->disconnect();
 }
 
-bool FujicoinGUI::isPrivacyModeActivated() const
+bool BaricoinGUI::isPrivacyModeActivated() const
 {
     assert(m_mask_values_action);
     return m_mask_values_action->isChecked();
@@ -1489,12 +1489,12 @@ UnitDisplayStatusBarControl::UnitDisplayStatusBarControl(const PlatformStyle *pl
 {
     createContextMenu();
     setToolTip(tr("Unit to show amounts in. Click to select another unit."));
-    QList<FujicoinUnits::Unit> units = FujicoinUnits::availableUnits();
+    QList<BaricoinUnits::Unit> units = BaricoinUnits::availableUnits();
     int max_width = 0;
     const QFontMetrics fm(font());
-    for (const FujicoinUnits::Unit unit : units)
+    for (const BaricoinUnits::Unit unit : units)
     {
-        max_width = qMax(max_width, GUIUtil::TextWidth(fm, FujicoinUnits::longName(unit)));
+        max_width = qMax(max_width, GUIUtil::TextWidth(fm, BaricoinUnits::longName(unit)));
     }
     setMinimumSize(max_width, 0);
     setAlignment(Qt::AlignRight | Qt::AlignVCenter);
@@ -1523,8 +1523,8 @@ void UnitDisplayStatusBarControl::changeEvent(QEvent* e)
 void UnitDisplayStatusBarControl::createContextMenu()
 {
     menu = new QMenu(this);
-    for (const FujicoinUnits::Unit u : FujicoinUnits::availableUnits()) {
-        menu->addAction(FujicoinUnits::longName(u))->setData(QVariant(u));
+    for (const BaricoinUnits::Unit u : BaricoinUnits::availableUnits()) {
+        menu->addAction(BaricoinUnits::longName(u))->setData(QVariant(u));
     }
     connect(menu, &QMenu::triggered, this, &UnitDisplayStatusBarControl::onMenuSelection);
 }
@@ -1547,7 +1547,7 @@ void UnitDisplayStatusBarControl::setOptionsModel(OptionsModel *_optionsModel)
 /** When Display Units are changed on OptionsModel it will refresh the display text of the control on the status bar */
 void UnitDisplayStatusBarControl::updateDisplayUnit(int newUnits)
 {
-    setText(FujicoinUnits::longName(newUnits));
+    setText(BaricoinUnits::longName(newUnits));
 }
 
 /** Shows context menu with Display Unit options by the mouse coordinates */

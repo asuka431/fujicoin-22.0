@@ -1,29 +1,29 @@
 #!/usr/bin/env bash
-# Copyright (c) 2018-2020 The Fujicoin Core developers
+# Copyright (c) 2018-2020 The Baricoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 export LC_ALL=C
 
-# Be aware that fujicoind and fujicoin-qt differ in terms of localization: Qt
+# Be aware that baricoind and baricoin-qt differ in terms of localization: Qt
 # opts in to POSIX localization by running setlocale(LC_ALL, "") on startup,
-# whereas no such call is made in fujicoind.
+# whereas no such call is made in baricoind.
 #
 # Qt runs setlocale(LC_ALL, "") on initialization. This installs the locale
 # specified by the user's LC_ALL (or LC_*) environment variable as the new
 # C locale.
 #
-# In contrast, fujicoind does not opt in to localization -- no call to
+# In contrast, baricoind does not opt in to localization -- no call to
 # setlocale(LC_ALL, "") is made and the environment variables LC_* are
 # thus ignored.
 #
-# This results in situations where fujicoind is guaranteed to be running
-# with the classic locale ("C") whereas the locale of fujicoin-qt will vary
+# This results in situations where baricoind is guaranteed to be running
+# with the classic locale ("C") whereas the locale of baricoin-qt will vary
 # depending on the user's environment variables.
 #
 # An example: Assuming the environment variable LC_ALL=de_DE then the
-# call std::to_string(1.23) will return "1.230000" in fujicoind but
-# "1,230000" in fujicoin-qt.
+# call std::to_string(1.23) will return "1.230000" in baricoind but
+# "1,230000" in baricoin-qt.
 #
 # From the Qt documentation:
 # "On Unix/Linux Qt is configured to use the system locale settings by default.
@@ -38,8 +38,8 @@ export LC_ALL=C
 # https://stackoverflow.com/a/34878283 for more details.
 
 KNOWN_VIOLATIONS=(
-    "src/fujicoin-tx.cpp.*stoul"
-    "src/fujicoin-tx.cpp.*trim_right"
+    "src/baricoin-tx.cpp.*stoul"
+    "src/baricoin-tx.cpp.*trim_right"
     "src/dbwrapper.cpp.*stoul"
     "src/dbwrapper.cpp:.*vsnprintf"
     "src/httprpc.cpp.*trim"

@@ -19,8 +19,8 @@ Release Process
 
 * On both the master branch and the new release branch:
   - update `CLIENT_VERSION_MAJOR` in [`configure.ac`](../configure.ac)
-  - update `CLIENT_VERSION_MAJOR`, `PACKAGE_VERSION`, and `PACKAGE_STRING` in [`build_msvc/fujicoin_config.h`](/build_msvc/fujicoin_config.h)
-* On the new release branch in [`configure.ac`](../configure.ac) and [`build_msvc/fujicoin_config.h`](/build_msvc/fujicoin_config.h) (see [this commit](https://github.com/bitcoin/bitcoin/commit/742f7dd)):
+  - update `CLIENT_VERSION_MAJOR`, `PACKAGE_VERSION`, and `PACKAGE_STRING` in [`build_msvc/baricoin_config.h`](/build_msvc/baricoin_config.h)
+* On the new release branch in [`configure.ac`](../configure.ac) and [`build_msvc/baricoin_config.h`](/build_msvc/baricoin_config.h) (see [this commit](https://github.com/bitcoin/bitcoin/commit/742f7dd)):
   - set `CLIENT_VERSION_MINOR` to `0`
   - set `CLIENT_VERSION_BUILD` to `0`
   - set `CLIENT_VERSION_IS_RELEASE` to `true`
@@ -58,9 +58,9 @@ Release Process
 
 #### Tagging a release (candidate)
 
-To tag the version (or release candidate) in git, use the `make-tag.py` script from [fujicoin-maintainer-tools](https://github.com/bitcoin-core/bitcoin-maintainer-tools). From the root of the repository run:
+To tag the version (or release candidate) in git, use the `make-tag.py` script from [baricoin-maintainer-tools](https://github.com/bitcoin-core/bitcoin-maintainer-tools). From the root of the repository run:
 
-    ../fujicoin-maintainer-tools/make-tag.py v(new version, e.g. 0.20.0)
+    ../baricoin-maintainer-tools/make-tag.py v(new version, e.g. 0.20.0)
 
 This will perform a few last-minute consistency checks in the build system files, and if they pass, create a signed tag.
 
@@ -76,7 +76,7 @@ Check out the source code in the following directory hierarchy.
     cd /path/to/your/toplevel/build
     git clone https://github.com/bitcoin-core/guix.sigs.git
     git clone https://github.com/bitcoin-core/bitcoin-detached-sigs.git
-    git clone https://github.com/fujicoin/fujicoin.git
+    git clone https://github.com/baricoin/baricoin.git
 
 ### Write the release notes
 
@@ -92,10 +92,10 @@ Generate list of authors:
 
 ### Setup and perform Guix builds
 
-Checkout the Fujicoin Core version you'd like to build:
+Checkout the Baricoin Core version you'd like to build:
 
 ```sh
-pushd ./fujicoin
+pushd ./baricoin
 SIGNER='(your builder key, ie bluematt, sipa, etc)'
 VERSION='(new version without v-prefix, e.g. 0.20.0)'
 git fetch "v${VERSION}"
@@ -124,7 +124,7 @@ Follow the relevant Guix README.md sections:
 
 ### Verify other builders' signatures to your own. (Optional)
 
-Add other builders keys to your gpg keyring, and/or refresh keys: See `../fujicoin/contrib/builder-keys/README.md`.
+Add other builders keys to your gpg keyring, and/or refresh keys: See `../baricoin/contrib/builder-keys/README.md`.
 
 Follow the relevant Guix README.md sections:
 - [Verifying build output attestations](/contrib/guix/README.md#verifying-build-output-attestations)
@@ -147,26 +147,26 @@ Codesigner only: Create Windows/macOS detached signatures:
 
 Codesigner only: Sign the macOS binary:
 
-    transfer fujicoin-osx-unsigned.tar.gz to macOS for signing
-    tar xf fujicoin-osx-unsigned.tar.gz
+    transfer baricoin-osx-unsigned.tar.gz to macOS for signing
+    tar xf baricoin-osx-unsigned.tar.gz
     ./detached-sig-create.sh -s "Key ID"
     Enter the keychain password and authorize the signature
     Move signature-osx.tar.gz back to the guix-build host
 
 Codesigner only: Sign the windows binaries:
 
-    tar xf fujicoin-win-unsigned.tar.gz
+    tar xf baricoin-win-unsigned.tar.gz
     ./detached-sig-create.sh -key /path/to/codesign.key
     Enter the passphrase for the key when prompted
     signature-win.tar.gz will be created
 
 Code-signer only: It is advised to test that the code signature attaches properly prior to tagging by performing the `guix-codesign` step.
-However if this is done, once the release has been tagged in the fujicoin-detached-sigs repo, the `guix-codesign` step must be performed again in order for the guix attestation to be valid when compared against the attestations of non-codesigner builds.
+However if this is done, once the release has been tagged in the baricoin-detached-sigs repo, the `guix-codesign` step must be performed again in order for the guix attestation to be valid when compared against the attestations of non-codesigner builds.
 
 Codesigner only: Commit the detached codesign payloads:
 
 ```sh
-pushd ./fujicoin-detached-sigs
+pushd ./baricoin-detached-sigs
 # checkout the appropriate branch for this release series
 rm -rf ./*
 tar xf signature-osx.tar.gz
@@ -181,7 +181,7 @@ popd
 Non-codesigners: wait for Windows/macOS detached signatures:
 
 - Once the Windows/macOS builds each have 3 matching signatures, they will be signed with their respective release keys.
-- Detached signatures will then be committed to the [fujicoin-detached-sigs](https://github.com/bitcoin-core/bitcoin-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
+- Detached signatures will then be committed to the [baricoin-detached-sigs](https://github.com/bitcoin-core/bitcoin-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
 
 Create (and optionally verify) the codesigned outputs:
 
@@ -206,8 +206,8 @@ cat "$VERSION"/*/all.SHA256SUMS.asc > SHA256SUMS.asc
 ```
 
 
-- Upload to the fujicoincore.org server (`/var/www/bin/bitcoin-core-${VERSION}/`):
-    1. The contents of each `./fujicoin/guix-build-${VERSION}/output/${HOST}/` directory, except for
+- Upload to the baricoincore.org server (`/var/www/bin/bitcoin-core-${VERSION}/`):
+    1. The contents of each `./baricoin/guix-build-${VERSION}/output/${HOST}/` directory, except for
        `*-debug*` files.
 
        Guix will output all of the results into host subdirectories, but the SHA256SUMS
@@ -219,21 +219,21 @@ cat "$VERSION"/*/all.SHA256SUMS.asc > SHA256SUMS.asc
        for troubleshooting by developers. It is assumed that anyone that is
        interested in debugging can run guix to generate the files for
        themselves. To avoid end-user confusion about which file to pick, as well
-       as save storage space *do not upload these to the fujicoincore.org server,
+       as save storage space *do not upload these to the baricoincore.org server,
        nor put them in the torrent*.
 
        ```sh
-       find guix-build-${VERSION}/output/ -maxdepth 2 -type f -not -name "SHA256SUMS.part" -and -not -name "*debug*" -exec scp {} user@fujicoincore.org:/var/www/bin/fujicoin-core-${VERSION} \;
+       find guix-build-${VERSION}/output/ -maxdepth 2 -type f -not -name "SHA256SUMS.part" -and -not -name "*debug*" -exec scp {} user@baricoincore.org:/var/www/bin/baricoin-core-${VERSION} \;
        ```
 
     2. The `SHA256SUMS` file
 
     3. The `SHA256SUMS.asc` combined signature file you just created
 
-- Create a torrent of the `/var/www/bin/fujicoin-core-${VERSION}` directory such
-  that at the top level there is only one file: the `fujicoin-core-${VERSION}`
+- Create a torrent of the `/var/www/bin/baricoin-core-${VERSION}` directory such
+  that at the top level there is only one file: the `baricoin-core-${VERSION}`
   directory containing everything else. Name the torrent
-  `fujicoin-${VERSION}.torrent` (note that there is no `-core-` in this name).
+  `baricoin-${VERSION}.torrent` (note that there is no `-core-` in this name).
 
   Optionally help seed this torrent. To get the `magnet:` URI use:
 
@@ -242,28 +242,28 @@ cat "$VERSION"/*/all.SHA256SUMS.asc > SHA256SUMS.asc
   ```
 
   Insert the magnet URI into the announcement sent to mailing lists. This permits
-  people without access to `fujicoincore.org` to download the binary distribution.
+  people without access to `baricoincore.org` to download the binary distribution.
   Also put it into the `optional_magnetlink:` slot in the YAML file for
-  fujicoincore.org.
+  baricoincore.org.
 
 - Update other repositories and websites for new version
 
-  - fujicoincore.org blog post
+  - baricoincore.org blog post
 
-  - fujicoincore.org maintained versions update:
+  - baricoincore.org maintained versions update:
     [table](https://github.com/bitcoin-core/bitcoincore.org/commits/master/_includes/posts/maintenance-table.md)
 
-  - fujicoincore.org RPC documentation update
+  - baricoincore.org RPC documentation update
 
       - Install [golang](https://golang.org/doc/install)
 
-      - Install the new Fujicoin Core release
+      - Install the new Baricoin Core release
 
-      - Run fujicoind on regtest
+      - Run baricoind on regtest
 
-      - Clone the [fujicoincore.org repository](https://github.com/bitcoin-core/bitcoincore.org)
+      - Clone the [baricoincore.org repository](https://github.com/bitcoin-core/bitcoincore.org)
 
-      - Run: `go run generate.go` while being in `contrib/doc-gen` folder, and with fujicoin-cli in PATH
+      - Run: `go run generate.go` while being in `contrib/doc-gen` folder, and with baricoin-cli in PATH
 
       - Add the generated files to git
 
@@ -280,12 +280,12 @@ cat "$VERSION"/*/all.SHA256SUMS.asc > SHA256SUMS.asc
 
         - https://code.launchpad.net/~bitcoin-core/bitcoin-core-snap/+git/packaging (Click "Import Now" to fetch the branch)
         - https://code.launchpad.net/~bitcoin-core/bitcoin-core-snap/+git/packaging/+ref/0.xx (Click "Create snap package")
-        - Name it "fujicoin-core-snap-0.xx"
+        - Name it "baricoin-core-snap-0.xx"
         - Leave owner and series as-is
         - Select architectures that are compiled via guix
         - Leave "automatically build when branch changes" unticked
         - Tick "automatically upload to store"
-        - Put "fujicoin-core" in the registered store package name field
+        - Put "baricoin-core" in the registered store package name field
         - Tick the "edge" box
         - Put "0.xx" in the track field
         - Click "create snap package"
@@ -300,11 +300,11 @@ cat "$VERSION"/*/all.SHA256SUMS.asc > SHA256SUMS.asc
 
 - Announce the release:
 
-  - fujicoin-dev and bitcoin-core-dev mailing list
+  - baricoin-dev and bitcoin-core-dev mailing list
 
-  - Fujicoin Core announcements list https://bitcoincore.org/en/list/announcements/join/
+  - Baricoin Core announcements list https://bitcoincore.org/en/list/announcements/join/
 
-  - Fujicoin Core Twitter https://twitter.com/bitcoincoreorg
+  - Baricoin Core Twitter https://twitter.com/bitcoincoreorg
 
   - Celebrate
 

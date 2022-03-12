@@ -10,10 +10,10 @@
 
 namespace init {
 namespace {
-class FujicoindInit : public interfaces::Init
+class BaricoindInit : public interfaces::Init
 {
 public:
-    FujicoindInit(NodeContext& node) : m_node(node)
+    BaricoindInit(NodeContext& node) : m_node(node)
     {
         m_node.args = &gArgs;
         m_node.init = this;
@@ -26,6 +26,6 @@ public:
 namespace interfaces {
 std::unique_ptr<Init> MakeNodeInit(NodeContext& node, int argc, char* argv[], int& exit_status)
 {
-    return std::make_unique<init::FujicoindInit>(node);
+    return std::make_unique<init::BaricoindInit>(node);
 }
 } // namespace interfaces

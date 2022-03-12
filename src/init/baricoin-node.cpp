@@ -12,12 +12,12 @@
 
 namespace init {
 namespace {
-const char* EXE_NAME = "fujicoin-node";
+const char* EXE_NAME = "baricoin-node";
 
-class FujicoinNodeInit : public interfaces::Init
+class BaricoinNodeInit : public interfaces::Init
 {
 public:
-    FujicoinNodeInit(NodeContext& node, const char* arg0)
+    BaricoinNodeInit(NodeContext& node, const char* arg0)
         : m_node(node),
           m_ipc(interfaces::MakeIpc(EXE_NAME, arg0, *this))
     {
@@ -35,8 +35,8 @@ public:
 namespace interfaces {
 std::unique_ptr<Init> MakeNodeInit(NodeContext& node, int argc, char* argv[], int& exit_status)
 {
-    auto init = std::make_unique<init::FujicoinNodeInit>(node, argc > 0 ? argv[0] : "");
-    // Check if fujicoin-node is being invoked as an IPC server. If so, then
+    auto init = std::make_unique<init::BaricoinNodeInit>(node, argc > 0 ? argv[0] : "");
+    // Check if baricoin-node is being invoked as an IPC server. If so, then
     // bypass normal execution and just respond to requests over the IPC
     // channel and return null.
     if (init->m_ipc->startSpawnedProcess(argc, argv, exit_status)) {

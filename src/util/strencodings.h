@@ -6,8 +6,8 @@
 /**
  * Utilities for converting data from/to strings.
  */
-#ifndef FUJICOIN_UTIL_STRENCODINGS_H
-#define FUJICOIN_UTIL_STRENCODINGS_H
+#ifndef BARICOIN_UTIL_STRENCODINGS_H
+#define BARICOIN_UTIL_STRENCODINGS_H
 
 #include <attributes.h>
 #include <span.h>
@@ -264,4 +264,4 @@ std::string ToUpper(const std::string& str);
  */
 std::string Capitalize(std::string str);
 
-#endif // FUJICOIN_UTIL_STRENCODINGS_H
+#endif // BARICOIN_UTIL_STRENCODINGS_H

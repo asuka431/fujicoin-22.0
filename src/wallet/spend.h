@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_WALLET_SPEND_H
-#define FUJICOIN_WALLET_SPEND_H
+#ifndef BARICOIN_WALLET_SPEND_H
+#define BARICOIN_WALLET_SPEND_H
 
 #include <wallet/coinselection.h>
 #include <wallet/transaction.h>
@@ -61,4 +61,4 @@ public:
     }
 };
 
-#endif // FUJICOIN_WALLET_SPEND_H
+#endif // BARICOIN_WALLET_SPEND_H

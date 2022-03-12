@@ -6,10 +6,10 @@ define(_CLIENT_VERSION_RC, 0)
 define(_CLIENT_VERSION_IS_RELEASE, true)
 define(_COPYRIGHT_YEAR, 2021)
 define(_COPYRIGHT_HOLDERS,[The %s developers])
-define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[Fujicoin Core]])
-AC_INIT([Fujicoin Core],m4_join([.], _CLIENT_VERSION_MAJOR, _CLIENT_VERSION_MINOR, _CLIENT_VERSION_BUILD)m4_if(_CLIENT_VERSION_RC, [0], [], [rc]_CLIENT_VERSION_RC),[https://github.com/fujicoin/fujicoin/issues],[fujicoin],[https://www.fujicoin.org/])
+define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[Baricoin Core]])
+AC_INIT([Baricoin Core],m4_join([.], _CLIENT_VERSION_MAJOR, _CLIENT_VERSION_MINOR, _CLIENT_VERSION_BUILD)m4_if(_CLIENT_VERSION_RC, [0], [], [rc]_CLIENT_VERSION_RC),[https://github.com/baricoin/baricoin/issues],[baricoin],[https://www.baricoin.org/])
 AC_CONFIG_SRCDIR([src/validation.cpp])
-AC_CONFIG_HEADERS([src/config/fujicoin-config.h])
+AC_CONFIG_HEADERS([src/config/baricoin-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 
@@ -19,15 +19,15 @@ if test "x$PKG_CONFIG" = x; then
   AC_MSG_ERROR([pkg-config not found])
 fi
 
-FUJICOIN_DAEMON_NAME=fujicoind
-FUJICOIN_GUI_NAME=fujicoin-qt
-FUJICOIN_CLI_NAME=fujicoin-cli
-FUJICOIN_TX_NAME=fujicoin-tx
-FUJICOIN_UTIL_NAME=fujicoin-util
-FUJICOIN_WALLET_TOOL_NAME=fujicoin-wallet
+BARICOIN_DAEMON_NAME=baricoind
+BARICOIN_GUI_NAME=baricoin-qt
+BARICOIN_CLI_NAME=baricoin-cli
+BARICOIN_TX_NAME=baricoin-tx
+BARICOIN_UTIL_NAME=baricoin-util
+BARICOIN_WALLET_TOOL_NAME=baricoin-wallet
 dnl Multi Process
-FUJICOIN_MP_NODE_NAME=fujicoin-node
-FUJICOIN_MP_GUI_NAME=fujicoin-gui
+BARICOIN_MP_NODE_NAME=baricoin-node
+BARICOIN_MP_GUI_NAME=baricoin-gui
 
 dnl Unless the user specified ARFLAGS, force it to be cr
 AC_ARG_VAR(ARFLAGS, [Flags for the archiver, defaults to <cr> if not set])
@@ -37,9 +37,9 @@ fi
 
 AC_CANONICAL_HOST
 
-AH_TOP([#ifndef FUJICOIN_CONFIG_H])
-AH_TOP([#define FUJICOIN_CONFIG_H])
-AH_BOTTOM([#endif //FUJICOIN_CONFIG_H])
+AH_TOP([#ifndef BARICOIN_CONFIG_H])
+AH_TOP([#define BARICOIN_CONFIG_H])
+AH_BOTTOM([#endif //BARICOIN_CONFIG_H])
 
 dnl faketime breaks configure and is only needed for make. Disable it here.
 unset FAKETIME
@@ -220,7 +220,7 @@ AC_ARG_ENABLE([ccache],
 
 dnl Suppress warnings from external headers (e.g. Boost, Qt).
 dnl May be useful if warnings from external headers clutter the build output
-dnl too much, so that it becomes difficult to spot Fujicoin Core warnings
+dnl too much, so that it becomes difficult to spot Baricoin Core warnings
 dnl or if they cause a build failure with --enable-werror.
 AC_ARG_ENABLE([suppress-external-warnings],
   [AS_HELP_STRING([--enable-suppress-external-warnings],
@@ -288,7 +288,7 @@ AC_ARG_WITH([mpgen],
 
 AC_ARG_ENABLE([multiprocess],
   [AS_HELP_STRING([--enable-multiprocess],
-  [build multiprocess fujicoin-node, fujicoin-wallet, and fujicoin-gui executables in addition to monolithic fujicoind and fujicoin-qt executables. Requires libmultiprocess library. Experimental (default is no)])],
+  [build multiprocess baricoin-node, baricoin-wallet, and baricoin-gui executables in addition to monolithic baricoind and baricoin-qt executables. Requires libmultiprocess library. Experimental (default is no)])],
   [enable_multiprocess=$enableval],
   [enable_multiprocess=no])
 
@@ -587,45 +587,45 @@ CPPFLAGS="$CPPFLAGS -DHAVE_BUILD_INFO -D__STDC_FORMAT_MACROS"
 
 AC_ARG_WITH([utils],
   [AS_HELP_STRING([--with-utils],
-  [build fujicoin-cli fujicoin-tx fujicoin-util fujicoin-wallet (default=yes)])],
-  [build_fujicoin_utils=$withval],
-  [build_fujicoin_utils=yes])
+  [build baricoin-cli baricoin-tx baricoin-util baricoin-wallet (default=yes)])],
+  [build_baricoin_utils=$withval],
+  [build_baricoin_utils=yes])
 
 AC_ARG_ENABLE([util-cli],
   [AS_HELP_STRING([--enable-util-cli],
-  [build fujicoin-cli])],
-  [build_fujicoin_cli=$enableval],
-  [build_fujicoin_cli=$build_fujicoin_utils])
+  [build baricoin-cli])],
+  [build_baricoin_cli=$enableval],
+  [build_baricoin_cli=$build_baricoin_utils])
 
 AC_ARG_ENABLE([util-tx],
   [AS_HELP_STRING([--enable-util-tx],
-  [build fujicoin-tx])],
-  [build_fujicoin_tx=$enableval],
-  [build_fujicoin_tx=$build_fujicoin_utils])
+  [build baricoin-tx])],
+  [build_baricoin_tx=$enableval],
+  [build_baricoin_tx=$build_baricoin_utils])
 
 AC_ARG_ENABLE([util-wallet],
   [AS_HELP_STRING([--enable-util-wallet],
-  [build fujicoin-wallet])],
-  [build_fujicoin_wallet=$enableval],
-  [build_fujicoin_wallet=$build_fujicoin_utils])
+  [build baricoin-wallet])],
+  [build_baricoin_wallet=$enableval],
+  [build_baricoin_wallet=$build_baricoin_utils])
 
 AC_ARG_ENABLE([util-util],
   [AS_HELP_STRING([--enable-util-util],
-  [build fujicoin-util])],
-  [build_fujicoin_util=$enableval],
-  [build_fujicoin_util=$build_fujicoin_utils])
+  [build baricoin-util])],
+  [build_baricoin_util=$enableval],
+  [build_baricoin_util=$build_baricoin_utils])
 
 AC_ARG_WITH([libs],
   [AS_HELP_STRING([--with-libs],
   [build libraries (default=yes)])],
-  [build_fujicoin_libs=$withval],
-  [build_fujicoin_libs=yes])
+  [build_baricoin_libs=$withval],
+  [build_baricoin_libs=yes])
 
 AC_ARG_WITH([daemon],
   [AS_HELP_STRING([--with-daemon],
-  [build fujicoind daemon (default=yes)])],
-  [build_fujicoind=$withval],
-  [build_fujicoind=yes])
+  [build baricoind daemon (default=yes)])],
+  [build_baricoind=$withval],
+  [build_baricoind=yes])
 
 case $host in
   *mingw*)
@@ -687,7 +687,7 @@ case $host in
 
          if test "x$use_bdb" != xno && $BREW list --versions berkeley-db4 >/dev/null && test "x$BDB_CFLAGS" = "x" && test "x$BDB_LIBS" = "x"; then
            bdb_prefix=$($BREW --prefix berkeley-db4 2>/dev/null)
-           dnl This must precede the call to FUJICOIN_FIND_BDB48 below.
+           dnl This must precede the call to BARICOIN_FIND_BDB48 below.
            BDB_CFLAGS="-I$bdb_prefix/include"
            BDB_LIBS="-L$bdb_prefix/lib -ldb_cxx-4.8"
          fi
@@ -811,7 +811,7 @@ AC_C_BIGENDIAN
 dnl Check for pthread compile/link requirements
 AX_PTHREAD
 
-dnl The following macro will add the necessary defines to fujicoin-config.h, but
+dnl The following macro will add the necessary defines to baricoin-config.h, but
 dnl they also need to be passed down to any subprojects. Pull the results out of
 dnl the cache and add them to CPPFLAGS.
 AC_SYS_LARGEFILE
@@ -934,7 +934,7 @@ AC_CHECK_DECLS([getifaddrs, freeifaddrs],[CHECK_SOCKET],,
 )
 AC_CHECK_DECLS([strnlen])
 
-dnl These are used for daemonization in fujicoind
+dnl These are used for daemonization in baricoind
 AC_CHECK_DECLS([fork])
 AC_CHECK_DECLS([setsid])
 
@@ -1257,16 +1257,16 @@ AC_DEFUN([SUPPRESS_WARNINGS],
 dnl enable-fuzz should disable all other targets
 if test "x$enable_fuzz" = "xyes"; then
   AC_MSG_WARN(enable-fuzz will disable all other targets and force --enable-fuzz-binary=yes)
-  build_fujicoin_utils=no
-  build_fujicoin_cli=no
-  build_fujicoin_tx=no
-  build_fujicoin_util=no
-  build_fujicoin_wallet=no
-  build_fujicoind=no
-  build_fujicoin_libs=no
-  fujicoin_enable_qt=no
-  fujicoin_enable_qt_test=no
-  fujicoin_enable_qt_dbus=no
+  build_baricoin_utils=no
+  build_baricoin_cli=no
+  build_baricoin_tx=no
+  build_baricoin_util=no
+  build_baricoin_wallet=no
+  build_baricoind=no
+  build_baricoin_libs=no
+  baricoin_enable_qt=no
+  baricoin_enable_qt_test=no
+  baricoin_enable_qt_dbus=no
   enable_wallet=no
   use_bench=no
   use_external_signer=no
@@ -1293,10 +1293,10 @@ if test "x$enable_fuzz" = "xyes"; then
       */ int not_main() {
      ]])])
 else
-  FUJICOIN_QT_INIT
+  BARICOIN_QT_INIT
 
-  dnl sets $fujicoin_enable_qt, $fujicoin_enable_qt_test, $fujicoin_enable_qt_dbus
-  FUJICOIN_QT_CONFIGURE([5.9.5])
+  dnl sets $baricoin_enable_qt, $baricoin_enable_qt_test, $baricoin_enable_qt_dbus
+  BARICOIN_QT_CONFIGURE([5.9.5])
 
   dnl Keep a copy of the original $QT_INCLUDES and use it when invoking qt's moc
   QT_INCLUDES_UNSUPPRESSED=$QT_INCLUDES
@@ -1312,7 +1312,7 @@ fi
 if test x$enable_wallet != xno; then
     dnl Check for libdb_cxx only if wallet enabled
     if test "x$use_bdb" != "xno"; then
-      FUJICOIN_FIND_BDB48
+      BARICOIN_FIND_BDB48
       if test x$suppress_external_warnings != xno ; then
         BDB_CPPFLAGS=SUPPRESS_WARNINGS($BDB_CPPFLAGS)
       fi
@@ -1395,7 +1395,7 @@ if test "x$use_natpmp" != xno; then
                    [have_natpmp=no])
 fi
 
-if test x$build_fujicoin_wallet$build_fujicoin_cli$build_fujicoin_tx$build_fujicoind$fujicoin_enable_qt$use_tests$use_bench = xnonononononono; then
+if test x$build_baricoin_wallet$build_baricoin_cli$build_baricoin_tx$build_baricoind$baricoin_enable_qt$use_tests$use_bench = xnonononononono; then
   use_boost=no
 else
   use_boost=yes
@@ -1406,7 +1406,7 @@ if test x$use_boost = xyes; then
   dnl Check for Boost headers
   AX_BOOST_BASE([1.64.0],[],[AC_MSG_ERROR([Boost is not available!])])
   if test x$want_boost = xno; then
-    AC_MSG_ERROR([[only libfujicoinconsensus can be built without boost]])
+    AC_MSG_ERROR([[only libbaricoinconsensus can be built without boost]])
   fi
   AX_BOOST_SYSTEM
   AX_BOOST_FILESYSTEM
@@ -1463,7 +1463,7 @@ fi
 
 dnl libevent check
 
-if test x$build_fujicoin_cli$build_fujicoind$fujicoin_enable_qt$use_tests$use_bench != xnonononono; then
+if test x$build_baricoin_cli$build_baricoind$baricoin_enable_qt$use_tests$use_bench != xnonononono; then
   PKG_CHECK_MODULES([EVENT], [libevent >= 2.0.21], [use_libevent=yes], [AC_MSG_ERROR([libevent version 2.0.21 or greater not found.])])
   if test x$TARGET_OS != xwindows; then
     PKG_CHECK_MODULES([EVENT_PTHREADS], [libevent_pthreads >= 2.0.21],, [AC_MSG_ERROR([libevent_pthreads version 2.0.21 or greater not found.])])
@@ -1477,7 +1477,7 @@ fi
 dnl QR Code encoding library check
 
 if test "x$use_qr" != xno; then
-  FUJICOIN_QT_CHECK([PKG_CHECK_MODULES([QR], [libqrencode], [have_qrencode=yes], [have_qrencode=no])])
+  BARICOIN_QT_CHECK([PKG_CHECK_MODULES([QR], [libqrencode], [have_qrencode=yes], [have_qrencode=no])])
 fi
 
 dnl ZMQ check
@@ -1504,7 +1504,7 @@ fi
 dnl univalue check
 
 need_bundled_univalue=yes
-if test x$build_fujicoin_wallet$build_fujicoin_cli$build_fujicoin_tx$build_fujicoin_util$build_fujicoind$fujicoin_enable_qt$use_tests$use_bench = xnononononononono; then
+if test x$build_baricoin_wallet$build_baricoin_cli$build_baricoin_tx$build_baricoin_util$build_baricoind$baricoin_enable_qt$use_tests$use_bench = xnononononononono; then
   need_bundled_univalue=no
 else
   if test x$system_univalue != xno; then
@@ -1557,8 +1557,8 @@ else
 fi
 
 AM_CONDITIONAL([BUILD_MULTIPROCESS],[test "x$build_multiprocess" = xyes])
-AM_CONDITIONAL([BUILD_FUJICOIN_NODE], [test "x$build_multiprocess" = xyes])
-AM_CONDITIONAL([BUILD_FUJICOIN_GUI], [test "x$build_multiprocess" = xyes])
+AM_CONDITIONAL([BUILD_BARICOIN_NODE], [test "x$build_multiprocess" = xyes])
+AM_CONDITIONAL([BUILD_BARICOIN_GUI], [test "x$build_multiprocess" = xyes])
 
 dnl codegen tools check
 
@@ -1571,33 +1571,33 @@ if test x$build_multiprocess != xno; then
   AC_SUBST(MPGEN_PREFIX)
 fi
 
-AC_MSG_CHECKING([whether to build fujicoind])
-AM_CONDITIONAL([BUILD_FUJICOIND], [test x$build_fujicoind = xyes])
-AC_MSG_RESULT($build_fujicoind)
+AC_MSG_CHECKING([whether to build baricoind])
+AM_CONDITIONAL([BUILD_BARICOIND], [test x$build_baricoind = xyes])
+AC_MSG_RESULT($build_baricoind)
 
-AC_MSG_CHECKING([whether to build fujicoin-cli])
-AM_CONDITIONAL([BUILD_FUJICOIN_CLI], [test x$build_fujicoin_cli = xyes])
-AC_MSG_RESULT($build_fujicoin_cli)
+AC_MSG_CHECKING([whether to build baricoin-cli])
+AM_CONDITIONAL([BUILD_BARICOIN_CLI], [test x$build_baricoin_cli = xyes])
+AC_MSG_RESULT($build_baricoin_cli)
 
-AC_MSG_CHECKING([whether to build fujicoin-tx])
-AM_CONDITIONAL([BUILD_FUJICOIN_TX], [test x$build_fujicoin_tx = xyes])
-AC_MSG_RESULT($build_fujicoin_tx)
+AC_MSG_CHECKING([whether to build baricoin-tx])
+AM_CONDITIONAL([BUILD_BARICOIN_TX], [test x$build_baricoin_tx = xyes])
+AC_MSG_RESULT($build_baricoin_tx)
 
-AC_MSG_CHECKING([whether to build fujicoin-wallet])
-AM_CONDITIONAL([BUILD_FUJICOIN_WALLET], [test x$build_fujicoin_wallet = xyes])
-AC_MSG_RESULT($build_fujicoin_wallet)
+AC_MSG_CHECKING([whether to build baricoin-wallet])
+AM_CONDITIONAL([BUILD_BARICOIN_WALLET], [test x$build_baricoin_wallet = xyes])
+AC_MSG_RESULT($build_baricoin_wallet)
 
-AC_MSG_CHECKING([whether to build fujicoin-util])
-AM_CONDITIONAL([BUILD_FUJICOIN_UTIL], [test x$build_fujicoin_util = xyes])
-AC_MSG_RESULT($build_fujicoin_util)
+AC_MSG_CHECKING([whether to build baricoin-util])
+AM_CONDITIONAL([BUILD_BARICOIN_UTIL], [test x$build_baricoin_util = xyes])
+AC_MSG_RESULT($build_baricoin_util)
 
 AC_MSG_CHECKING([whether to build libraries])
-AM_CONDITIONAL([BUILD_FUJICOIN_LIBS], [test x$build_fujicoin_libs = xyes])
-if test x$build_fujicoin_libs = xyes; then
+AM_CONDITIONAL([BUILD_BARICOIN_LIBS], [test x$build_baricoin_libs = xyes])
+if test x$build_baricoin_libs = xyes; then
   AC_DEFINE(HAVE_CONSENSUS_LIB, 1, [Define this symbol if the consensus lib has been built])
-  AC_CONFIG_FILES([libfujicoinconsensus.pc:libfujicoinconsensus.pc.in])
+  AC_CONFIG_FILES([libbaricoinconsensus.pc:libbaricoinconsensus.pc.in])
 fi
-AC_MSG_RESULT($build_fujicoin_libs)
+AC_MSG_RESULT($build_baricoin_libs)
 
 AC_LANG_POP
 
@@ -1690,13 +1690,13 @@ fi
 
 dnl these are only used when qt is enabled
 BUILD_TEST_QT=""
-if test x$fujicoin_enable_qt != xno; then
+if test x$baricoin_enable_qt != xno; then
   dnl enable dbus support
   AC_MSG_CHECKING([whether to build GUI with support for D-Bus])
-  if test x$fujicoin_enable_qt_dbus != xno; then
+  if test x$baricoin_enable_qt_dbus != xno; then
     AC_DEFINE([USE_DBUS],[1],[Define if dbus support should be compiled in])
   fi
-  AC_MSG_RESULT($fujicoin_enable_qt_dbus)
+  AC_MSG_RESULT($baricoin_enable_qt_dbus)
 
   dnl enable qr support
   AC_MSG_CHECKING([whether to build GUI with support for QR codes])
@@ -1717,8 +1717,8 @@ if test x$fujicoin_enable_qt != xno; then
     AC_MSG_WARN("xgettext is required to update qt translations")
   fi
 
-  AC_MSG_CHECKING([whether to build test_fujicoin-qt])
-  if test x$use_gui_tests$fujicoin_enable_qt_test = xyesyes; then
+  AC_MSG_CHECKING([whether to build test_baricoin-qt])
+  if test x$use_gui_tests$baricoin_enable_qt_test = xyesyes; then
     AC_MSG_RESULT([yes])
     BUILD_TEST_QT="yes"
   else
@@ -1728,7 +1728,7 @@ fi
 
 AM_CONDITIONAL([ENABLE_ZMQ], [test "x$use_zmq" = "xyes"])
 
-AC_MSG_CHECKING([whether to build test_fujicoin])
+AC_MSG_CHECKING([whether to build test_baricoin])
 if test x$use_tests = xyes; then
   if test "x$enable_fuzz" = "xyes"; then
     AC_MSG_RESULT([no, because fuzzing is enabled])
@@ -1748,7 +1748,7 @@ else
   AC_MSG_RESULT([no])
 fi
 
-if test x$build_fujicoin_wallet$build_fujicoin_cli$build_fujicoin_tx$build_fujicoin_libs$build_fujicoind$fujicoin_enable_qt$use_bench$use_tests = xnononononononono; then
+if test x$build_baricoin_wallet$build_baricoin_cli$build_baricoin_tx$build_baricoin_libs$build_baricoind$baricoin_enable_qt$use_bench$use_tests = xnononononononono; then
   AC_MSG_ERROR([No targets! Please specify at least one of: --with-utils --with-libs --with-daemon --with-gui --enable-bench or --enable-tests])
 fi
 
@@ -1763,7 +1763,7 @@ AM_CONDITIONAL([ENABLE_TRACING],[test x$have_sdt = xyes])
 AM_CONDITIONAL([ENABLE_TESTS],[test x$BUILD_TEST = xyes])
 AM_CONDITIONAL([ENABLE_FUZZ],[test x$enable_fuzz = xyes])
 AM_CONDITIONAL([ENABLE_FUZZ_BINARY],[test x$enable_fuzz_binary = xyes])
-AM_CONDITIONAL([ENABLE_QT],[test x$fujicoin_enable_qt = xyes])
+AM_CONDITIONAL([ENABLE_QT],[test x$baricoin_enable_qt = xyes])
 AM_CONDITIONAL([ENABLE_QT_TESTS],[test x$BUILD_TEST_QT = xyes])
 AM_CONDITIONAL([ENABLE_BENCH],[test x$use_bench = xyes])
 AM_CONDITIONAL([USE_QRCODE], [test x$use_qr = xyes])
@@ -1798,14 +1798,14 @@ AC_SUBST(COPYRIGHT_YEAR, _COPYRIGHT_YEAR)
 AC_SUBST(COPYRIGHT_HOLDERS, "_COPYRIGHT_HOLDERS")
 AC_SUBST(COPYRIGHT_HOLDERS_SUBSTITUTION, "_COPYRIGHT_HOLDERS_SUBSTITUTION")
 AC_SUBST(COPYRIGHT_HOLDERS_FINAL, "_COPYRIGHT_HOLDERS_FINAL")
-AC_SUBST(FUJICOIN_DAEMON_NAME)
-AC_SUBST(FUJICOIN_GUI_NAME)
-AC_SUBST(FUJICOIN_CLI_NAME)
-AC_SUBST(FUJICOIN_TX_NAME)
-AC_SUBST(FUJICOIN_UTIL_NAME)
-AC_SUBST(FUJICOIN_WALLET_TOOL_NAME)
-AC_SUBST(FUJICOIN_MP_NODE_NAME)
-AC_SUBST(FUJICOIN_MP_GUI_NAME)
+AC_SUBST(BARICOIN_DAEMON_NAME)
+AC_SUBST(BARICOIN_GUI_NAME)
+AC_SUBST(BARICOIN_CLI_NAME)
+AC_SUBST(BARICOIN_TX_NAME)
+AC_SUBST(BARICOIN_UTIL_NAME)
+AC_SUBST(BARICOIN_WALLET_TOOL_NAME)
+AC_SUBST(BARICOIN_MP_NODE_NAME)
+AC_SUBST(BARICOIN_MP_GUI_NAME)
 
 AC_SUBST(RELDFLAGS)
 AC_SUBST(DEBUG_CPPFLAGS)
@@ -1864,7 +1864,7 @@ AC_CONFIG_LINKS([contrib/devtools/test-symbol-check.py:contrib/devtools/test-sym
 AC_CONFIG_LINKS([contrib/filter-lcov.py:contrib/filter-lcov.py])
 AC_CONFIG_LINKS([test/functional/test_runner.py:test/functional/test_runner.py])
 AC_CONFIG_LINKS([test/fuzz/test_runner.py:test/fuzz/test_runner.py])
-AC_CONFIG_LINKS([test/util/fujicoin-util-test.py:test/util/fujicoin-util-test.py])
+AC_CONFIG_LINKS([test/util/baricoin-util-test.py:test/util/baricoin-util-test.py])
 AC_CONFIG_LINKS([test/util/rpcauth-test.py:test/util/rpcauth-test.py])
 
 dnl boost's m4 checks do something really nasty: they export these vars. As a
@@ -1911,21 +1911,21 @@ echo
 echo "Options used to compile and link:"
 echo "  external signer = $use_external_signer"
 echo "  multiprocess    = $build_multiprocess"
-echo "  with libs       = $build_fujicoin_libs"
+echo "  with libs       = $build_baricoin_libs"
 echo "  with wallet     = $enable_wallet"
 if test "x$enable_wallet" != "xno"; then
     echo "    with sqlite   = $use_sqlite"
     echo "    with bdb      = $use_bdb"
 fi
-echo "  with gui / qt   = $fujicoin_enable_qt"
-if test x$fujicoin_enable_qt != xno; then
+echo "  with gui / qt   = $baricoin_enable_qt"
+if test x$baricoin_enable_qt != xno; then
     echo "    with qr       = $use_qr"
 fi
 echo "  with zmq        = $use_zmq"
 if test x$enable_fuzz == xno; then
     echo "  with test       = $use_tests"
 else
-    echo "  with test       = not building test_fujicoin because fuzzing is enabled"
+    echo "  with test       = not building test_baricoin because fuzzing is enabled"
     echo "    with fuzz     = $enable_fuzz"
 fi
 echo "  with bench      = $use_bench"

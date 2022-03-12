@@ -1,16 +1,16 @@
 22.0 Release Notes
 ==================
 
-Fujicoin Core version 22.0 is now available from:
+Baricoin Core version 22.0 is now available from:
 
-  <https://www.fujicoin.org/en/download_core>
+  <https://www.baricoin.org/en/download_core>
 
 This release includes new features, various bug fixes and performance
 improvements, as well as updated translations.
 
 Please report bugs using the issue tracker at GitHub:
 
-  <https://github.com/fujicoin/fujicoin/issues>
+  <https://github.com/baricoin/baricoin/issues>
 
 To receive security and update notifications, please subscribe to:
 
@@ -21,36 +21,36 @@ How to Upgrade
 
 If you are running an older version, shut it down. Wait until it has completely
 shut down (which might take a few minutes in some cases), then run the
-installer (on Windows) or just copy over `/Applications/Fujicoin-Qt` (on Mac)
-or `fujicoind`/`fujicoin-qt` (on Linux).
+installer (on Windows) or just copy over `/Applications/Baricoin-Qt` (on Mac)
+or `baricoind`/`baricoin-qt` (on Linux).
 
-Upgrading directly from a version of Fujicoin Core that has reached its EOL is
+Upgrading directly from a version of Baricoin Core that has reached its EOL is
 possible, but it might take some time if the data directory needs to be migrated. Old
-wallet versions of Fujicoin Core are generally supported.
+wallet versions of Baricoin Core are generally supported.
 
 Compatibility
 ==============
 
-Fujicoin Core is supported and extensively tested on operating systems
-using the Linux kernel, macOS 10.14+, and Windows 7 and newer.  Fujicoin
+Baricoin Core is supported and extensively tested on operating systems
+using the Linux kernel, macOS 10.14+, and Windows 7 and newer.  Baricoin
 Core should also work on most other Unix-like systems but is not as
-frequently tested on them.  It is not recommended to use Fujicoin Core on
+frequently tested on them.  It is not recommended to use Baricoin Core on
 unsupported systems.
 
-From Fujicoin Core 22.0 onwards, macOS versions earlier than 10.14 are no longer supported.
+From Baricoin Core 22.0 onwards, macOS versions earlier than 10.14 are no longer supported.
 
 Notable changes
 ===============
 
 P2P and network changes
 -----------------------
-- Added support for running Fujicoin Core as an
+- Added support for running Baricoin Core as an
   [I2P (Invisible Internet Project)](https://en.wikipedia.org/wiki/I2P) service
-  and connect to such services. See [i2p.md](https://github.com/fujicoin/fujicoin/blob/master/doc/i2p.md) for details. (#20685)
+  and connect to such services. See [i2p.md](https://github.com/baricoin/baricoin/blob/master/doc/i2p.md) for details. (#20685)
 - This release removes support for Tor version 2 hidden services in favor of Tor
   v3 only, as the Tor network [dropped support for Tor
   v2](https://blog.torproject.org/v2-deprecation-timeline) with the release of
-  Tor version 0.4.6.  Henceforth, Fujicoin Core ignores Tor v2 addresses; it
+  Tor version 0.4.6.  Henceforth, Baricoin Core ignores Tor v2 addresses; it
   neither rumors them over the network to other peers, nor stores them in memory
   or to `peers.dat`.  (#22050)
 
@@ -95,7 +95,7 @@ New and Updated RPCs
   of `decodescript` these fields are top-level attributes, and included again as attributes
   of the `scriptPubKey` object. (#20286)
 
-- When creating a hex-encoded fujicoin transaction using the `fujicoin-tx` utility
+- When creating a hex-encoded baricoin transaction using the `baricoin-tx` utility
   with the `-json` option set, the following fields: `addresses`, `reqSigs` are no longer
   returned in the tx output of the response. (#20286)
 
@@ -137,7 +137,7 @@ Files
 - The list of banned hosts and networks (via `setban` RPC) is now saved on disk
   in JSON format in `banlist.json` instead of `banlist.dat`. `banlist.dat` is
   only read on startup if `banlist.json` is not present. Changes are only written to the new
-  `banlist.json`. A future version of Fujicoin Core may completely ignore
+  `banlist.json`. A future version of Baricoin Core may completely ignore
   `banlist.dat`. (#20966)
 
 New settings
@@ -152,7 +152,7 @@ Updated settings
 
 Changes to Wallet or GUI related settings can be found in the GUI or Wallet section below.
 
-- Passing an invalid `-rpcauth` argument now cause fujicoind to fail to start.  (#20461)
+- Passing an invalid `-rpcauth` argument now cause baricoind to fail to start.  (#20461)
 
 Tools and Utilities
 -------------------
@@ -160,17 +160,17 @@ Tools and Utilities
 - A new CLI `-addrinfo` command returns the number of addresses known to the
   node per network type (including Tor v2 versus v3) and total. This can be
   useful to see if the node knows enough addresses in a network to use options
-  like `-onlynet=<network>` or to upgrade to this release of Fujicoin Core 22.0
+  like `-onlynet=<network>` or to upgrade to this release of Baricoin Core 22.0
   that supports Tor v3 only.  (#21595)
 
-- A new `-rpcwaittimeout` argument to `fujicoin-cli` sets the timeout
+- A new `-rpcwaittimeout` argument to `baricoin-cli` sets the timeout
   in seconds to use with `-rpcwait`. If the timeout expires,
-  `fujicoin-cli` will report a failure. (#21056)
+  `baricoin-cli` will report a failure. (#21056)
 
 Wallet
 ------
 
-- External signers such as hardware wallets can now be used through the new RPC methods `enumeratesigners` and `displayaddress`. Support is also added to the `send` RPC call. This feature is experimental. See [external-signer.md](https://github.com/fujicoin/fujicoin/blob/master/doc/external-signer.md) for details. (#16546)
+- External signers such as hardware wallets can now be used through the new RPC methods `enumeratesigners` and `displayaddress`. Support is also added to the `send` RPC call. This feature is experimental. See [external-signer.md](https://github.com/baricoin/baricoin/blob/master/doc/external-signer.md) for details. (#16546)
 
 - A new `listdescriptors` RPC is available to inspect the contents of descriptor-enabled wallets.
   The RPC returns public versions of all imported descriptors, including their timestamp and flags.
@@ -187,12 +187,12 @@ Wallet
 - We now support up to 20 keys in `multi()` and `sortedmulti()` descriptors
   under `wsh()`. (#20867)
 
-- Taproot descriptors can be imported into the wallet only after activation has occurred on the network (e.g. mainnet, testnet, signet) in use. See [descriptors.md](https://github.com/fujicoin/fujicoin/blob/master/doc/descriptors.md) for supported descriptors.
+- Taproot descriptors can be imported into the wallet only after activation has occurred on the network (e.g. mainnet, testnet, signet) in use. See [descriptors.md](https://github.com/baricoin/baricoin/blob/master/doc/descriptors.md) for supported descriptors.
 
 GUI changes
 -----------
 
-- External signers such as hardware wallets can now be used. These require an external tool such as [HWI](https://github.com/fujicoin/HWI) to be installed and configured under Options -> Wallet. When creating a new wallet a new option "External signer" will appear in the dialog. If the device is detected, its name is suggested as the wallet name. The watch-only keys are then automatically imported. Receive addresses can be verified on the device. The send dialog will automatically use the connected device. This feature is experimental and the UI may freeze for a few seconds when performing these actions.
+- External signers such as hardware wallets can now be used. These require an external tool such as [HWI](https://github.com/baricoin/HWI) to be installed and configured under Options -> Wallet. When creating a new wallet a new option "External signer" will appear in the dialog. If the device is detected, its name is suggested as the wallet name. The watch-only keys are then automatically imported. Receive addresses can be verified on the device. The send dialog will automatically use the connected device. This feature is experimental and the UI may freeze for a few seconds when performing these actions.
 
 Low-level changes
 =================
@@ -316,7 +316,7 @@ A detailed list of changes in this version follows. To keep the list to a manage
 - bitcoin/bitcoin#20965 net, rpc:  return `NET_UNROUTABLE` as `not_publicly_routable`, automate helps (jonatack)
 - bitcoin/bitcoin#20966 banman: save the banlist in a JSON format on disk (vasild)
 - bitcoin/bitcoin#21015 Make all of `net_processing` (and some of net) use std::chrono types (dhruv)
-- bitcoin/bitcoin#21029 fujicoin-cli: Correct docs (no "generatenewaddress" exists) (luke-jr)
+- bitcoin/bitcoin#21029 baricoin-cli: Correct docs (no "generatenewaddress" exists) (luke-jr)
 - bitcoin/bitcoin#21148 Split orphan handling from `net_processing` into txorphanage (ajtowns)
 - bitcoin/bitcoin#21162 Net Processing: Move RelayTransaction() into PeerManager (jnewbery)
 - bitcoin/bitcoin#21167 make `CNode::m_inbound_onion` public, initialize explicitly (jonatack)
@@ -411,7 +411,7 @@ A detailed list of changes in this version follows. To keep the list to a manage
 - bitcoin/bitcoin#22686 Use GetSelectionAmount in ApproximateBestSubset (achow101)
 
 ### RPC and other APIs
-- bitcoin/bitcoin#18335, bitcoin/bitcoin#21484 cli: Print useful error if fujicoind rpc work queue exceeded (LarryRuane)
+- bitcoin/bitcoin#18335, bitcoin/bitcoin#21484 cli: Print useful error if baricoind rpc work queue exceeded (LarryRuane)
 - bitcoin/bitcoin#18466 Fix invalid parameter error codes for `{sign,verify}message` RPCs (theStack)
 - bitcoin/bitcoin#18772 Calculate fees in `getblock` using BlockUndo data (robot-visions)
 - bitcoin/bitcoin#19033 http: Release work queue after event base finish (promag)
@@ -458,7 +458,7 @@ A detailed list of changes in this version follows. To keep the list to a manage
 - bitcoin-core/gui#4 UI external signer support (e.g. hardware wallet) (Sjors)
 - bitcoin-core/gui#13 Hide peer detail view if multiple are selected (promag)
 - bitcoin-core/gui#18 Add peertablesortproxy module (hebasto)
-- bitcoin-core/gui#21 Improve pruning tooltip (fluffypony, FujicoinErrorLog)
+- bitcoin-core/gui#21 Improve pruning tooltip (fluffypony, BaricoinErrorLog)
 - bitcoin-core/gui#72 Log static plugins meta data and used style (hebasto)
 - bitcoin-core/gui#79 Embed monospaced font (hebasto)
 - bitcoin-core/gui#85 Remove unused "What's This" button in dialogs on Windows OS (hebasto)
@@ -524,7 +524,7 @@ A detailed list of changes in this version follows. To keep the list to a manage
 - bitcoin-core/gui#375 Emit dataChanged signal to dynamically re-sort Peers table (hebasto)
 - bitcoin-core/gui#393 Fix regression in "Encrypt Wallet" menu item (hebasto)
 - bitcoin-core/gui#396 Ensure external signer option remains disabled without signers (achow101)
-- bitcoin-core/gui#406 Handle new added plurals in `fujicoin_en.ts` (hebasto)
+- bitcoin-core/gui#406 Handle new added plurals in `baricoin_en.ts` (hebasto)
 
 ### Build system
 - bitcoin/bitcoin#17227 Add Android packaging support (icota)
@@ -555,7 +555,7 @@ A detailed list of changes in this version follows. To keep the list to a manage
 - bitcoin/bitcoin#20471 Use C++17 in depends (fanquake)
 - bitcoin/bitcoin#20496 Drop unneeded macOS framework dependencies (hebasto)
 - bitcoin/bitcoin#20520 Do not force Precompiled Headers (PCH) for building Qt on Linux (hebasto)
-- bitcoin/bitcoin#20549 Support make src/fujicoin-node and src/fujicoin-gui (promag)
+- bitcoin/bitcoin#20549 Support make src/baricoin-node and src/baricoin-gui (promag)
 - bitcoin/bitcoin#20565 Ensure PIC build for bdb on Android (BlockMechanic)
 - bitcoin/bitcoin#20594 Fix getauxval calls in randomenv.cpp (jonasschnelli)
 - bitcoin/bitcoin#20603 Update crc32c subtree (MarcoFalke)
@@ -571,7 +571,7 @@ A detailed list of changes in this version follows. To keep the list to a manage
 - bitcoin/bitcoin#20936 build fuzz tests by default (danben)
 - bitcoin/bitcoin#20937 guix: Make nsis reproducible by respecting SOURCE-DATE-EPOCH (dongcarl)
 - bitcoin/bitcoin#20938 fix linking against -latomic when building for riscv (fanquake)
-- bitcoin/bitcoin#20939 fix `RELOC_SECTION` security check for fujicoin-util (fanquake)
+- bitcoin/bitcoin#20939 fix `RELOC_SECTION` security check for baricoin-util (fanquake)
 - bitcoin/bitcoin#20963 gitian-linux: Build binaries for 64-bit POWER (continued) (laanwj)
 - bitcoin/bitcoin#21036 gitian: Bump descriptors to focal for 22.0 (fanquake)
 - bitcoin/bitcoin#21045 Adds switch to enable/disable randomized base address in MSVC builds (EthanHeilman)
@@ -611,7 +611,7 @@ A detailed list of changes in this version follows. To keep the list to a manage
 - bitcoin/bitcoin#21495 build, qt: Fix static builds on macOS Big Sur (hebasto)
 - bitcoin/bitcoin#21497 Do not opt-in unused CoreWLAN stuff in depends for macOS (hebasto)
 - bitcoin/bitcoin#21543 Enable safe warnings for msvc builds (hebasto)
-- bitcoin/bitcoin#21565 Make `fujicoin_qt.m4` more generic (fanquake)
+- bitcoin/bitcoin#21565 Make `baricoin_qt.m4` more generic (fanquake)
 - bitcoin/bitcoin#21610 remove -Wdeprecated-register from NOWARN flags (fanquake)
 - bitcoin/bitcoin#21613 enable -Wdocumentation (fanquake)
 - bitcoin/bitcoin#21629 Fix configuring when building depends with `NO_BDB=1` (fanquake)
@@ -637,7 +637,7 @@ A detailed list of changes in this version follows. To keep the list to a manage
 - bitcoin/bitcoin#22182 guix: Overhaul how guix-{attest,verify} works and hierarchy (dongcarl)
 - bitcoin/bitcoin#22186 build, qt: Fix compiling qt package in depends with GCC 11 (hebasto)
 - bitcoin/bitcoin#22199 macdeploy: minor fixups and simplifications (fanquake)
-- bitcoin/bitcoin#22230 Fix MSVC linker /SubSystem option for fujicoin-qt.exe (hebasto)
+- bitcoin/bitcoin#22230 Fix MSVC linker /SubSystem option for baricoin-qt.exe (hebasto)
 - bitcoin/bitcoin#22234 Mark print-% target as phony (dgoncharov)
 - bitcoin/bitcoin#22238 improve detection of eBPF support (fanquake)
 - bitcoin/bitcoin#22258 Disable deprecated-copy warning only when external warnings are enabled (MarcoFalke)
@@ -806,7 +806,7 @@ A detailed list of changes in this version follows. To keep the list to a manage
 - bitcoin/bitcoin#21810 fuzz: Various RPC fuzzer follow-ups (practicalswift)
 - bitcoin/bitcoin#21814 Fix `feature_config_args.py` intermittent issue (MarcoFalke)
 - bitcoin/bitcoin#21821 Add missing test for empty P2WSH redeem (MarcoFalke)
-- bitcoin/bitcoin#21822 Resolve bug in `interface_fujicoin_cli.py` (klementtan)
+- bitcoin/bitcoin#21822 Resolve bug in `interface_baricoin_cli.py` (klementtan)
 - bitcoin/bitcoin#21846 fuzz: Add `-fsanitize=integer` suppression needed for RPC fuzzer (`generateblock`) (practicalswift)
 - bitcoin/bitcoin#21849 fuzz: Limit toxic test globals to their respective scope (MarcoFalke)
 - bitcoin/bitcoin#21867 use MiniWallet for `p2p_blocksonly.py` (theStack)
@@ -857,7 +857,7 @@ A detailed list of changes in this version follows. To keep the list to a manage
 - bitcoin/bitcoin#22224 Update msvc and appveyor builds to use Qt5.12.11 binaries (sipsorcery)
 - bitcoin/bitcoin#22249 Kill process group to avoid dangling processes when using `--failfast` (S3RK)
 - bitcoin/bitcoin#22267 fuzz: Speed up crypto fuzz target (MarcoFalke)
-- bitcoin/bitcoin#22270 Add fujicoin-util tests (+refactors) (MarcoFalke)
+- bitcoin/bitcoin#22270 Add baricoin-util tests (+refactors) (MarcoFalke)
 - bitcoin/bitcoin#22271 fuzz: Assert roundtrip equality for `CPubKey` (theStack)
 - bitcoin/bitcoin#22279 fuzz: add missing ECCVerifyHandle to `base_encode_decode` (apoelstra)
 - bitcoin/bitcoin#22292 bench, doc: benchmarking updates and fixups (jonatack)
@@ -893,13 +893,13 @@ A detailed list of changes in this version follows. To keep the list to a manage
 - bitcoin/bitcoin#20605 init: Signal-safe instant shutdown (laanwj)
 - bitcoin/bitcoin#20608 contrib: Add symbol check test for PE binaries (fanquake)
 - bitcoin/bitcoin#20689 contrib: Replace binary verification script verify.sh with python rewrite (theStack)
-- bitcoin/bitcoin#20715 util: Add argsmanager::getcommand() and use it in fujicoin-wallet (MarcoFalke)
+- bitcoin/bitcoin#20715 util: Add argsmanager::getcommand() and use it in baricoin-wallet (MarcoFalke)
 - bitcoin/bitcoin#20735 script: Remove outdated extract-osx-sdk.sh (hebasto)
 - bitcoin/bitcoin#20817 lint: Update list of spelling linter false positives, bump to codespell 2.0.0 (theStack)
-- bitcoin/bitcoin#20884 script: Improve robustness of fujicoind.service on startup (hebasto)
+- bitcoin/bitcoin#20884 script: Improve robustness of baricoind.service on startup (hebasto)
 - bitcoin/bitcoin#20906 contrib: Embed c++11 patch in `install_db4.sh` (gruve-p)
 - bitcoin/bitcoin#21004 contrib: Fix docker args conditional in gitian-build (setpill)
-- bitcoin/bitcoin#21007 fujicoind: Add -daemonwait option to wait for initialization (laanwj)
+- bitcoin/bitcoin#21007 baricoind: Add -daemonwait option to wait for initialization (laanwj)
 - bitcoin/bitcoin#21041 log: Move "Pre-allocating up to position 0x[…] in […].dat" log message to debug category (practicalswift)
 - bitcoin/bitcoin#21059 Drop boost/preprocessor dependencies (hebasto)
 - bitcoin/bitcoin#21087 guix: Passthrough `BASE_CACHE` into container (dongcarl)
@@ -923,7 +923,7 @@ A detailed list of changes in this version follows. To keep the list to a manage
 - bitcoin/bitcoin#21471 bugfix: Fix `bech32_encode` calls in `gen_key_io_test_vectors.py` (sipa)
 - bitcoin/bitcoin#21615 script: Add trusted key for hebasto (hebasto)
 - bitcoin/bitcoin#21664 contrib: Use lief for macos and windows symbol & security checks (fanquake)
-- bitcoin/bitcoin#21695 contrib: Remove no longer used contrib/fujicoin-qt.pro (hebasto)
+- bitcoin/bitcoin#21695 contrib: Remove no longer used contrib/baricoin-qt.pro (hebasto)
 - bitcoin/bitcoin#21711 guix: Add full installation and usage documentation (dongcarl)
 - bitcoin/bitcoin#21799 guix: Use `gcc-8` across the board (dongcarl)
 - bitcoin/bitcoin#21802 Avoid UB in util/asmap (advance a dereferenceable iterator outside its valid range) (MarcoFalke)
@@ -954,7 +954,7 @@ A detailed list of changes in this version follows. To keep the list to a manage
 - bitcoin/bitcoin#20473 Document current boost dependency as 1.71.0 (laanwj)
 - bitcoin/bitcoin#20512 Add bash as an OpenBSD dependency (emilengler)
 - bitcoin/bitcoin#20568 Use FeeModes doc helper in estimatesmartfee (MarcoFalke)
-- bitcoin/bitcoin#20577 libconsensus: add missing error code description, fix NFujicoin link (theStack)
+- bitcoin/bitcoin#20577 libconsensus: add missing error code description, fix NBaricoin link (theStack)
 - bitcoin/bitcoin#20587 Tidy up Tor doc (more stringent) (wodry)
 - bitcoin/bitcoin#20592 Update wtxidrelay documentation per BIP339 (jonatack)
 - bitcoin/bitcoin#20601 Update for FreeBSD 12.2, add GUI Build Instructions (jarolrod)
@@ -967,7 +967,7 @@ A detailed list of changes in this version follows. To keep the list to a manage
 - bitcoin/bitcoin#20829 Add -netinfo help (jonatack)
 - bitcoin/bitcoin#20830 Update developer notes with signet (jonatack)
 - bitcoin/bitcoin#20890 Add explicit macdeployqtplus dependencies install step (hebasto)
-- bitcoin/bitcoin#20913 Add manual page generation for fujicoin-util (laanwj)
+- bitcoin/bitcoin#20913 Add manual page generation for baricoin-util (laanwj)
 - bitcoin/bitcoin#20985 Add xorriso to macOS depends packages (fanquake)
 - bitcoin/bitcoin#20986 Update developer notes to discourage very long lines (jnewbery)
 - bitcoin/bitcoin#20987 Add instructions for generating RPC docs (ben-kaufman)
@@ -985,7 +985,7 @@ A detailed list of changes in this version follows. To keep the list to a manage
 - bitcoin/bitcoin#21324 Update build instructions for Fedora (hebasto)
 - bitcoin/bitcoin#21343 Revamp macOS build doc (jarolrod)
 - bitcoin/bitcoin#21346 install qt5 when building on macOS (fanquake)
-- bitcoin/bitcoin#21384 doc: add signet to fujicoin.conf documentation (jonatack)
+- bitcoin/bitcoin#21384 doc: add signet to baricoin.conf documentation (jonatack)
 - bitcoin/bitcoin#21394 Improve comment about protected peers (amitiuttarwar)
 - bitcoin/bitcoin#21398 Update fuzzing docs for afl-clang-lto (MarcoFalke)
 - bitcoin/bitcoin#21444 net, doc: Doxygen updates and fixes in netbase.{h,cpp} (jonatack)
@@ -994,11 +994,11 @@ A detailed list of changes in this version follows. To keep the list to a manage
 - bitcoin/bitcoin#21661 Fix name of script guix-build (Emzy)
 - bitcoin/bitcoin#21672 Remove boostrap info from `GUIX_COMMON_FLAGS` doc (fanquake)
 - bitcoin/bitcoin#21688 Note on SDK for macOS depends cross-compile (jarolrod)
-- bitcoin/bitcoin#21709 Update reduce-memory.md and fujicoin.conf -maxconnections info (jonatack)
+- bitcoin/bitcoin#21709 Update reduce-memory.md and baricoin.conf -maxconnections info (jonatack)
 - bitcoin/bitcoin#21710 update helps for addnode rpc and -addnode/-maxconnections config options (jonatack)
 - bitcoin/bitcoin#21752 Clarify that feerates are per virtual size (MarcoFalke)
 - bitcoin/bitcoin#21811 Remove Visual Studio 2017 reference from readme (sipsorcery)
-- bitcoin/bitcoin#21818 Fixup -coinstatsindex help, update fujicoin.conf and files.md (jonatack)
+- bitcoin/bitcoin#21818 Fixup -coinstatsindex help, update baricoin.conf and files.md (jonatack)
 - bitcoin/bitcoin#21856 add OSS-Fuzz section to fuzzing.md doc (adamjonas)
 - bitcoin/bitcoin#21912 Remove mention of priority estimation (MarcoFalke)
 - bitcoin/bitcoin#21925 Update bips.md for 0.21.1 (MarcoFalke)
@@ -1006,7 +1006,7 @@ A detailed list of changes in this version follows. To keep the list to a manage
 - bitcoin/bitcoin#21947 Fix OSS-Fuzz links (MarcoFalke)
 - bitcoin/bitcoin#21988 note that brew installed qt is not supported (jarolrod)
 - bitcoin/bitcoin#22056 describe in fuzzing.md how to reproduce a CI crash (jonatack)
-- bitcoin/bitcoin#22080 add maxuploadtarget to fujicoin.conf example (jarolrod)
+- bitcoin/bitcoin#22080 add maxuploadtarget to baricoin.conf example (jarolrod)
 - bitcoin/bitcoin#22088 Improve note on choosing posix mingw32 (jarolrod)
 - bitcoin/bitcoin#22109 Fix external links (IRC, …) (MarcoFalke)
 - bitcoin/bitcoin#22121 Various validation doc fixups (MarcoFalke)
@@ -1020,7 +1020,7 @@ A detailed list of changes in this version follows. To keep the list to a manage
 - bitcoin/bitcoin#22349 Repository IRC updates (jonatack)
 - bitcoin/bitcoin#22360 Remove unused section from release process (MarcoFalke)
 - bitcoin/bitcoin#22369 Add steps for Transifex to release process (jonatack)
-- bitcoin/bitcoin#22393 Added info to fujicoin.conf doc (bliotti)
+- bitcoin/bitcoin#22393 Added info to baricoin.conf doc (bliotti)
 - bitcoin/bitcoin#22402 Install Rosetta on M1-macOS for qt in depends (hebasto)
 - bitcoin/bitcoin#22432 Fix incorrect `testmempoolaccept` doc (glozow)
 - bitcoin/bitcoin#22648 doc, test: improve i2p/tor docs and i2p reachable unit tests (jonatack)

@@ -3,11 +3,11 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include <config/fujicoin-config.h>
+#include <config/baricoin-config.h>
 #endif
 
-#include <qt/fujicoin.h>
-#include <qt/fujicoingui.h>
+#include <qt/baricoin.h>
+#include <qt/baricoingui.h>
 
 #include <chainparams.h>
 #include <qt/clientmodel.h>
@@ -135,11 +135,11 @@ static void initTranslations(QTranslator &qtTranslatorBase, QTranslator &qtTrans
     if (qtTranslator.load("qt_" + lang_territory, QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
         QApplication::installTranslator(&qtTranslator);
 
-    // Load e.g. fujicoin_de.qm (shortcut "de" needs to be defined in fujicoin.qrc)
+    // Load e.g. baricoin_de.qm (shortcut "de" needs to be defined in baricoin.qrc)
     if (translatorBase.load(lang, ":/translations/"))
         QApplication::installTranslator(&translatorBase);
 
-    // Load e.g. fujicoin_de_DE.qm (shortcut "de_DE" needs to be defined in fujicoin.qrc)
+    // Load e.g. baricoin_de_DE.qm (shortcut "de_DE" needs to be defined in baricoin.qrc)
     if (translator.load(lang_territory, ":/translations/"))
         QApplication::installTranslator(&translator);
 }
@@ -155,18 +155,18 @@ void DebugMessageHandler(QtMsgType type, const QMessageLogContext& context, cons
     }
 }
 
-FujicoinCore::FujicoinCore(interfaces::Node& node) :
+BaricoinCore::BaricoinCore(interfaces::Node& node) :
     QObject(), m_node(node)
 {
 }
 
-void FujicoinCore::handleRunawayException(const std::exception *e)
+void BaricoinCore::handleRunawayException(const std::exception *e)
 {
     PrintExceptionContinue(e, "Runaway exception");
     Q_EMIT runawayException(QString::fromStdString(m_node.getWarnings().translated));
 }
 
-void FujicoinCore::initialize()
+void BaricoinCore::initialize()
 {
     try
     {
@@ -182,7 +182,7 @@ void FujicoinCore::initialize()
     }
 }
 
-void FujicoinCore::shutdown()
+void BaricoinCore::shutdown()
 {
     try
     {
@@ -198,9 +198,9 @@ void FujicoinCore::shutdown()
 }
 
 static int qt_argc = 1;
-static const char* qt_argv = "fujicoin-qt";
+static const char* qt_argv = "baricoin-qt";
 
-FujicoinApplication::FujicoinApplication():
+BaricoinApplication::BaricoinApplication():
     QApplication(qt_argc, const_cast<char **>(&qt_argv)),
     coreThread(nullptr),
     optionsModel(nullptr),
@@ -215,20 +215,20 @@ FujicoinApplication::FujicoinApplication():
     setQuitOnLastWindowClosed(false);
 }
 
-void FujicoinApplication::setupPlatformStyle()
+void BaricoinApplication::setupPlatformStyle()
 {
     // UI per-platform customization
-    // This must be done inside the FujicoinApplication constructor, or after it, because
+    // This must be done inside the BaricoinApplication constructor, or after it, because
     // PlatformStyle::instantiate requires a QApplication
     std::string platformName;
-    platformName = gArgs.GetArg("-uiplatform", FujicoinGUI::DEFAULT_UIPLATFORM);
+    platformName = gArgs.GetArg("-uiplatform", BaricoinGUI::DEFAULT_UIPLATFORM);
     platformStyle = PlatformStyle::instantiate(QString::fromStdString(platformName));
     if (!platformStyle) // Fall back to "other" if specified name not found
         platformStyle = PlatformStyle::instantiate("other");
     assert(platformStyle);
 }
 
-FujicoinApplication::~FujicoinApplication()
+BaricoinApplication::~BaricoinApplication()
 {
     if(coreThread)
     {
@@ -245,38 +245,38 @@ FujicoinApplication::~FujicoinApplication()
 }
 
 #ifdef ENABLE_WALLET
-void FujicoinApplication::createPaymentServer()
+void BaricoinApplication::createPaymentServer()
 {
     paymentServer = new PaymentServer(this);
 }
 #endif
 
-void FujicoinApplication::createOptionsModel(bool resetSettings)
+void BaricoinApplication::createOptionsModel(bool resetSettings)
 {
     optionsModel = new OptionsModel(this, resetSettings);
 }
 
-void FujicoinApplication::createWindow(const NetworkStyle *networkStyle)
+void BaricoinApplication::createWindow(const NetworkStyle *networkStyle)
 {
-    window = new FujicoinGUI(node(), platformStyle, networkStyle, nullptr);
+    window = new BaricoinGUI(node(), platformStyle, networkStyle, nullptr);
 
     pollShutdownTimer = new QTimer(window);
-    connect(pollShutdownTimer, &QTimer::timeout, window, &FujicoinGUI::detectShutdown);
+    connect(pollShutdownTimer, &QTimer::timeout, window, &BaricoinGUI::detectShutdown);
 }
 
-void FujicoinApplication::createSplashScreen(const NetworkStyle *networkStyle)
+void BaricoinApplication::createSplashScreen(const NetworkStyle *networkStyle)
 {
     assert(!m_splash);
     m_splash = new SplashScreen(networkStyle);
     // We don't hold a direct pointer to the splash screen after creation, but the splash
     // screen will take care of deleting itself when finish() happens.
     m_splash->show();
-    connect(this, &FujicoinApplication::requestedInitialize, m_splash, &SplashScreen::handleLoadWallet);
-    connect(this, &FujicoinApplication::splashFinished, m_splash, &SplashScreen::finish);
-    connect(this, &FujicoinApplication::requestedShutdown, m_splash, &QWidget::close);
+    connect(this, &BaricoinApplication::requestedInitialize, m_splash, &SplashScreen::handleLoadWallet);
+    connect(this, &BaricoinApplication::splashFinished, m_splash, &SplashScreen::finish);
+    connect(this, &BaricoinApplication::requestedShutdown, m_splash, &QWidget::close);
 }
 
-void FujicoinApplication::setNode(interfaces::Node& node)
+void BaricoinApplication::setNode(interfaces::Node& node)
 {
     assert(!m_node);
     m_node = &node;
@@ -284,32 +284,32 @@ void FujicoinApplication::setNode(interfaces::Node& node)
     if (m_splash) m_splash->setNode(*m_node);
 }
 
-bool FujicoinApplication::baseInitialize()
+bool BaricoinApplication::baseInitialize()
 {
     return node().baseInitialize();
 }
 
-void FujicoinApplication::startThread()
+void BaricoinApplication::startThread()
 {
     if(coreThread)
         return;
     coreThread = new QThread(this);
-    FujicoinCore *executor = new FujicoinCore(node());
+    BaricoinCore *executor = new BaricoinCore(node());
     executor->moveToThread(coreThread);
 
     /*  communication to and from thread */
-    connect(executor, &FujicoinCore::initializeResult, this, &FujicoinApplication::initializeResult);
-    connect(executor, &FujicoinCore::shutdownResult, this, &FujicoinApplication::shutdownResult);
-    connect(executor, &FujicoinCore::runawayException, this, &FujicoinApplication::handleRunawayException);
-    connect(this, &FujicoinApplication::requestedInitialize, executor, &FujicoinCore::initialize);
-    connect(this, &FujicoinApplication::requestedShutdown, executor, &FujicoinCore::shutdown);
+    connect(executor, &BaricoinCore::initializeResult, this, &BaricoinApplication::initializeResult);
+    connect(executor, &BaricoinCore::shutdownResult, this, &BaricoinApplication::shutdownResult);
+    connect(executor, &BaricoinCore::runawayException, this, &BaricoinApplication::handleRunawayException);
+    connect(this, &BaricoinApplication::requestedInitialize, executor, &BaricoinCore::initialize);
+    connect(this, &BaricoinApplication::requestedShutdown, executor, &BaricoinCore::shutdown);
     /*  make sure executor object is deleted in its own thread */
     connect(coreThread, &QThread::finished, executor, &QObject::deleteLater);
 
     coreThread->start();
 }
 
-void FujicoinApplication::parameterSetup()
+void BaricoinApplication::parameterSetup()
 {
     // Default printtoconsole to false for the GUI. GUI programs should not
     // print to the console unnecessarily.
@@ -319,19 +319,19 @@ void FujicoinApplication::parameterSetup()
     InitParameterInteraction(gArgs);
 }
 
-void FujicoinApplication::InitPruneSetting(int64_t prune_MiB)
+void BaricoinApplication::InitPruneSetting(int64_t prune_MiB)
 {
     optionsModel->SetPruneTargetGB(PruneMiBtoGB(prune_MiB), true);
 }
 
-void FujicoinApplication::requestInitialize()
+void BaricoinApplication::requestInitialize()
 {
     qDebug() << __func__ << ": Requesting initialize";
     startThread();
     Q_EMIT requestedInitialize();
 }
 
-void FujicoinApplication::requestShutdown()
+void BaricoinApplication::requestShutdown()
 {
     // Show a simple window indicating shutdown status
     // Do this first as some of the steps may take some time below,
@@ -359,7 +359,7 @@ void FujicoinApplication::requestShutdown()
     Q_EMIT requestedShutdown();
 }
 
-void FujicoinApplication::initializeResult(bool success, interfaces::BlockAndHeaderTipInfo tip_info)
+void BaricoinApplication::initializeResult(bool success, interfaces::BlockAndHeaderTipInfo tip_info)
 {
     qDebug() << __func__ << ": Initialization result: " << success;
     // Set exit result.
@@ -393,10 +393,10 @@ void FujicoinApplication::initializeResult(bool success, interfaces::BlockAndHea
 
 #ifdef ENABLE_WALLET
         // Now that initialization/startup is done, process any command-line
-        // fujicoin: URIs or payment requests:
+        // baricoin: URIs or payment requests:
         if (paymentServer) {
-            connect(paymentServer, &PaymentServer::receivedPaymentRequest, window, &FujicoinGUI::handlePaymentRequest);
-            connect(window, &FujicoinGUI::receivedURI, paymentServer, &PaymentServer::handleURIOrFile);
+            connect(paymentServer, &PaymentServer::receivedPaymentRequest, window, &BaricoinGUI::handlePaymentRequest);
+            connect(window, &BaricoinGUI::receivedURI, paymentServer, &PaymentServer::handleURIOrFile);
             connect(paymentServer, &PaymentServer::message, [this](const QString& title, const QString& message, unsigned int style) {
                 window->message(title, message, style);
             });
@@ -410,12 +410,12 @@ void FujicoinApplication::initializeResult(bool success, interfaces::BlockAndHea
     }
 }
 
-void FujicoinApplication::shutdownResult()
+void BaricoinApplication::shutdownResult()
 {
     quit(); // Exit second main loop invocation after shutdown finished
 }
 
-void FujicoinApplication::handleRunawayException(const QString &message)
+void BaricoinApplication::handleRunawayException(const QString &message)
 {
     QMessageBox::critical(
         nullptr, tr("Runaway exception"),
@@ -424,7 +424,7 @@ void FujicoinApplication::handleRunawayException(const QString &message)
     ::exit(EXIT_FAILURE);
 }
 
-void FujicoinApplication::handleNonFatalException(const QString& message)
+void BaricoinApplication::handleNonFatalException(const QString& message)
 {
     assert(QThread::currentThread() == thread());
     QMessageBox::warning(
@@ -434,7 +434,7 @@ void FujicoinApplication::handleNonFatalException(const QString& message)
         QLatin1String("<br><br>") + GUIUtil::MakeHtmlLink(message, PACKAGE_BUGREPORT));
 }
 
-WId FujicoinApplication::getMainWinId() const
+WId BaricoinApplication::getMainWinId() const
 {
     if (!window)
         return 0;
@@ -449,7 +449,7 @@ static void SetupUIArgs(ArgsManager& argsman)
     argsman.AddArg("-min", "Start minimized", ArgsManager::ALLOW_ANY, OptionsCategory::GUI);
     argsman.AddArg("-resetguisettings", "Reset all settings changed in the GUI", ArgsManager::ALLOW_ANY, OptionsCategory::GUI);
     argsman.AddArg("-splash", strprintf("Show splash screen on startup (default: %u)", DEFAULT_SPLASHSCREEN), ArgsManager::ALLOW_ANY, OptionsCategory::GUI);
-    argsman.AddArg("-uiplatform", strprintf("Select platform to customize UI for (one of windows, macosx, other; default: %s)", FujicoinGUI::DEFAULT_UIPLATFORM), ArgsManager::ALLOW_ANY | ArgsManager::DEBUG_ONLY, OptionsCategory::GUI);
+    argsman.AddArg("-uiplatform", strprintf("Select platform to customize UI for (one of windows, macosx, other; default: %s)", BaricoinGUI::DEFAULT_UIPLATFORM), ArgsManager::ALLOW_ANY | ArgsManager::DEBUG_ONLY, OptionsCategory::GUI);
 }
 
 int GuiMain(int argc, char* argv[])
@@ -472,8 +472,8 @@ int GuiMain(int argc, char* argv[])
     // Do not refer to data directory yet, this can be overridden by Intro::pickDataDirectory
 
     /// 1. Basic Qt initialization (not dependent on parameters or configuration)
-    Q_INIT_RESOURCE(fujicoin);
-    Q_INIT_RESOURCE(fujicoin_locale);
+    Q_INIT_RESOURCE(baricoin);
+    Q_INIT_RESOURCE(baricoin_locale);
 
     // Generate high-dpi pixmaps
     QApplication::setAttribute(Qt::AA_UseHighDpiPixmaps);
@@ -485,7 +485,7 @@ int GuiMain(int argc, char* argv[])
     QApplication::setAttribute(Qt::AA_DontUseNativeDialogs);
 #endif
 
-    FujicoinApplication app;
+    BaricoinApplication app;
     QFontDatabase::addApplicationFont(":/fonts/monospace");
 
     /// 2. Parse command-line options. We do this after qt in order to show an error if there are problems parsing these
@@ -536,7 +536,7 @@ int GuiMain(int argc, char* argv[])
     // Gracefully exit if the user cancels
     if (!Intro::showIfNeeded(did_show_intro, prune_MiB)) return EXIT_SUCCESS;
 
-    /// 6. Determine availability of data directory and parse fujicoin.conf
+    /// 6. Determine availability of data directory and parse baricoin.conf
     /// - Do not call gArgs.GetDataDirNet() before this step finishes
     if (!CheckDataDirOption()) {
         InitError(strprintf(Untranslated("Specified data directory \"%s\" does not exist.\n"), gArgs.GetArg("-datadir", "")));
@@ -593,7 +593,7 @@ int GuiMain(int argc, char* argv[])
         exit(EXIT_SUCCESS);
 
     // Start up the payment server early, too, so impatient users that click on
-    // fujicoin: links repeatedly have their payment requests routed to this process:
+    // baricoin: links repeatedly have their payment requests routed to this process:
     if (WalletModel::isWalletEnabled()) {
         app.createPaymentServer();
     }

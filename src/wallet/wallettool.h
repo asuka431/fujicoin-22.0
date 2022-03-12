@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_WALLET_WALLETTOOL_H
-#define FUJICOIN_WALLET_WALLETTOOL_H
+#ifndef BARICOIN_WALLET_WALLETTOOL_H
+#define BARICOIN_WALLET_WALLETTOOL_H
 
 #include <wallet/wallet.h>
 
@@ -14,4 +14,4 @@ bool ExecuteWalletToolFunc(const ArgsManager& args, const std::string& command);
 
 } // namespace WalletTool
 
-#endif // FUJICOIN_WALLET_WALLETTOOL_H
+#endif // BARICOIN_WALLET_WALLETTOOL_H

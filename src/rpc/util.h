@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef FUJICOIN_RPC_UTIL_H
-#define FUJICOIN_RPC_UTIL_H
+#ifndef BARICOIN_RPC_UTIL_H
+#define BARICOIN_RPC_UTIL_H
 
 #include <node/coinstats.h>
 #include <node/transaction.h>
@@ -367,4 +367,4 @@ private:
     const RPCExamples m_examples;
 };
 
-#endif // FUJICOIN_RPC_UTIL_H
+#endif // BARICOIN_RPC_UTIL_H
