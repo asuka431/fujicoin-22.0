@@ -649,11 +649,11 @@ Signing is only possible with addresses of the type 'legacy'.</source>
     </message>
     <message>
         <source>Load Partially Signed Baricoin Transaction</source>
-        <translation type="unfinished">部分的に署名された富士コインのトランザクションを読み込み</translation>
+        <translation type="unfinished">部分的に署名された今治コインのトランザクションを読み込み</translation>
     </message>
     <message>
         <source>Load Partially Signed Baricoin Transaction from clipboard</source>
-        <translation type="unfinished">部分的に署名された富士コインのトランザクションをクリップボードから読み込み</translation>
+        <translation type="unfinished">部分的に署名された今治コインのトランザクションをクリップボードから読み込み</translation>
     </message>
     <message>
         <source>Node window</source>
@@ -2845,7 +2845,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee rate of "100 satos
     </message>
     <message>
         <source>Please, review your transaction proposal. This will produce a Partially Signed Baricoin Transaction (PSBT) which you can save or copy and then sign with e.g. an offline %1 wallet, or a PSBT-compatible hardware wallet.</source>
-        <translation type="unfinished">トランザクション提案を確認してください。これにより、部分的に署名された富士コイン・トランザクション（PSBT）が作成されます。これを保存するかコピーして例えばオフラインの %1 ウォレットやPSBTを扱えるハードウェアウォレットで残りの署名が出来ます。</translation>
+        <translation type="unfinished">トランザクション提案を確認してください。これにより、部分的に署名された今治コイン・トランザクション（PSBT）が作成されます。これを保存するかコピーして例えばオフラインの %1 ウォレットやPSBTを扱えるハードウェアウォレットで残りの署名が出来ます。</translation>
     </message>
     <message>
         <source>Please, review your transaction.</source>
