@@ -15,9 +15,7 @@ uint256 CBlockHeader::GetHash() const
 
 uint256 CBlockHeader::GetPoWHash() const
 {
-   uint256 thash;
-   scrypt_N_1_1_256((char*)&(nVersion), (char*)&(thash), 10); //Baricoin scrypt-N11 2^11 = 2048
-   return thash;
+    return SerializeHashYescrypt(*this);
 }
 
 std::string CBlock::ToString() const

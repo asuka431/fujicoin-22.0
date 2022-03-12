@@ -440,6 +440,7 @@ libbaricoin_wallet_tool_a_SOURCES = \
 # crypto primitives library
 crypto_libbaricoin_crypto_base_a_CPPFLAGS = $(AM_CPPFLAGS)
 crypto_libbaricoin_crypto_base_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+crypto_libbitcoin_crypto_a_CFLAGS = $(AM_CFLAGS) $(PIE_FLAGS) -fomit-frame-pointer
 crypto_libbaricoin_crypto_base_a_SOURCES = \
   crypto/aes.cpp \
   crypto/aes.h \
@@ -470,8 +471,7 @@ crypto_libbaricoin_crypto_base_a_SOURCES = \
   crypto/sha512.h \
   crypto/siphash.cpp \
   crypto/siphash.h \
-  crypto/scrypt.cpp \
-  crypto/scrypt.h
+  crypto/yescrypt-0.5/yescrypt.c
 
 if USE_ASM
 crypto_libbaricoin_crypto_base_a_SOURCES += crypto/sha256_sse4.cpp
